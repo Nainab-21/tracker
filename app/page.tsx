@@ -9,17 +9,25 @@ type Tab = 'gantt' | 'issues';
 
 function Spinner() {
   return (
-    <div className="flex items-center justify-center py-32">
-      <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-700 border-t-blue-500" />
+    <div style={{ display: 'flex', justifyContent: 'center', padding: '80px 0' }}>
+      <div style={{
+        width: 40, height: 40, borderRadius: '50%',
+        border: '4px solid #dde3ed', borderTopColor: '#2E75B6',
+        animation: 'spin 0.8s linear infinite',
+      }} />
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }
 
 function ErrorBanner({ message }: { message: string }) {
   return (
-    <div className="rounded-xl border border-red-500/40 bg-red-500/10 p-6 text-center">
-      <p className="text-red-400 font-medium">Failed to load data</p>
-      <p className="text-slate-400 text-sm mt-1">{message}</p>
+    <div style={{
+      border: '1px solid #f5c6cb', background: '#fff5f5', borderRadius: 8,
+      padding: '20px 24px', textAlign: 'center',
+    }}>
+      <p style={{ color: '#C00000', fontWeight: 600 }}>Failed to load data</p>
+      <p style={{ color: '#666', fontSize: '0.85rem', marginTop: 4 }}>{message}</p>
     </div>
   );
 }
@@ -46,158 +54,115 @@ export default function Home() {
     ]);
 
     if (planRes.status === 'fulfilled') {
-      const data = planRes.value;
-      if (data.error) setPlanningError(data.detail ?? data.error);
-      else setPlanningData(data);
-    } else {
-      setPlanningError(String(planRes.reason));
-    }
+      const d = planRes.value;
+      if (d.error) setPlanningError(d.detail ?? d.error);
+      else setPlanningData(d);
+    } else setPlanningError(String(planRes.reason));
 
     if (issueRes.status === 'fulfilled') {
-      const data = issueRes.value;
-      if (data.error) setIssuesError(data.detail ?? data.error);
-      else setIssuesData(data);
-    } else {
-      setIssuesError(String(issueRes.reason));
-    }
+      const d = issueRes.value;
+      if (d.error) setIssuesError(d.detail ?? d.error);
+      else setIssuesData(d);
+    } else setIssuesError(String(issueRes.reason));
 
     setLastRefreshed(new Date());
     setLoading(false);
     setRefreshing(false);
   }, []);
 
-  useEffect(() => {
-    fetchAll();
-  }, [fetchAll]);
+  useEffect(() => { fetchAll(); }, [fetchAll]);
 
-  const fmtTime = (d: Date) =>
-    d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  const todayStr = new Date().toLocaleDateString('en-US', {
+    weekday: 'short', month: 'short', day: 'numeric', year: 'numeric',
+  });
 
   return (
-    <div className="min-h-screen bg-[#0b1120]">
-      {/* ── Top Header ────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 border-b border-slate-700/50 bg-[#0b1120]/90 backdrop-blur-md">
-        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between gap-4">
-            {/* Logo + Title */}
-            <div className="flex items-center gap-3 min-w-0">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-400 flex-shrink-0">
-                <svg
-                  className="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
-              </div>
-              <div className="min-w-0">
-                <h1 className="text-sm font-bold text-white truncate">
-                  StomaSense Tracker
-                </h1>
-                <p className="text-xs text-slate-400">Roadmap &amp; Issues 2026</p>
-              </div>
-            </div>
-
-            {/* Tabs */}
-            <nav className="flex rounded-lg border border-slate-700/50 bg-slate-800/50 p-0.5 gap-0.5">
-              {(
-                [
-                  { id: 'gantt', label: 'Roadmap' },
-                  { id: 'issues', label: 'Issues' },
-                ] as { id: Tab; label: string }[]
-              ).map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`rounded-md px-4 py-1.5 text-sm font-medium transition-all ${
-                    activeTab === tab.id
-                      ? 'bg-blue-600 text-white shadow'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </nav>
-
-            {/* Refresh + timestamp */}
-            <div className="flex items-center gap-3">
-              {lastRefreshed && (
-                <span className="text-xs text-slate-500 hidden sm:block">
-                  Updated {fmtTime(lastRefreshed)}
-                </span>
-              )}
-              <button
-                onClick={() => fetchAll(true)}
-                disabled={refreshing}
-                className="flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm text-slate-300 hover:border-blue-500 hover:text-white transition-colors disabled:opacity-50"
-              >
-                <svg
-                  className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
-                </svg>
-                {refreshing ? 'Refreshing…' : 'Refresh'}
-              </button>
-            </div>
+    <div style={{ minHeight: '100vh', background: '#F0F4F8' }}>
+      {/* ── Header ───────────────────────────────────────────────────────── */}
+      <div style={{
+        background: 'linear-gradient(135deg, #1F3864 0%, #2E75B6 100%)',
+        color: '#fff', padding: '18px 28px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        boxShadow: '0 3px 10px rgba(0,0,0,0.25)',
+        position: 'sticky', top: 0, zIndex: 100,
+      }}>
+        <div>
+          <h1 style={{ fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.5px' }}>
+            🌿 StomaSense – Roadmap &amp; Issues Tracker 2026
+          </h1>
+          <div style={{ fontSize: '0.78rem', opacity: 0.8, marginTop: 4 }}>
+            Blocks: [3 Months Mar–May 2026] · [May–Oct 2026] · Last updated: {lastRefreshed?.toLocaleTimeString() ?? '—'}
           </div>
         </div>
-      </header>
 
-      {/* ── Main Content ──────────────────────────────────────────────────── */}
-      <main className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          {/* Tabs */}
+          <div style={{ display: 'flex', background: 'rgba(255,255,255,0.15)', borderRadius: 8, padding: 3, gap: 3 }}>
+            {(['gantt', 'issues'] as Tab[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                style={{
+                  padding: '6px 18px', borderRadius: 6, border: 'none',
+                  cursor: 'pointer', fontWeight: 600, fontSize: '0.82rem',
+                  background: activeTab === tab ? '#fff' : 'transparent',
+                  color: activeTab === tab ? '#1F3864' : '#fff',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {tab === 'gantt' ? '📊 Roadmap' : '🐛 Issues'}
+              </button>
+            ))}
+          </div>
+
+          {/* Today badge */}
+          <div style={{
+            background: '#FFD966', color: '#1a1a2e', borderRadius: 20,
+            padding: '5px 14px', fontSize: '0.8rem', fontWeight: 600, whiteSpace: 'nowrap',
+          }}>
+            📅 {todayStr}
+          </div>
+
+          {/* Refresh */}
+          <button
+            onClick={() => fetchAll(true)}
+            disabled={refreshing}
+            style={{
+              padding: '6px 16px', borderRadius: 6, border: '1px solid rgba(255,255,255,0.4)',
+              background: 'rgba(255,255,255,0.1)', color: '#fff',
+              cursor: refreshing ? 'not-allowed' : 'pointer',
+              fontSize: '0.82rem', fontWeight: 600,
+              opacity: refreshing ? 0.6 : 1, transition: 'background 0.2s',
+            }}
+          >
+            {refreshing ? '↺ Refreshing…' : '↺ Refresh'}
+          </button>
+        </div>
+      </div>
+
+      {/* ── Content ──────────────────────────────────────────────────────── */}
+      <div style={{ padding: '20px 24px' }}>
         {loading ? (
           <Spinner />
         ) : (
           <>
             {activeTab === 'gantt' && (
-              <>
-                <div className="mb-6">
-                  <h2 className="text-xl font-bold text-white">Roadmap 2026</h2>
-                  <p className="text-sm text-slate-400 mt-1">
-                    Interactive Gantt chart — 9 projects across 2 delivery blocks
-                  </p>
-                </div>
-                {planningError ? (
-                  <ErrorBanner message={planningError} />
-                ) : planningData ? (
-                  <GanttSection tasks={planningData.tasks} />
-                ) : null}
-              </>
+              planningError
+                ? <ErrorBanner message={planningError} />
+                : planningData
+                  ? <GanttSection tasks={planningData.tasks} />
+                  : null
             )}
-
             {activeTab === 'issues' && (
-              <>
-                <div className="mb-6">
-                  <h2 className="text-xl font-bold text-white">Issues & Backlog</h2>
-                  <p className="text-sm text-slate-400 mt-1">
-                    Product improvement log — bugs, data issues, features, and enhancements
-                  </p>
-                </div>
-                {issuesError ? (
-                  <ErrorBanner message={issuesError} />
-                ) : issuesData ? (
-                  <IssuesSection issues={issuesData.issues} />
-                ) : null}
-              </>
+              issuesError
+                ? <ErrorBanner message={issuesError} />
+                : issuesData
+                  ? <IssuesSection issues={issuesData.issues} />
+                  : null
             )}
           </>
         )}
-      </main>
+      </div>
     </div>
   );
 }
