@@ -5,6 +5,8 @@ import type { PlanningTask, TaskStatus } from '@/lib/types';
 
 interface Props { tasks: PlanningTask[] }
 
+type ViewMode = 'gantt' | 'timeline';
+
 // ── Timeline ──────────────────────────────────────────────────────────────────
 const RANGE_START = new Date('2026-03-01');
 const RANGE_END   = new Date('2026-11-01');
@@ -66,7 +68,152 @@ function KPI({ val, lbl, color }: { val: number | string; lbl: string; color: st
   );
 }
 
+// ── Timeline sub-component ────────────────────────────────────────────────────
+function TimelineView({ tasks, projectColorMap }: { tasks: PlanningTask[]; projectColorMap: Record<string, string> }) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Sort by proximity to today (tasks active today first, then upcoming, then past)
+  const sorted = [...tasks].sort((a, b) => {
+    const aStart = new Date(a.startDate + 'T00:00:00');
+    const aEnd   = new Date(a.endDate   + 'T00:00:00');
+    const bStart = new Date(b.startDate + 'T00:00:00');
+    const bEnd   = new Date(b.endDate   + 'T00:00:00');
+
+    const aActive = aStart <= today && today <= aEnd;
+    const bActive = bStart <= today && today <= bEnd;
+    if (aActive && !bActive) return -1;
+    if (!aActive && bActive) return 1;
+
+    // Upcoming: distance from today to start
+    const aDist = aStart > today ? aStart.getTime() - today.getTime() : today.getTime() - aEnd.getTime();
+    const bDist = bStart > today ? bStart.getTime() - today.getTime() : today.getTime() - bEnd.getTime();
+    return aDist - bDist;
+  });
+
+  // Timeline range: 30 days before today to 120 days after
+  const viewStart = new Date(today); viewStart.setDate(viewStart.getDate() - 30);
+  const viewEnd   = new Date(today); viewEnd.setDate(viewEnd.getDate() + 120);
+  const viewMs    = viewEnd.getTime() - viewStart.getTime();
+  const todayPct  = ((today.getTime() - viewStart.getTime()) / viewMs) * 100;
+
+  function barL(d: Date) { return Math.max(0, Math.min(100, ((d.getTime() - viewStart.getTime()) / viewMs) * 100)); }
+  function barW(s: Date, e: Date) { return Math.max(0.5, Math.min(100 - barL(s), ((e.getTime() - s.getTime()) / viewMs) * 100)); }
+
+  // Month labels for the timeline header
+  const monthLabels: { label: string; pct: number }[] = [];
+  const cur = new Date(viewStart.getFullYear(), viewStart.getMonth(), 1);
+  while (cur <= viewEnd) {
+    const p = ((cur.getTime() - viewStart.getTime()) / viewMs) * 100;
+    if (p >= 0 && p <= 100) {
+      monthLabels.push({ label: cur.toLocaleDateString('en-US', { month: 'short', year: '2-digit' }), pct: p });
+    }
+    cur.setMonth(cur.getMonth() + 1);
+  }
+
+  const fmtDay = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  return (
+    <div style={{ padding: '0 0 12px 0' }}>
+      {/* Timeline ruler */}
+      <div style={{ position: 'relative', height: 28, borderBottom: '1px solid #dde3ed', background: '#f8fafc', marginBottom: 0 }}>
+        {monthLabels.map(m => (
+          <div key={m.label} style={{ position: 'absolute', left: `${m.pct}%`, top: 0, bottom: 0, display: 'flex', alignItems: 'center', paddingLeft: 6 }}>
+            <span style={{ fontSize: '0.68rem', color: '#5c7da8', fontWeight: 600, whiteSpace: 'nowrap' }}>{m.label}</span>
+            <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 1, background: '#dde3ed' }} />
+          </div>
+        ))}
+        {/* Today marker in ruler */}
+        <div style={{ position: 'absolute', left: `${todayPct}%`, top: 0, bottom: 0, width: 2, background: '#C00000', zIndex: 5 }}>
+          <span style={{ position: 'absolute', top: 4, left: 4, fontSize: '0.65rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today · {fmtDay(today)}</span>
+        </div>
+      </div>
+
+      {/* Task rows */}
+      <div style={{ position: 'relative' }}>
+        {/* Today vertical line running through all rows */}
+        <div style={{ position: 'absolute', left: `calc(180px + ${todayPct}% * (100% - 180px) / 100)`, top: 0, bottom: 0, width: 2, background: 'rgba(192,0,0,0.25)', zIndex: 2, pointerEvents: 'none' }} />
+
+        {sorted.map((task, idx) => {
+          const sDate   = new Date(task.startDate + 'T00:00:00');
+          const eDate   = new Date(task.endDate   + 'T00:00:00');
+          const isActive = sDate <= today && today <= eDate;
+          const isPast   = eDate < today;
+          const color    = projectColorMap[task.project] ?? '#2E75B6';
+          const statusCol = STATUS_COLOR[task.status];
+          const bL = barL(sDate);
+          const bW = barW(sDate, eDate);
+          const rowBg = isActive ? '#FFFBE6' : idx % 2 === 0 ? '#fff' : '#f8fafc';
+
+          return (
+            <div key={`${task.id}-${task.task}-${idx}`}
+              style={{ display: 'flex', alignItems: 'center', borderBottom: '1px solid #eef2f8', background: rowBg, opacity: isPast ? 0.65 : 1 }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#f0f4f8')}
+              onMouseLeave={e => (e.currentTarget.style.background = rowBg)}>
+
+              {/* Left info panel (fixed width) */}
+              <div style={{ width: 180, flexShrink: 0, padding: '6px 10px', borderRight: '1px solid #eef2f8' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 600, color: '#1a1a2e', lineHeight: 1.3 }}>{task.task}</div>
+                <div style={{ fontSize: '0.65rem', color: color, marginTop: 2, fontWeight: 600 }}>{task.project}</div>
+                <div style={{ display: 'flex', gap: 6, marginTop: 3, alignItems: 'center' }}>
+                  <span style={{ display: 'inline-block', padding: '1px 5px', borderRadius: 8, fontSize: '0.62rem', fontWeight: 700, background: statusCol, color: task.status === 'Under Review' ? '#1a1a2e' : '#fff' }}>
+                    {task.status}
+                  </span>
+                  <span style={{ fontSize: '0.62rem', color: '#888' }}>{task.progress}%</span>
+                </div>
+              </div>
+
+              {/* Timeline bar area */}
+              <div style={{ flex: 1, position: 'relative', height: 44, overflow: 'hidden' }}>
+                {/* Month grid lines */}
+                {monthLabels.map(m => (
+                  <div key={m.label} style={{ position: 'absolute', left: `${m.pct}%`, top: 0, bottom: 0, width: 1, background: '#eef2f8', zIndex: 1 }} />
+                ))}
+                {/* Today line in this row */}
+                <div style={{ position: 'absolute', left: `${todayPct}%`, top: 0, bottom: 0, width: 2, background: 'rgba(192,0,0,0.35)', zIndex: 3 }} />
+
+                {/* Bar background */}
+                <div style={{
+                  position: 'absolute', top: '50%', transform: 'translateY(-50%)',
+                  left: `${bL}%`, width: `${bW}%`,
+                  height: 24, borderRadius: 4,
+                  background: color, opacity: 0.15,
+                  zIndex: 2,
+                }} />
+                {/* Progress fill */}
+                <div style={{
+                  position: 'absolute', top: '50%', transform: 'translateY(-50%)',
+                  left: `${bL}%`, width: `${bW * task.progress / 100}%`,
+                  height: 24, borderRadius: 4,
+                  background: color, opacity: 0.8,
+                  zIndex: 2,
+                }} />
+                {/* Label on bar */}
+                <div style={{
+                  position: 'absolute', top: '50%', transform: 'translateY(-50%)',
+                  left: `${bL}%`, width: `${bW}%`,
+                  height: 24, display: 'flex', alignItems: 'center',
+                  paddingLeft: 6, overflow: 'hidden', zIndex: 4,
+                }}>
+                  <span style={{ fontSize: '0.62rem', color: '#fff', fontWeight: 600, whiteSpace: 'nowrap', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>
+                    {fmtDay(sDate)} – {fmtDay(eDate)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {sorted.length === 0 && (
+        <p style={{ textAlign: 'center', padding: '40px', color: '#888' }}>No tasks match the current filters.</p>
+      )}
+    </div>
+  );
+}
+
 export default function GanttSection({ tasks }: Props) {
+  const [viewMode, setViewMode] = useState<ViewMode>('gantt');
   const [blockFilter,   setBlockFilter]   = useState('All');
   const [statusFilter,  setStatusFilter]  = useState('All');
   const [teamFilter,    setTeamFilter]    = useState('All');
@@ -228,22 +375,48 @@ export default function GanttSection({ tasks }: Props) {
         <div style={{ background: '#fff', borderRadius: '0 10px 10px 0', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
 
           {/* Controls bar */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', borderBottom: '1px solid #eef2f8', background: '#f8fafc' }}>
-            {[{ label: '▼ Expand All', action: () => { setCollapsedBlocks(new Set()); setCollapsedProjects(new Set()); } },
-              { label: '▲ Collapse All', action: () => setCollapsedBlocks(new Set(grouped.keys())) }
-            ].map(({ label, action }) => (
-              <button key={label} onClick={action} style={{ padding: '5px 14px', borderRadius: 5, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid #cdd4df', background: '#fff', color: '#1a1a2e', fontWeight: 600 }}>
-                {label}
-              </button>
-            ))}
-            <span style={{ color: '#888', fontSize: '0.75rem' }}>Click on block / project to expand · collapse</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', borderBottom: '1px solid #eef2f8', background: '#f8fafc', flexWrap: 'wrap' }}>
+            {/* View toggle */}
+            <div style={{ display: 'flex', background: '#e0e7ef', borderRadius: 7, padding: 2, gap: 2 }}>
+              {(['gantt', 'timeline'] as ViewMode[]).map(v => (
+                <button key={v} onClick={() => setViewMode(v)} style={{
+                  padding: '4px 14px', borderRadius: 5, border: 'none', cursor: 'pointer',
+                  fontSize: '0.78rem', fontWeight: 600, transition: 'all 0.15s',
+                  background: viewMode === v ? '#1F3864' : 'transparent',
+                  color: viewMode === v ? '#fff' : '#555',
+                }}>
+                  {v === 'gantt' ? '📋 Gantt' : '📅 Timeline'}
+                </button>
+              ))}
+            </div>
+
+            {viewMode === 'gantt' && (
+              <>
+                {[{ label: '▼ Expand All', action: () => { setCollapsedBlocks(new Set()); setCollapsedProjects(new Set()); } },
+                  { label: '▲ Collapse All', action: () => setCollapsedBlocks(new Set(grouped.keys())) }
+                ].map(({ label, action }) => (
+                  <button key={label} onClick={action} style={{ padding: '5px 14px', borderRadius: 5, fontSize: '0.78rem', cursor: 'pointer', border: '1px solid #cdd4df', background: '#fff', color: '#1a1a2e', fontWeight: 600 }}>
+                    {label}
+                  </button>
+                ))}
+                <span style={{ color: '#888', fontSize: '0.75rem' }}>Click block / project to collapse</span>
+              </>
+            )}
+            {viewMode === 'timeline' && (
+              <span style={{ color: '#888', fontSize: '0.75rem' }}>Tasks sorted by proximity to today · bars show actual duration</span>
+            )}
             <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: '#555' }}>
-              Showing {filtered.length} / {total} tasks
+              {filtered.length} / {total} tasks
             </span>
           </div>
 
+          {/* ── Timeline View ──────────────────────────────────────────── */}
+          {viewMode === 'timeline' && (
+            <TimelineView tasks={filtered} projectColorMap={projectColorMap} />
+          )}
+
           {/* Table */}
-          <div style={{ overflowX: 'auto', position: 'relative' }}>
+          {viewMode === 'gantt' && <div style={{ overflowX: 'auto', position: 'relative' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
               <thead>
                 <tr>
@@ -366,7 +539,7 @@ export default function GanttSection({ tasks }: Props) {
                 <span style={{ position: 'absolute', top: 0, left: 4, fontSize: '0.6rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today</span>
               </div>
             )}
-          </div>
+          </div>}
 
           {/* Legend */}
           <div style={{ padding: '10px 16px', borderTop: '1px solid #eef2f8', background: '#f8fafc', display: 'flex', gap: 20, flexWrap: 'wrap' }}>

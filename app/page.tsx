@@ -110,7 +110,7 @@ export default function Home() {
                   transition: 'all 0.2s',
                 }}
               >
-                {tab === 'gantt' ? '📊 Roadmap' : '🐛 Issues'}
+                {tab === 'gantt' ? '📊 Roadmap' : '📋 Product Improvement Log'}
               </button>
             ))}
           </div>
