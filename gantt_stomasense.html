@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StomaSense – Gantt Roadmap 2026</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: #F0F4F8; color: #1a1a2e; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #1F3864 0%, #2E75B6 100%);
+    color: #fff; padding: 18px 28px; display: flex;
+    align-items: center; justify-content: space-between;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+  .header .meta { font-size: 0.78rem; opacity: 0.8; margin-top: 4px; }
+  .today-badge {
+    background: #FFD966; color: #1a1a2e; border-radius: 20px;
+    padding: 5px 14px; font-size: 0.8rem; font-weight: 600;
+  }
+
+  /* ── Layout ── */
+  .layout { display: flex; height: calc(100vh - 68px); overflow: hidden; }
+  .sidebar {
+    width: 280px; min-width: 230px; background: #fff;
+    border-right: 1px solid #dde3ed;
+    overflow-y: auto; padding: 16px; flex-shrink: 0;
+  }
+  .main { flex: 1; overflow: auto; padding: 16px; }
+
+  /* ── Sidebar sections ── */
+  .sidebar h3 {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px;
+    color: #5c7da8; margin: 14px 0 8px; padding-bottom: 4px;
+    border-bottom: 1px solid #eef2f8;
+  }
+
+  /* ── KPI cards ── */
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .kpi {
+    background: #F0F4F8; border-radius: 8px; padding: 10px 8px;
+    text-align: center; border: 1px solid #dde3ed;
+  }
+  .kpi .val { font-size: 1.5rem; font-weight: 700; }
+  .kpi .lbl { font-size: 0.68rem; color: #666; margin-top: 2px; }
+  .kpi.green  .val { color: #538135; }
+  .kpi.blue   .val { color: #2E75B6; }
+  .kpi.red    .val { color: #C00000; }
+  .kpi.orange .val { color: #ED7D31; }
+  .kpi.purple .val { color: #7030A0; }
+
+  /* ── Progress bar global ── */
+  .global-progress { margin: 12px 0; }
+  .global-progress .lbl {
+    display: flex; justify-content: space-between;
+    font-size: 0.75rem; color: #555; margin-bottom: 4px;
+  }
+  .progress-outer {
+    background: #e0e7ef; border-radius: 20px; height: 10px; overflow: hidden;
+  }
+  .progress-inner {
+    height: 100%; border-radius: 20px;
+    background: linear-gradient(90deg, #2E75B6, #70AD47);
+    transition: width 0.5s;
+  }
+
+  /* ── Filters ── */
+  .filter-row { margin-bottom: 8px; }
+  .filter-row label { font-size: 0.72rem; color: #555; display: block; margin-bottom: 3px; }
+  .filter-row select, .filter-row input {
+    width: 100%; padding: 5px 8px; border: 1px solid #cdd4df;
+    border-radius: 6px; font-size: 0.8rem; background: #f8fafc;
+    color: #1a1a2e;
+  }
+  .btn-refresh {
+    width: 100%; margin-top: 10px; padding: 8px; background: #2E75B6;
+    color: #fff; border: none; border-radius: 6px; font-size: 0.82rem;
+    cursor: pointer; font-weight: 600; transition: background 0.2s;
+  }
+  .btn-refresh:hover { background: #1F5FA6; }
+
+  /* ── Project cards in sidebar ── */
+  .proy-card {
+    border-radius: 6px; padding: 8px 10px; margin-bottom: 6px;
+    border-left: 4px solid;  background: #f8fafc;
+    cursor: pointer; transition: transform 0.15s;
+  }
+  .proy-card:hover { transform: translateX(2px); }
+  .proy-card .name { font-size: 0.75rem; font-weight: 600; }
+  .proy-card .prog { font-size: 0.68rem; color: #666; margin-top: 4px; }
+  .proy-card .bar-outer { background: #e0e7ef; border-radius: 10px; height: 5px; margin-top: 4px; }
+  .proy-card .bar-inner { height: 5px; border-radius: 10px; }
+
+  /* ── Gantt container ── */
+  .gantt-wrapper { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; }
+  .gantt-controls {
+    display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+    border-bottom: 1px solid #eef2f8; background: #f8fafc;
+  }
+  .btn-expand, .btn-collapse {
+    padding: 5px 14px; border-radius: 5px; font-size: 0.78rem; cursor: pointer;
+    border: 1px solid #cdd4df; background: #fff; color: #1a1a2e; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .btn-expand:hover  { background: #e0e7ef; }
+  .btn-collapse:hover { background: #e0e7ef; }
+  .zoom-group { display: flex; gap: 5px; margin-left: auto; }
+  .btn-zoom {
+    padding: 4px 11px; border-radius: 5px; font-size: 0.78rem; cursor: pointer;
+    border: 1px solid #cdd4df; background: #fff; transition: background 0.15s;
+  }
+  .btn-zoom:hover { background: #e0e7ef; }
+  .btn-zoom.active { background: #2E75B6; color: #fff; border-color: #2E75B6; }
+
+  /* ── Gantt table ── */
+  #gantt-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  #gantt-table thead th {
+    background: #1F3864; color: #fff; padding: 8px 10px;
+    text-align: left; white-space: nowrap; position: sticky; top: 0; z-index: 10;
+  }
+  #gantt-table thead th.date-col {
+    text-align: center; font-size: 0.68rem; min-width: 30px; padding: 4px 2px;
+  }
+  .group-row {
+    background: #1F3864; color: #fff; cursor: pointer;
+    font-weight: 700; font-size: 0.82rem;
+  }
+  .group-row td { padding: 8px 12px; }
+  .group-row:hover { background: #2E75B6; }
+  .subgroup-row {
+    cursor: pointer; font-weight: 600; font-size: 0.78rem;
+  }
+  .subgroup-row td { padding: 7px 10px 7px 20px; }
+  .task-row { transition: background 0.1s; }
+  .task-row:hover { background: #f0f4f8 !important; }
+  .task-row td { padding: 6px 10px 6px 28px; border-bottom: 1px solid #eef2f8; }
+  .task-name { font-weight: 500; }
+  .task-meta { color: #888; font-size: 0.7rem; margin-top: 1px; }
+  .status-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.68rem; font-weight: 700; white-space: nowrap;
+  }
+  .pct-text { font-size: 0.7rem; color: #555; white-space: nowrap; }
+
+  /* ── Gantt bars area ── */
+  .bar-cell { position: relative; padding: 0 !important; height: 38px; }
+  .gantt-bar-bg { position: absolute; inset: 7px 0; border-radius: 3px; opacity: 0.18; }
+  .gantt-bar {
+    position: absolute; top: 9px; border-radius: 3px; height: 20px;
+    display: flex; align-items: center; overflow: hidden; white-space: nowrap;
+  }
+  .gantt-bar .bar-label { color: #fff; font-size: 0.62rem; font-weight: 600; padding-left: 5px; overflow: hidden; text-overflow: ellipsis; }
+  .gantt-bar-done {
+    position: absolute; top: 9px; border-radius: 3px 0 0 3px; height: 20px;
+    opacity: 0.6; pointer-events: none;
+  }
+
+  /* ── Today line ── */
+  .today-line {
+    position: absolute; top: 0; width: 2px; background: #C00000;
+    z-index: 20; pointer-events: none;
+  }
+  .today-line::after {
+    content: 'Hoy'; position: absolute; top: 0; left: 4px;
+    font-size: 0.6rem; color: #C00000; font-weight: 700; white-space: nowrap;
+  }
+
+  /* ── Tooltip ── */
+  .tooltip {
+    position: fixed; display: none; z-index: 9999;
+    background: #1a1a2e; color: #fff; border-radius: 8px;
+    padding: 10px 14px; font-size: 0.75rem; max-width: 320px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3); pointer-events: auto;
+    line-height: 1.5;
+  }
+  .tooltip .tt-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: #FFD966; }
+  .tooltip .tt-row { display: flex; gap: 6px; }
+  .tooltip .tt-key { color: #aaa; min-width: 90px; flex-shrink: 0; }
+  .tooltip .tt-sep { border-top: 1px solid rgba(255,255,255,0.15); margin: 5px 0; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>🌿 StomaSense – Roadmap de Prioridades 2026</h1>
+    <div class="meta">Bloques: [3 Meses Mar-May 2026] · [May-Oct 2026] · Actualizado: 17/03/2026</div>
+  </div>
+  <div class="today-badge">📅 Hoy: 17/03/2026</div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>📊 Resumen Global</h3>
+    <div class="global-progress">
+      <div class="lbl"><span>Avance global</span><span id="pct-global">9.7%</span></div>
+      <div class="progress-outer"><div class="progress-inner" style="width:9.7%"></div></div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi blue"><div class="val" id="kpi-total">44</div><div class="lbl">Total tareas</div></div>
+      <div class="kpi green"><div class="val" id="kpi-done">0</div><div class="lbl">Completadas</div></div>
+      <div class="kpi orange"><div class="val" id="kpi-prog">7</div><div class="lbl">En Progreso</div></div>
+      <div class="kpi red"><div class="val" id="kpi-block">0</div><div class="lbl">Bloqueadas</div></div>
+    </div>
+
+    <h3>🔍 Filtros</h3>
+    <div class="filter-row">
+      <label>Bloque</label>
+      <select id="filter-bloque" onchange="applyFilters()">
+        <option value="">Todos</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <label>Categoría</label>
+      <select id="filter-cat" onchange="applyFilters()">
+        <option value="">Todas</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <label>Estado</label>
+      <select id="filter-estado" onchange="applyFilters()">
+        <option value="">Todos</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <label>Buscar tarea</label>
+      <input type="text" id="filter-search" placeholder="Escribir..." oninput="applyFilters()">
+    </div>
+    <button class="btn-refresh" onclick="resetFilters()">↺ Limpiar filtros</button>
+
+    <h3>📁 Proyectos</h3>
+    <div id="proy-cards"></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="gantt-wrapper">
+      <div class="gantt-controls">
+        <button class="btn-expand"   onclick="expandAll()">▼ Expandir todo</button>
+        <button class="btn-collapse" onclick="collapseAll()">▲ Colapsar todo</button>
+        <span style="color:#888;font-size:0.75rem">Click en grupo/proyecto para expandir/colapsar</span>
+        <div class="zoom-group">
+          <button class="btn-zoom" onclick="setZoom('week')"  id="zoom-week">Por Día</button>
+          <button class="btn-zoom active" onclick="setZoom('month')" id="zoom-month">Por Mes</button>
+          <button class="btn-zoom" onclick="setZoom('all')"   id="zoom-all">Compacto</button>
+        </div>
+      </div>
+      <div id="gantt-scroll" style="overflow-x:auto; position:relative;">
+        <table id="gantt-table">
+          <thead id="gantt-thead"></thead>
+          <tbody id="gantt-tbody"></tbody>
+        </table>
+        <div class="today-line" id="today-line" style="height:0;display:none;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLTIP -->
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────
+const TASKS_ALL   = [{"id": 1, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Issue Review & Diagnóstico", "desc": "Revisión de issues reportados en módulo de teledetección (NDVI+, Hydro Plus, Smart Growth, Weed Detection) + metricas", "responsable": "Equipo IA", "inicio": "2026-03-17", "fin": "2026-03-27", "dias": 10, "pct": 50, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#264478", "dur_done": 5}, {"id": 2, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Curvas potenciales y SGI", "desc": "Curvas potenciales y rangos de reclasificacion corregidos para el calculo de SGI", "responsable": "Equipo IA", "inicio": "2026-03-10", "fin": "2026-03-20", "dias": 10, "pct": 80, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#264478", "dur_done": 8}, {"id": 3, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Modelo de Humedad ajustado y validado ", "desc": "Validacion de modelo CA con las nuevas muestras y Modelo MX promedio", "responsable": "Equipo IA + Producto", "inicio": "2026-03-10", "fin": "2026-03-27", "dias": 17, "pct": 85, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#264478", "dur_done": 14}, {"id": 4, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Modelo Cloudfill desplegado ", "desc": "Version productiva y pruebas de coherencia temporal en las 5 unidades de negocio", "responsable": "Producto", "inicio": "2026-03-10", "fin": "2026-03-27", "dias": 17, "pct": 85, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#264478", "dur_done": 14}, {"id": 5, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Actualización de datos de clientes (Manual, Correo, API)", "desc": "Correcciones y mejoras identificadas en la sesión PSH", "responsable": "Equipo IA", "inicio": "2026-03-17", "fin": "2026-04-20", "dias": 34, "pct": 85, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#264478", "dur_done": 28}, {"id": 6, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Migracion de clientes TA ", "desc": "Migrar los clientes de TA al nuevo portal con todos los ", "responsable": "Equipo IA", "inicio": "2026-04-01", "fin": "2026-04-15", "dias": 14, "pct": 20, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#264478", "dur_done": 2}, {"id": 7, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Teledetección – Feedback PSH", "categoria": "Teledetección", "tarea": "Migrar los modelos de los Clientes TA ", "desc": "Migrar los modelos de los clientes de TA", "responsable": "Equipo IA", "inicio": "2026-04-01", "fin": "2026-04-15", "dias": 19, "pct": 20, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#264478", "dur_done": 2}, {"id": 8, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "App Móvil Teledetección [E2E]", "categoria": "Móvil", "tarea": "Issue Review & Diagnóstico", "desc": "entrega funcional y técnico de la app móvil end-to-end", "responsable": "Producto", "inicio": "2026-03-17", "fin": "2026-03-24", "dias": 8, "pct": 0, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#2E75B6", "dur_done": 0}, {"id": 8, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "App Móvil Teledetección [E2E]", "categoria": "Móvil", "tarea": "Integracion de dashboard completo.", "desc": "Dashbaord completo", "responsable": "Producto", "inicio": "2026-03-17", "fin": "2026-03-24", "dias": 8, "pct": 0, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#2E75B6", "dur_done": 0}, {"id": 14, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Movilidad Empresarial [Modelos|Lab|Op]", "categoria": "Movilidad", "tarea": "Modelos – Integración de modelos IA", "desc": "Integración de modelos existentes al flujo de movilidad empresarial", "responsable": "Equipo IA", "inicio": "2026-03-17", "fin": "2026-04-10", "dias": 25, "pct": 0, "estado": "En Progreso", "notas": "", "color": "#5B9BD5", "proy_color": "#AE5A00", "dur_done": 0}, {"id": 15, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Movilidad Empresarial [Modelos|Lab|Op]", "categoria": "Movilidad", "tarea": "Laboratorio – Configuración de ambiente", "desc": "Setup del entorno de laboratorio para pruebas de movilidad", "responsable": "Laboratorio", "inicio": "2026-04-01", "fin": "2026-04-20", "dias": 20, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#AE5A00", "dur_done": 0}, {"id": 16, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Movilidad Empresarial [Modelos|Lab|Op]", "categoria": "Movilidad", "tarea": "Operación – Flujo operativo", "desc": "Configuración y documentación del flujo operativo", "responsable": "Operaciones", "inicio": "2026-04-15", "fin": "2026-05-10", "dias": 26, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#AE5A00", "dur_done": 0}, {"id": 17, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Movilidad Empresarial [Modelos|Lab|Op]", "categoria": "Movilidad", "tarea": "Integración Modelos-Lab-Operación", "desc": "Articulación de los tres componentes en pipeline unificado", "responsable": "Tech Lead", "inicio": "2026-05-11", "fin": "2026-05-25", "dias": 15, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#AE5A00", "dur_done": 0}, {"id": 18, "bloque": "3 Meses (Mar-May 2026)", "proyecto": "Movilidad Empresarial [Modelos|Lab|Op]", "categoria": "Movilidad", "tarea": "Pruebas end-to-end", "desc": "Validación integral del flujo completo", "responsable": "QA", "inicio": "2026-05-26", "fin": "2026-05-31", "dias": 6, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#AE5A00", "dur_done": 0}, {"id": 19, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Recopilación y limpieza de datos", "desc": "Consolidación de datasets históricos para entrenamiento de modelos", "responsable": "Equipo IA", "inicio": "2026-05-01", "fin": "2026-05-20", "dias": 20, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 20, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Entrenamiento modelo Pol (polarimetría)", "desc": "Fejuste y entrenamiento del modelo de Pol en caña", "responsable": "Data Science", "inicio": "2026-05-21", "fin": "2026-06-15", "dias": 26, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 21, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Entrenamiento modelo Maduración", "desc": "Modelo predictivo de maduración de caña", "responsable": "Data Science", "inicio": "2026-06-01", "fin": "2026-06-30", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 22, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Entrenamiento modelo TCH (Toneladas Caña/Ha)", "desc": "Predicción de rendimiento TCH", "responsable": "Data Science", "inicio": "2026-06-15", "fin": "2026-07-15", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 23, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Modelo Caña / No Caña (clasificación)", "desc": "Clasificador binario de presencia de caña en imágenes satelitales", "responsable": "Data Science", "inicio": "2026-06-01", "fin": "2026-07-15", "dias": 45, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 24, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Validación y ajuste de modelos", "desc": "Validación cruzada, métricas en campo y ajuste de hiperparámetros", "responsable": "MLOps", "inicio": "2026-07-16", "fin": "2026-08-15", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 25, "bloque": "May-Oct 2026", "proyecto": "Modelos IA – Pol|Maduración|TCH|Caña", "categoria": "Modelos IA", "tarea": "Integración a plataforma", "desc": "Despliegue de modelos como microservicios en la plataforma", "responsable": "Backend", "inicio": "2026-08-16", "fin": "2026-09-15", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#538135", "dur_done": 0}, {"id": 26, "bloque": "May-Oct 2026", "proyecto": "Frescura de Caña", "categoria": "Modelos IA", "tarea": "Diseño del modelo de frescura", "desc": "Definición de features, metodología y métricas del modelo", "responsable": "Data Science", "inicio": "2026-05-01", "fin": "2026-05-31", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#7030A0", "dur_done": 0}, {"id": 27, "bloque": "May-Oct 2026", "proyecto": "Frescura de Caña", "categoria": "Modelos IA", "tarea": "Recolección de datos sensoriales", "desc": "Captura de datos en campo (imágenes, sensores, muestras)", "responsable": "Campo", "inicio": "2026-06-01", "fin": "2026-06-30", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#7030A0", "dur_done": 0}, {"id": 26, "bloque": "May-Oct 2026", "proyecto": "Frescura de Caña", "categoria": "Modelos IA", "tarea": "Entrenamiento modelo frescura", "desc": "Entrenamiento y evaluación del modelo", "responsable": "Data Science", "inicio": "2026-07-01", "fin": "2026-07-31", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#7030A0", "dur_done": 0}, {"id": 25, "bloque": "May-Oct 2026", "proyecto": "Frescura de Caña", "categoria": "Modelos IA", "tarea": "Validación en campo", "desc": "Pruebas reales y comparación con método convencional", "responsable": "QA + Campo", "inicio": "2026-08-01", "fin": "2026-08-31", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#7030A0", "dur_done": 0}, {"id": 24, "bloque": "May-Oct 2026", "proyecto": "Frescura de Caña", "categoria": "Modelos IA", "tarea": "Despliegue productivo", "desc": "Publicación del modelo en producción", "responsable": "DevOps", "inicio": "2026-09-01", "fin": "2026-09-30", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#7030A0", "dur_done": 0}, {"id": 23, "bloque": "May-Oct 2026", "proyecto": "Salud Financiera | Rentabilidad Fincas", "categoria": "Modelos IA", "tarea": "Levantamiento de indicadores financieros", "desc": "Definición de KPIs de rentabilidad y salud financiera por finca", "responsable": "Negocio + IA", "inicio": "2026-05-15", "fin": "2026-06-15", "dias": 32, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#C55A11", "dur_done": 0}, {"id": 22, "bloque": "May-Oct 2026", "proyecto": "Salud Financiera | Rentabilidad Fincas", "categoria": "Modelos IA", "tarea": "Integración de datos financieros", "desc": "Conexión con fuentes de datos contables/ERP", "responsable": "Backend", "inicio": "2026-06-16", "fin": "2026-07-15", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#C55A11", "dur_done": 0}, {"id": 21, "bloque": "May-Oct 2026", "proyecto": "Salud Financiera | Rentabilidad Fincas", "categoria": "Modelos IA", "tarea": "Desarrollo modelos predictivos financieros", "desc": "Modelos de predicción de rentabilidad y alertas de salud financiera", "responsable": "Data Science", "inicio": "2026-07-16", "fin": "2026-08-31", "dias": 47, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#C55A11", "dur_done": 0}, {"id": 20, "bloque": "May-Oct 2026", "proyecto": "Salud Financiera | Rentabilidad Fincas", "categoria": "Modelos IA", "tarea": "Dashboard de rentabilidad y salud financiera", "desc": "Visualización interactiva de indicadores financieros por finca", "responsable": "Frontend", "inicio": "2026-09-01", "fin": "2026-10-15", "dias": 45, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#C55A11", "dur_done": 0}, {"id": 19, "bloque": "May-Oct 2026", "proyecto": "IoT Analytics – Telemetría [Riesgos]", "categoria": "IoT Analytics", "tarea": "Definición de alertas y umbrales de riesgo", "desc": "Catálogo de riesgos, umbrales y lógica de alertas IoT", "responsable": "IoT Team", "inicio": "2026-05-15", "fin": "2026-06-01", "dias": 18, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#17375E", "dur_done": 0}, {"id": 18, "bloque": "May-Oct 2026", "proyecto": "IoT Analytics – Telemetría [Riesgos]", "categoria": "IoT Analytics", "tarea": "Integración de sensores IoT", "desc": "Conexión y configuración de sensores de riego, clima, suelo", "responsable": "IoT Team", "inicio": "2026-06-01", "fin": "2026-06-30", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#17375E", "dur_done": 0}, {"id": 17, "bloque": "May-Oct 2026", "proyecto": "IoT Analytics – Telemetría [Riesgos]", "categoria": "IoT Analytics", "tarea": "Desarrollo dashboard de telemetría", "desc": "Panel en tiempo real de métricas y alertas de riesgo", "responsable": "Frontend", "inicio": "2026-07-01", "fin": "2026-07-31", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#17375E", "dur_done": 0}, {"id": 16, "bloque": "May-Oct 2026", "proyecto": "IoT Analytics – Telemetría [Riesgos]", "categoria": "IoT Analytics", "tarea": "Testing y calibración de sensores", "desc": "Validación de precisión y calibración en campo", "responsable": "QA + Campo", "inicio": "2026-08-01", "fin": "2026-08-31", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#17375E", "dur_done": 0}, {"id": 15, "bloque": "May-Oct 2026", "proyecto": "IoT Analytics – Telemetría [Riesgos]", "categoria": "IoT Analytics", "tarea": "Despliegue productivo telemetría", "desc": "Go-live del sistema de telemetría con alertas en producción", "responsable": "DevOps", "inicio": "2026-09-01", "fin": "2026-09-30", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#17375E", "dur_done": 0}, {"id": 14, "bloque": "May-Oct 2026", "proyecto": "IoT – Movilidad Empresarial [Avance Labores]", "categoria": "IoT Analytics", "tarea": "Diseño del flujo de avance de labores", "desc": "Mapeo del proceso de reporte de avance de labores en campo", "responsable": "Producto", "inicio": "2026-06-01", "fin": "2026-06-20", "dias": 20, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#833C00", "dur_done": 0}, {"id": 13, "bloque": "May-Oct 2026", "proyecto": "IoT – Movilidad Empresarial [Avance Labores]", "categoria": "IoT Analytics", "tarea": "Integración con módulos existentes", "desc": "Conexión con módulos operacionales y de movilidad ya desplegados", "responsable": "Backend", "inicio": "2026-06-21", "fin": "2026-07-20", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#833C00", "dur_done": 0}, {"id": 12, "bloque": "May-Oct 2026", "proyecto": "IoT – Movilidad Empresarial [Avance Labores]", "categoria": "IoT Analytics", "tarea": "Pruebas con usuarios (UAT)", "desc": "Sesiones de prueba con usuarios de campo, iteraciones", "responsable": "QA + Usuarios", "inicio": "2026-07-21", "fin": "2026-08-20", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#833C00", "dur_done": 0}, {"id": 11, "bloque": "May-Oct 2026", "proyecto": "IoT – Movilidad Empresarial [Avance Labores]", "categoria": "IoT Analytics", "tarea": "Ajustes finales y despliegue", "desc": "Correcciones post-UAT y go-live", "responsable": "DevOps", "inicio": "2026-08-21", "fin": "2026-09-30", "dias": 41, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#833C00", "dur_done": 0}, {"id": 10, "bloque": "May-Oct 2026", "proyecto": "Módulo Operacional – Módulo de Riego", "categoria": "Módulo Operacional", "tarea": "Requerimientos y diseño funcional", "desc": "Especificación funcional y técnica del módulo de riego", "responsable": "Producto + IoT", "inicio": "2026-05-01", "fin": "2026-05-25", "dias": 25, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#1F4E79", "dur_done": 0}, {"id": 9, "bloque": "May-Oct 2026", "proyecto": "Módulo Operacional – Módulo de Riego", "categoria": "Módulo Operacional", "tarea": "Desarrollo core del módulo", "desc": "Implementación de lógica de negocio, algoritmos de riego", "responsable": "Backend + IoT", "inicio": "2026-05-26", "fin": "2026-07-15", "dias": 51, "pct": 0, "estado": "Pendiente", "notas": "Dependencia: telemetría", "color": "#A6A6A6", "proy_color": "#1F4E79", "dur_done": 0}, {"id": 8, "bloque": "May-Oct 2026", "proyecto": "Módulo Operacional – Módulo de Riego", "categoria": "Módulo Operacional", "tarea": "Integración con telemetría de sensores", "desc": "Conexión con sensores de humedad, clima y actuadores de riego", "responsable": "IoT Team", "inicio": "2026-07-16", "fin": "2026-08-15", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#1F4E79", "dur_done": 0}, {"id": 7, "bloque": "May-Oct 2026", "proyecto": "Módulo Operacional – Módulo de Riego", "categoria": "Módulo Operacional", "tarea": "Testing en campo", "desc": "Pruebas reales en fincas piloto", "responsable": "QA + Campo", "inicio": "2026-08-16", "fin": "2026-09-15", "dias": 31, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#1F4E79", "dur_done": 0}, {"id": 6, "bloque": "May-Oct 2026", "proyecto": "Módulo Operacional – Módulo de Riego", "categoria": "Módulo Operacional", "tarea": "Despliegue y capacitación", "desc": "Go-live, documentación y capacitación a usuarios finales", "responsable": "Operaciones", "inicio": "2026-09-16", "fin": "2026-10-15", "dias": 30, "pct": 0, "estado": "Pendiente", "notas": "", "color": "#A6A6A6", "proy_color": "#1F4E79", "dur_done": 0}];
+const PROY_STATS  = {"Teledetección – Feedback PSH": {"total": 7, "sum_pct": 425, "bloque": "3 Meses (Mar-May 2026)", "avg_pct": 60.7}, "App Móvil Teledetección [E2E]": {"total": 2, "sum_pct": 0, "bloque": "3 Meses (Mar-May 2026)", "avg_pct": 0.0}, "Movilidad Empresarial [Modelos|Lab|Op]": {"total": 5, "sum_pct": 0, "bloque": "3 Meses (Mar-May 2026)", "avg_pct": 0.0}, "Modelos IA – Pol|Maduración|TCH|Caña": {"total": 7, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}, "Frescura de Caña": {"total": 5, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}, "Salud Financiera | Rentabilidad Fincas": {"total": 4, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}, "IoT Analytics – Telemetría [Riesgos]": {"total": 5, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}, "IoT – Movilidad Empresarial [Avance Labores]": {"total": 4, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}, "Módulo Operacional – Módulo de Riego": {"total": 5, "sum_pct": 0, "bloque": "May-Oct 2026", "avg_pct": 0.0}};
+const BLOQUES     = ["3 Meses (Mar-May 2026)", "May-Oct 2026"];
+const CATS        = ["Teledetección", "Móvil", "Movilidad", "Modelos IA", "IoT Analytics", "Módulo Operacional"];
+const STATUSES    = ["Pendiente", "En Progreso", "Completado", "Bloqueado", "En Revisión"];
+const STATUS_COLORS = {"Pendiente": "#A6A6A6", "En Progreso": "#5B9BD5", "Completado": "#70AD47", "Bloqueado": "#C00000", "En Revisión": "#FFD966"};
+const TODAY_STR   = "2026-03-17";
+
+// ─── STATE ──────────────────────────────────────────
+let collapsed = {};   // key = "bloque::proyecto" or "bloque"
+let currentZoom = "month";
+let filteredTasks = [...TASKS_ALL];
+
+// ─── UTILS ──────────────────────────────────────────
+function parseDate(s) { return new Date(s + "T00:00:00"); }
+function fmtDate(s) {
+  const d = parseDate(s);
+  return d.toLocaleDateString("es-CO", {day:"2-digit", month:"short", year:"2-digit"});
+}
+function daysBetween(a, b) {
+  return Math.ceil((parseDate(b) - parseDate(a)) / 86400000);
+}
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+function clamp(val, mn, mx) { return Math.max(mn, Math.min(mx, val)); }
+
+// ─── ZOOM RANGES ────────────────────────────────────
+function getZoomRange() {
+  // Always show the full task range — zoom only controls granularity (day vs month columns)
+  const starts = filteredTasks.map(t => parseDate(t.inicio));
+  const ends   = filteredTasks.map(t => parseDate(t.fin));
+  if (!starts.length) { const d = new Date(); return [d, d]; }
+  const minD = new Date(Math.min(...starts)); minD.setDate(minD.getDate() - 3);
+  const maxD = new Date(Math.max(...ends));   maxD.setDate(maxD.getDate() + 3);
+  return [minD, maxD];
+}
+
+// ─── FILTER INIT ────────────────────────────────────
+function initFilters() {
+  const fb = document.getElementById("filter-bloque");
+  BLOQUES.forEach(b => { const o = document.createElement("option"); o.value = b; o.textContent = b; fb.appendChild(o); });
+  const fc = document.getElementById("filter-cat");
+  CATS.filter(Boolean).forEach(c => { const o = document.createElement("option"); o.value = c; o.textContent = c; fc.appendChild(o); });
+  const fs = document.getElementById("filter-estado");
+  STATUSES.forEach(s => { const o = document.createElement("option"); o.value = s; o.textContent = s; fs.appendChild(o); });
+}
+function applyFilters() {
+  const bloque = document.getElementById("filter-bloque").value;
+  const cat    = document.getElementById("filter-cat").value;
+  const estado = document.getElementById("filter-estado").value;
+  const search = document.getElementById("filter-search").value.toLowerCase();
+  filteredTasks = TASKS_ALL.filter(t =>
+    (!bloque || t.bloque === bloque) &&
+    (!cat    || t.categoria === cat) &&
+    (!estado || t.estado === estado) &&
+    (!search || t.tarea.toLowerCase().includes(search) || t.proyecto.toLowerCase().includes(search))
+  );
+  renderAll();
+}
+function resetFilters() {
+  document.getElementById("filter-bloque").value  = "";
+  document.getElementById("filter-cat").value     = "";
+  document.getElementById("filter-estado").value  = "";
+  document.getElementById("filter-search").value  = "";
+  filteredTasks = [...TASKS_ALL];
+  renderAll();
+}
+
+// ─── SIDEBAR PROJECT CARDS ──────────────────────────
+function renderProyCards() {
+  const container = document.getElementById("proy-cards");
+  container.innerHTML = "";
+  for (const [proy, stat] of Object.entries(PROY_STATS)) {
+    const col = stat.bloque === "3 Meses (Mar-May 2026)" ? "#FFC000" : "#5B9BD5";
+    const div = document.createElement("div");
+    div.className = "proy-card";
+    div.style.borderLeftColor = col;
+    div.innerHTML = `
+      <div class="name">${proy}</div>
+      <div class="prog">${stat.total} tareas · ${stat.avg_pct}% avance</div>
+      <div class="bar-outer"><div class="bar-inner" style="width:${stat.avg_pct}%;background:${col}"></div></div>`;
+    div.onclick = () => {
+      document.getElementById("filter-bloque").value = stat.bloque;
+      document.getElementById("filter-cat").value = "";
+      document.getElementById("filter-search").value = proy;
+      applyFilters();
+    };
+    container.appendChild(div);
+  }
+}
+
+// ─── BUILD GANTT HEADER (date columns) ──────────────
+function buildDateCols(rangeStart, rangeEnd) {
+  const cols = [];
+  if (currentZoom === "week") {
+    let d = new Date(rangeStart);
+    while (d <= rangeEnd) {
+      const dow = d.getDay();
+      cols.push({
+        label:      String(d.getDate()),
+        monthLabel: d.toLocaleDateString("es-CO", {month:"short", year:"2-digit"}),
+        monthKey:   `${d.getFullYear()}-${d.getMonth()}`,
+        date:       new Date(d),
+        isWeekend:  dow === 0 || dow === 6,
+        days:       1
+      });
+      d.setDate(d.getDate() + 1);
+    }
+  } else {
+    let d = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
+    while (d <= rangeEnd) {
+      cols.push({
+        label: d.toLocaleDateString("es-CO", {month:"short", year:"2-digit"}),
+        date: new Date(d), days: new Date(d.getFullYear(), d.getMonth()+1, 0).getDate()
+      });
+      d.setMonth(d.getMonth() + 1);
+    }
+  }
+  return cols;
+}
+
+// ─── RENDER GANTT ────────────────────────────────────
+function renderAll() {
+  const [rangeStart, rangeEnd] = getZoomRange();
+  const totalDays = daysBetween(rangeStart.toISOString().slice(0,10), rangeEnd.toISOString().slice(0,10));
+  const BAR_WIDTH = currentZoom === "week" ? 26 : currentZoom === "month" ? 8 : 5;
+  const dateCols = buildDateCols(rangeStart, rangeEnd);
+  const totalBarPx = dateCols.reduce((s, c) => s + (c.days || 1) * BAR_WIDTH, 0);
+
+  // ── HEADER ──
+  const thead = document.getElementById("gantt-thead");
+  thead.innerHTML = "";
+  const hrow = document.createElement("tr");
+  const fixedCols = [
+    ["#", "40px"], ["Tarea / Proyecto", "260px"],
+    ["Responsable", "110px"], ["Fechas", "130px"],
+    ["Est.", "95px"], ["Avance", "80px"]
+  ];
+  fixedCols.forEach(([lbl, w]) => {
+    const th = document.createElement("th");
+    th.textContent = lbl; th.style.minWidth = w; th.style.width = w;
+    hrow.appendChild(th);
+  });
+  // Date header
+  const barTh = document.createElement("th");
+  barTh.style.padding = "0"; barTh.style.minWidth = totalBarPx + "px";
+
+  if (currentZoom === "week") {
+    // Row 1: month group labels
+    const monthRow = document.createElement("div");
+    monthRow.style.cssText = `display:flex;align-items:center;height:18px;border-bottom:1px solid rgba(255,255,255,0.25);`;
+    let mGroups = [], cur = null;
+    dateCols.forEach(col => {
+      if (!cur || cur.key !== col.monthKey) {
+        cur = {key: col.monthKey, label: col.monthLabel, count: 1};
+        mGroups.push(cur);
+      } else { cur.count++; }
+    });
+    mGroups.forEach(g => {
+      const s = document.createElement("span");
+      const w = g.count * BAR_WIDTH;
+      s.style.cssText = `flex:0 0 ${w}px;width:${w}px;text-align:center;font-size:0.65rem;font-weight:700;border-right:1px solid rgba(255,255,255,0.3);overflow:hidden;white-space:nowrap;padding:0 4px;letter-spacing:0.3px;`;
+      s.textContent = g.label;
+      monthRow.appendChild(s);
+    });
+    barTh.appendChild(monthRow);
+
+    // Row 2: individual day numbers
+    const dayRow = document.createElement("div");
+    dayRow.style.cssText = `display:flex;align-items:center;height:18px;`;
+    dateCols.forEach(col => {
+      const s = document.createElement("span");
+      s.style.cssText = `flex:0 0 ${BAR_WIDTH}px;width:${BAR_WIDTH}px;text-align:center;font-size:0.63rem;border-right:1px solid rgba(255,255,255,0.12);white-space:nowrap;${col.isWeekend ? "opacity:0.45;" : ""}`;
+      s.textContent = col.label;
+      dayRow.appendChild(s);
+    });
+    barTh.appendChild(dayRow);
+
+  } else {
+    // Month / All: single row with month label spanning full month width
+    const dateRow = document.createElement("div");
+    dateRow.style.cssText = `display:flex;align-items:center;height:36px;padding:0;`;
+    dateCols.forEach(col => {
+      const span = document.createElement("span");
+      const w = (col.days || 1) * BAR_WIDTH;
+      span.style.cssText = `flex:0 0 ${w}px;width:${w}px;text-align:center;font-size:0.65rem;border-right:1px solid rgba(255,255,255,0.2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 2px;`;
+      span.textContent = col.label;
+      dateRow.appendChild(span);
+    });
+    barTh.appendChild(dateRow);
+  }
+
+  hrow.appendChild(barTh);
+  thead.appendChild(hrow);
+
+  // ── BODY ──
+  const tbody = document.getElementById("gantt-tbody");
+  tbody.innerHTML = "";
+
+  // Group by bloque → proyecto
+  const byBloque = {};
+  filteredTasks.forEach(t => {
+    if (!byBloque[t.bloque]) byBloque[t.bloque] = {};
+    if (!byBloque[t.bloque][t.proyecto]) byBloque[t.bloque][t.proyecto] = [];
+    byBloque[t.bloque][t.proyecto].push(t);
+  });
+
+  const bloqueColors = { "3 Meses (Mar-May 2026)": "#FFC000", "May-Oct 2026": "#5B9BD5" };
+
+  Object.entries(byBloque).forEach(([bloque, proyectos]) => {
+    const bKey = `b::${bloque}`;
+    const bCollapsed = !!collapsed[bKey];
+    const bColor = bloqueColors[bloque] || "#1F3864";
+
+    // ── Bloque group row ──
+    const bRow = document.createElement("tr");
+    bRow.className = "group-row";
+    bRow.style.background = bColor;
+    bRow.style.color = "#000";
+    bRow.innerHTML = `
+      <td colspan="6" style="padding-left:10px;font-size:0.85rem;">
+        ${bCollapsed ? "▶" : "▼"} <b>${bloque}</b>
+        <span style="font-size:0.7rem;opacity:0.8;margin-left:8px;">${Object.values(proyectos).flat().length} tareas</span>
+      </td>
+      <td style="background:${bColor};min-width:${totalBarPx}px;"></td>`;
+    bRow.onclick = () => { collapsed[bKey] = !collapsed[bKey]; renderAll(); };
+    tbody.appendChild(bRow);
+    if (bCollapsed) return;
+
+    Object.entries(proyectos).forEach(([proy, tasks]) => {
+      const pKey = `${bloque}::${proy}`;
+      const pCollapsed = !!collapsed[pKey];
+      const avgPct = Math.round(tasks.reduce((s,t) => s + t.pct, 0) / tasks.length);
+
+      // ── Project subgroup row ──
+      const pRow = document.createElement("tr");
+      pRow.className = "subgroup-row";
+      pRow.style.background = "#1F4E79";
+      pRow.style.color = "#fff";
+      pRow.innerHTML = `
+        <td colspan="6" style="padding-left:22px;">
+          ${pCollapsed ? "▶" : "▼"} ${proy}
+          <span style="font-size:0.68rem;opacity:0.8;margin-left:8px;">${tasks.length} tareas · ${avgPct}% avance</span>
+        </td>
+        <td style="background:#1F4E79;min-width:${totalBarPx}px;"></td>`;
+      pRow.onclick = (e) => { e.stopPropagation(); collapsed[pKey] = !collapsed[pKey]; renderAll(); };
+      tbody.appendChild(pRow);
+      if (pCollapsed) return;
+
+      tasks.forEach((t, ti) => {
+        const tRow = document.createElement("tr");
+        tRow.className = "task-row";
+        tRow.style.background = ti % 2 === 0 ? "#fff" : "#F8FAFC";
+
+        const stColor = STATUS_COLORS[t.estado] || "#A6A6A6";
+        const stText  = (["En Progreso","Completado","Bloqueado"].includes(t.estado)) ? "#fff" : "#000";
+
+        // Fixed cells
+        const tdId = document.createElement("td");
+        tdId.textContent = t.id; tdId.style.textAlign="center"; tdId.style.color="#888";
+
+        const tdName = document.createElement("td");
+        tdName.innerHTML = `<div class="task-name">${t.tarea}</div><div class="task-meta">📁 ${t.categoria}</div>`;
+
+        const tdResp = document.createElement("td");
+        tdResp.innerHTML = `<span style="font-size:0.72rem;">👤 ${t.responsable}</span>`;
+
+        const tdDates = document.createElement("td");
+        tdDates.innerHTML = `<div style="font-size:0.7rem;">${fmtDate(t.inicio)}</div><div style="font-size:0.7rem;color:#888;">→ ${fmtDate(t.fin)}</div>`;
+
+        const tdStatus = document.createElement("td");
+        tdStatus.innerHTML = `<span class="status-badge" style="background:${stColor};color:${stText}">${t.estado}</span>`;
+
+        const tdPct = document.createElement("td");
+        tdPct.innerHTML = `
+          <div class="pct-text" style="text-align:center;">${t.pct}%</div>
+          <div style="background:#e0e7ef;border-radius:10px;height:5px;margin:3px 0;">
+            <div style="width:${t.pct}%;height:5px;border-radius:10px;background:${stColor};"></div>
+          </div>`;
+
+        // Bar cell
+        const tdBar = document.createElement("td");
+        tdBar.className = "bar-cell";
+        tdBar.style.minWidth = totalBarPx + "px";
+        tdBar.style.width = totalBarPx + "px";
+        tdBar.style.position = "relative";
+        tdBar.style.height = "38px";
+
+        // Calculate bar position
+        function dateToPx(dateStr) {
+          const d = parseDate(dateStr), rs = rangeStart;
+          const daysFromStart = (d - rs) / 86400000;
+          if (currentZoom === "week") return daysFromStart * BAR_WIDTH;
+          // month mode: sum months
+          let px = 0, cur = new Date(rs.getFullYear(), rs.getMonth(), 1);
+          while (cur < d) {
+            const daysInMonth = new Date(cur.getFullYear(), cur.getMonth()+1, 0).getDate();
+            const next = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
+            if (next <= d) { px += daysInMonth * BAR_WIDTH; cur = next; }
+            else { px += (d.getDate() - 1) * BAR_WIDTH; break; }
+          }
+          return px;
+        }
+
+        const barLeft  = Math.max(0, dateToPx(t.inicio));
+        const barRight = dateToPx(t.fin);
+        const barW     = Math.max(4, barRight - barLeft);
+        const doneW    = barW * t.pct / 100;
+
+        // Background strip
+        const bgDiv = document.createElement("div");
+        bgDiv.className = "gantt-bar-bg";
+        bgDiv.style.cssText = `left:${barLeft}px;width:${barW}px;background:${stColor};`;
+        tdBar.appendChild(bgDiv);
+
+        // Main bar
+        const barDiv = document.createElement("div");
+        barDiv.className = "gantt-bar";
+        barDiv.style.cssText = `left:${barLeft}px;width:${barW}px;background:${stColor};`;
+        barDiv.innerHTML = barW > 40 ? `<span class="bar-label">${t.tarea}</span>` : "";
+        tdBar.appendChild(barDiv);
+
+        // Done portion
+        if (t.pct > 0 && t.pct < 100) {
+          const doneDiv = document.createElement("div");
+          doneDiv.className = "gantt-bar-done";
+          doneDiv.style.cssText = `left:${barLeft}px;width:${doneW}px;background:rgba(0,0,0,0.3);`;
+          tdBar.appendChild(doneDiv);
+        }
+
+        // Tooltip – click to show/hide
+        barDiv.style.cursor = "pointer";
+        barDiv.addEventListener("click", (e) => { e.stopPropagation(); toggleTooltip(e, t); });
+        tdBar.style.cursor  = "pointer";
+        tdBar.addEventListener("click",  (e) => { e.stopPropagation(); toggleTooltip(e, t); });
+
+        [tdId, tdName, tdResp, tdDates, tdStatus, tdPct, tdBar].forEach(td => tRow.appendChild(td));
+        tbody.appendChild(tRow);
+      });
+    });
+  });
+
+  // ── Today line (month view) ──
+  const todayLine = document.getElementById("today-line");
+  const today = parseDate(TODAY_STR);
+  if (today >= rangeStart && today <= rangeEnd) {
+    function dateToPx2(d) {
+      if (currentZoom === "week") {
+        return (d - rangeStart) / 86400000 * BAR_WIDTH;
+      }
+      let px = 0, cur = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
+      while (cur < d) {
+        const daysInMonth = new Date(cur.getFullYear(), cur.getMonth()+1, 0).getDate();
+        const next = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
+        if (next <= d) { px += daysInMonth * BAR_WIDTH; cur = next; }
+        else { px += (d.getDate() - 1) * BAR_WIDTH; break; }
+      }
+      return px;
+    }
+    const FIXED_COLS_PX = 40+260+110+130+95+80; // approximate fixed cols width
+    // We'll overlay AFTER the table renders
+    setTimeout(() => {
+      const tableEl = document.getElementById("gantt-table");
+      const scrollEl = document.getElementById("gantt-scroll");
+      const barColStart = tableEl.querySelector("thead tr th:last-child")?.offsetLeft || 0;
+      const todayPx = dateToPx2(today);
+      todayLine.style.left = (barColStart + todayPx) + "px";
+      todayLine.style.height = tableEl.offsetHeight + "px";
+      todayLine.style.display = "block";
+    }, 50);
+  } else {
+    todayLine.style.display = "none";
+  }
+}
+
+// ─── TOOLTIP ─────────────────────────────────────────
+let _ttActiveId = null;
+
+function toggleTooltip(e, t) {
+  const tt = document.getElementById("tooltip");
+  if (_ttActiveId === t.id && tt.style.display === "block") {
+    tt.style.display = "none"; _ttActiveId = null; return;
+  }
+  _ttActiveId = t.id;
+  const stColor = STATUS_COLORS[t.estado] || "#A6A6A6";
+  tt.innerHTML = `
+    <button onclick="hideTooltip()" style="position:absolute;top:7px;right:10px;background:transparent;border:none;color:#aaa;font-size:1rem;cursor:pointer;line-height:1;" title="Cerrar">✕</button>
+    <div class="tt-title" style="padding-right:18px">${t.tarea}</div>
+    <div class="tt-row"><span class="tt-key">Proyecto:</span><span>${t.proyecto}</span></div>
+    <div class="tt-row"><span class="tt-key">Bloque:</span><span>${t.bloque}</span></div>
+    <div class="tt-row"><span class="tt-key">Responsable:</span><span>${t.responsable}</span></div>
+    <div class="tt-sep"></div>
+    <div class="tt-row"><span class="tt-key">Inicio:</span><span>${fmtDate(t.inicio)}</span></div>
+    <div class="tt-row"><span class="tt-key">Fin:</span><span>${fmtDate(t.fin)}</span></div>
+    <div class="tt-row"><span class="tt-key">Duración:</span><span>${t.dias} días</span></div>
+    <div class="tt-sep"></div>
+    <div class="tt-row"><span class="tt-key">Estado:</span><span style="color:${stColor};font-weight:700;">${t.estado}</span></div>
+    <div class="tt-row"><span class="tt-key">% Avance:</span><span>${t.pct}%</span></div>
+    ${t.notas ? `<div class="tt-sep"></div><div class="tt-row"><span class="tt-key">Notas:</span><span>${t.notas}</span></div>` : ""}
+    ${t.desc ? `<div class="tt-sep"></div><div style="font-size:0.7rem;color:#ccc;margin-top:4px;">${t.desc}</div>` : ""}
+  `;
+  // position near click, auto-flip if out of viewport
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + 340 > window.innerWidth)  x = e.clientX - 350;
+  if (y + 300 > window.innerHeight) y = e.clientY - 310;
+  tt.style.left = x + "px"; tt.style.top = y + "px";
+  tt.style.display = "block";
+}
+function hideTooltip() {
+  document.getElementById("tooltip").style.display = "none";
+  _ttActiveId = null;
+}
+
+// ─── COLLAPSE HELPERS ───────────────────────────────
+function expandAll()   { collapsed = {}; renderAll(); }
+function collapseAll() {
+  const byBloque = {};
+  filteredTasks.forEach(t => {
+    if (!byBloque[t.bloque]) byBloque[t.bloque] = {};
+    byBloque[t.bloque][t.proyecto] = true;
+  });
+  Object.keys(byBloque).forEach(b => {
+    Object.keys(byBloque[b]).forEach(p => { collapsed[`${b}::${p}`] = true; });
+  });
+  renderAll();
+}
+
+// ─── ZOOM ────────────────────────────────────────────
+function setZoom(z) {
+  currentZoom = z;
+  ["week","month","all"].forEach(k => {
+    document.getElementById("zoom-" + k).classList.toggle("active", k === z);
+  });
+  renderAll();
+}
+
+// ─── CLOSE TOOLTIP ON OUTSIDE CLICK ────────────────
+document.addEventListener("click", (e) => {
+  const tt = document.getElementById("tooltip");
+  if (tt && tt.style.display === "block" && !tt.contains(e.target)) hideTooltip();
+});
+
+// ─── INIT ────────────────────────────────────────────
+window.onload = () => {
+  initFilters();
+  renderProyCards();
+  renderAll();
+};
+</script>
+</body>
+</html>
