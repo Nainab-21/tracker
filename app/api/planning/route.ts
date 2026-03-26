@@ -2,8 +2,17 @@ import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
 
-const SHAREPOINT_URL =
-  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Q1Tvep&download=1';
+const SHARING_URL =
+  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Q1Tvep';
+
+function sharingUrlToDownload(sharingUrl: string): string {
+  const encoded = Buffer.from(sharingUrl)
+    .toString('base64')
+    .replace(/=+$/, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+  return `https://api.onedrive.com/v1.0/shares/u!${encoded}/root/content`;
+}
 
 // ── Translation maps ──────────────────────────────────────────────────────────
 
@@ -211,12 +220,21 @@ function parseDate(val: unknown): string {
 
 export async function GET() {
   try {
-    const res = await fetch(SHAREPOINT_URL, {
+    const downloadUrl = sharingUrlToDownload(SHARING_URL);
+    const res = await fetch(downloadUrl, {
       headers: { 'User-Agent': 'Mozilla/5.0' },
       redirect: 'follow',
     });
 
-    if (!res.ok) throw new Error(`SharePoint fetch failed: ${res.status}`);
+    if (!res.ok) throw new Error(`File fetch failed: ${res.status} ${res.statusText}`);
+
+    const contentType = res.headers.get('content-type') ?? '';
+    if (contentType.includes('text/html')) {
+      throw new Error(
+        'SharePoint returned an HTML page instead of the Excel file. ' +
+        'Make sure the sharing link is set to "Anyone with the link can view".'
+      );
+    }
 
     const buffer = await res.arrayBuffer();
     const wb = XLSX.read(buffer, { type: 'array', cellDates: true });
