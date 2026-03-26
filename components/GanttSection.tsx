@@ -115,24 +115,29 @@ function TimelineView({ tasks, projectColorMap }: { tasks: PlanningTask[]; proje
 
   return (
     <div style={{ padding: '0 0 12px 0' }}>
-      {/* Timeline ruler */}
-      <div style={{ position: 'relative', height: 28, borderBottom: '1px solid #dde3ed', background: '#f8fafc', marginBottom: 0 }}>
-        {monthLabels.map(m => (
-          <div key={m.label} style={{ position: 'absolute', left: `${m.pct}%`, top: 0, bottom: 0, display: 'flex', alignItems: 'center', paddingLeft: 6 }}>
-            <span style={{ fontSize: '0.68rem', color: '#5c7da8', fontWeight: 600, whiteSpace: 'nowrap' }}>{m.label}</span>
-            <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 1, background: '#dde3ed' }} />
+      {/* Timeline ruler — same flex layout as rows so today line aligns */}
+      <div style={{ display: 'flex', height: 32, borderBottom: '1px solid #dde3ed', background: '#f8fafc' }}>
+        {/* Spacer matching the fixed info panel */}
+        <div style={{ width: 180, flexShrink: 0, borderRight: '1px solid #eef2f8', display: 'flex', alignItems: 'center', paddingLeft: 10 }}>
+          <span style={{ fontSize: '0.65rem', color: '#999', fontStyle: 'italic' }}>sorted by proximity</span>
+        </div>
+        {/* Ruler bar area — same flex:1 as each row's bar area */}
+        <div style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
+          {monthLabels.map(m => (
+            <div key={m.label} style={{ position: 'absolute', left: `${m.pct}%`, top: 0, bottom: 0, display: 'flex', alignItems: 'center', paddingLeft: 4 }}>
+              <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 1, background: '#dde3ed' }} />
+              <span style={{ fontSize: '0.68rem', color: '#5c7da8', fontWeight: 600, whiteSpace: 'nowrap' }}>{m.label}</span>
+            </div>
+          ))}
+          {/* Today marker */}
+          <div style={{ position: 'absolute', left: `${todayPct}%`, top: 0, bottom: 0, width: 2, background: '#C00000', zIndex: 5 }}>
+            <span style={{ position: 'absolute', top: 4, left: 4, fontSize: '0.65rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today · {fmtDay(today)}</span>
           </div>
-        ))}
-        {/* Today marker in ruler */}
-        <div style={{ position: 'absolute', left: `${todayPct}%`, top: 0, bottom: 0, width: 2, background: '#C00000', zIndex: 5 }}>
-          <span style={{ position: 'absolute', top: 4, left: 4, fontSize: '0.65rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today · {fmtDay(today)}</span>
         </div>
       </div>
 
       {/* Task rows */}
       <div style={{ position: 'relative' }}>
-        {/* Today vertical line running through all rows */}
-        <div style={{ position: 'absolute', left: `calc(180px + ${todayPct}% * (100% - 180px) / 100)`, top: 0, bottom: 0, width: 2, background: 'rgba(192,0,0,0.25)', zIndex: 2, pointerEvents: 'none' }} />
 
         {sorted.map((task, idx) => {
           const sDate   = new Date(task.startDate + 'T00:00:00');
