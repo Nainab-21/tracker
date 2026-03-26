@@ -1,18 +1,8 @@
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
+import * as fs from 'fs';
+import * as path from 'path';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
-
-const SHARING_URL =
-  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Q1Tvep';
-
-function sharingUrlToDownload(sharingUrl: string): string {
-  const encoded = Buffer.from(sharingUrl)
-    .toString('base64')
-    .replace(/=+$/, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
-  return `https://api.onedrive.com/v1.0/shares/u!${encoded}/root/content`;
-}
 
 // ── Translation maps ──────────────────────────────────────────────────────────
 
@@ -220,24 +210,9 @@ function parseDate(val: unknown): string {
 
 export async function GET() {
   try {
-    const downloadUrl = sharingUrlToDownload(SHARING_URL);
-    const res = await fetch(downloadUrl, {
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-      redirect: 'follow',
-    });
-
-    if (!res.ok) throw new Error(`File fetch failed: ${res.status} ${res.statusText}`);
-
-    const contentType = res.headers.get('content-type') ?? '';
-    if (contentType.includes('text/html')) {
-      throw new Error(
-        'SharePoint returned an HTML page instead of the Excel file. ' +
-        'Make sure the sharing link is set to "Anyone with the link can view".'
-      );
-    }
-
-    const buffer = await res.arrayBuffer();
-    const wb = XLSX.read(buffer, { type: 'array', cellDates: true });
+    const filePath = path.join(process.cwd(), 'planificacion_stomasense.xlsx');
+    const buffer = fs.readFileSync(filePath);
+    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
     const ws = wb.Sheets[wb.SheetNames[0]];
     const rows: unknown[][] = XLSX.utils.sheet_to_json(ws, { header: 1, defval: null });
 

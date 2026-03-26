@@ -1,24 +1,8 @@
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
+import * as fs from 'fs';
+import * as path from 'path';
 import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
-
-// Original SharePoint sharing link (without &download=1 — we use the OneDrive Shares API instead)
-const SHARING_URL =
-  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQCgKaHu8P3YT7JbOk5K_XX8AV9cmMeNa5vIdD8pwc2pogM?e=r7hWlh';
-
-/**
- * Convert a SharePoint/OneDrive sharing link to a direct binary download URL
- * via the OneDrive Shares API (works for anonymous public shares).
- * Spec: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/api/shares_get
- */
-function sharingUrlToDownload(sharingUrl: string): string {
-  const encoded = Buffer.from(sharingUrl)
-    .toString('base64')
-    .replace(/=+$/, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
-  return `https://api.onedrive.com/v1.0/shares/u!${encoded}/root/content`;
-}
 
 const DATA_ISSUE_TYPES = new Set([
   'Data Accuracy',
@@ -61,24 +45,9 @@ function classifyIssue(issueType: string): IssueGroup {
 
 export async function GET() {
   try {
-    const downloadUrl = sharingUrlToDownload(SHARING_URL);
-    const res = await fetch(downloadUrl, {
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-      redirect: 'follow',
-    });
-
-    if (!res.ok) throw new Error(`File fetch failed: ${res.status} ${res.statusText}`);
-
-    const contentType = res.headers.get('content-type') ?? '';
-    if (contentType.includes('text/html')) {
-      throw new Error(
-        'SharePoint returned an HTML page instead of the Excel file. ' +
-        'Make sure the sharing link is set to "Anyone with the link can view".'
-      );
-    }
-
-    const buffer = await res.arrayBuffer();
-    const wb = XLSX.read(buffer, { type: 'array', cellDates: true });
+    const filePath = path.join(process.cwd(), 'app_issues_backlog.xlsx');
+    const buffer = fs.readFileSync(filePath);
+    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
 
     // Find the "Product Improvement Log" sheet (case-insensitive)
     const sheetName =
