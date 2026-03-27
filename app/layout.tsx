@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'StomaSense – Roadmap & Issues Tracker 2026',
-  description: 'Live roadmap Gantt chart and issues dashboard for StomaSense 2026',
+  title: 'StomaSense – Roadmap & Product Improvement Log Tracker',
+  description: 'Live roadmap Gantt chart and product improvement log for StomaSense 2026',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

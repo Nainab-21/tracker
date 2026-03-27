@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
 
 interface Props { tasks: PlanningTask[] }
@@ -270,23 +270,34 @@ export default function GanttSection({ tasks }: Props) {
     return map;
   }, [filtered]);
 
-  // Project stats for sidebar cards
-  const projectStats = useMemo(() => {
-    const map = new Map<string, { total: number; sumPct: number; block: string }>();
-    for (const t of tasks) {
-      if (!map.has(t.project)) map.set(t.project, { total: 0, sumPct: 0, block: t.block });
-      const s = map.get(t.project)!;
-      s.total++;
-      s.sumPct += t.progress;
-    }
-    return map;
-  }, [tasks]);
 
-  // Today line position
-  const todayLeft = useMemo(() => {
-    const p = leftPct(new Date());
-    return p >= 0 && p <= 100 ? p : null;
+  // Today line — fractional position across the full timeline (null if outside range)
+  const todayFraction = useMemo(() => {
+    const p = leftPct(new Date()) / 100;
+    return p >= 0 && p <= 1 ? p : null;
   }, []);
+
+  // Measure the exact pixel offset of the Gantt chart area so the line stays
+  // pinned to the correct date regardless of screen / column width.
+  const ganttContainerRef = useRef<HTMLDivElement>(null);
+  const firstMonthThRef   = useRef<HTMLTableCellElement>(null);
+  const [todayLinePx, setTodayLinePx] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (todayFraction === null) return;
+    function recalc() {
+      if (!ganttContainerRef.current || !firstMonthThRef.current) return;
+      const containerLeft = ganttContainerRef.current.getBoundingClientRect().left;
+      const monthLeft     = firstMonthThRef.current.getBoundingClientRect().left;
+      const ganttStart    = monthLeft - containerLeft;
+      const ganttWidth    = ganttContainerRef.current.offsetWidth - ganttStart;
+      setTodayLinePx(ganttStart + todayFraction * ganttWidth);
+    }
+    recalc();
+    const ro = new ResizeObserver(recalc);
+    ro.observe(ganttContainerRef.current!);
+    return () => ro.disconnect();
+  }, [todayFraction]);
 
   const toggleBlock   = (b: string) => setCollapsedBlocks(prev => { const n = new Set(prev); n.has(b) ? n.delete(b) : n.add(b); return n; });
   const toggleProject = (p: string) => setCollapsedProjects(prev => { const n = new Set(prev); n.has(p) ? n.delete(p) : n.add(p); return n; });
@@ -311,26 +322,23 @@ export default function GanttSection({ tasks }: Props) {
           📊 Global Summary
         </div>
 
-        {/* Global progress bar */}
-        <div style={{ marginBottom: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#555', marginBottom: 4 }}>
-            <span>Overall progress</span><span style={{ fontWeight: 700 }}>{globalPct}%</span>
-          </div>
-          <div style={{ background: '#e0e7ef', borderRadius: 20, height: 10, overflow: 'hidden' }}>
-            <div style={{ width: `${globalPct}%`, height: '100%', borderRadius: 20, background: 'linear-gradient(90deg, #2E75B6, #70AD47)', transition: 'width 0.5s' }} />
-          </div>
-        </div>
-
-        {/* KPI grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
-          <KPI val={total}      lbl="Total tasks"  color="#2E75B6" />
-          <KPI val={completed}  lbl="Completed"    color="#538135" />
-          <KPI val={inProgress} lbl="In Progress"  color="#ED7D31" />
-          <KPI val={blocked}    lbl="Blocked"      color="#C00000" />
-          <KPI val={pending}    lbl="Pending"      color="#A6A6A6" />
-          <KPI val={delayed}    lbl="Delayed"      color="#FF8C00" />
-          <KPI val={`${globalPct}%`} lbl="Avg Progress" color="#2E75B6" />
-        </div>
+        {/* On-Track / Needs Attention badge */}
+        {(() => {
+          const now = new Date(); now.setHours(0, 0, 0, 0);
+          const needsAttention = delayed > 0 || blocked > 0 ||
+            tasks.some(t => new Date(t.endDate + 'T00:00:00') < now && t.status !== 'Completed');
+          return (
+            <div style={{
+              marginBottom: 16, borderRadius: 8, padding: '10px 12px', textAlign: 'center',
+              background: needsAttention ? '#FFF2F2' : '#F0FFF4',
+              border: `1px solid ${needsAttention ? '#C00000' : '#538135'}`,
+            }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: needsAttention ? '#C00000' : '#538135' }}>
+                {needsAttention ? '⚠ Needs Attention' : '✅ On-Track'}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Filters */}
         <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: 1, color: '#5c7da8', marginBottom: 8, paddingBottom: 4, borderBottom: '1px solid #eef2f8' }}>
@@ -359,24 +367,6 @@ export default function GanttSection({ tasks }: Props) {
           ↺ Clear filters
         </button>
 
-        {/* Project cards */}
-        <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: 1, color: '#5c7da8', marginBottom: 8, paddingBottom: 4, borderBottom: '1px solid #eef2f8' }}>
-          📁 Projects
-        </div>
-        {Array.from(projectStats.entries()).map(([proj, stat]) => {
-          const avg = stat.total ? Math.round(stat.sumPct / stat.total) : 0;
-          const col = projectColorMap[proj] ?? '#2E75B6';
-          return (
-            <div key={proj} style={{ borderRadius: 6, padding: '8px 10px', marginBottom: 6, borderLeft: `4px solid ${col}`, background: '#f8fafc', cursor: 'pointer' }}
-              onClick={() => setBlockFilter(stat.block === blockFilter ? 'All' : stat.block)}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1a1a2e' }}>{proj}</div>
-              <div style={{ fontSize: '0.68rem', color: '#666', marginTop: 4 }}>{stat.total} tasks · {avg}% avg</div>
-              <div style={{ background: '#e0e7ef', borderRadius: 10, height: 5, marginTop: 4 }}>
-                <div style={{ width: `${avg}%`, height: 5, borderRadius: 10, background: col, transition: 'width 0.4s' }} />
-              </div>
-            </div>
-          );
-        })}
       </div>
 
       {/* ── MAIN GANTT ────────────────────────────────────────────────────── */}
@@ -425,7 +415,7 @@ export default function GanttSection({ tasks }: Props) {
           )}
 
           {/* Table */}
-          {viewMode === 'gantt' && <div style={{ overflowX: 'auto', position: 'relative' }}>
+          {viewMode === 'gantt' && <div ref={ganttContainerRef} style={{ overflowX: 'auto', position: 'relative' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
               <thead>
                 <tr>
@@ -434,8 +424,8 @@ export default function GanttSection({ tasks }: Props) {
                   <th style={{ background: '#1F3864', color: '#fff', padding: '8px 10px', textAlign: 'center', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 10, width: 70 }}>Progress</th>
                   <th style={{ background: '#1F3864', color: '#fff', padding: '8px 10px', textAlign: 'center', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 10, width: 90 }}>Status</th>
                   {/* Month columns */}
-                  {MONTHS.map(m => (
-                    <th key={m.label} style={{ background: '#1F3864', color: '#fff', padding: '4px 2px', textAlign: 'center', fontSize: '0.68rem', minWidth: 80, position: 'sticky', top: 0, zIndex: 10, borderLeft: '1px solid rgba(255,255,255,0.15)' }}>
+                  {MONTHS.map((m, mi) => (
+                    <th key={m.label} ref={mi === 0 ? firstMonthThRef : undefined} style={{ background: '#1F3864', color: '#fff', padding: '4px 2px', textAlign: 'center', fontSize: '0.68rem', minWidth: 80, position: 'sticky', top: 0, zIndex: 10, borderLeft: '1px solid rgba(255,255,255,0.15)' }}>
                       {m.label} 2026
                     </th>
                   ))}
@@ -456,7 +446,6 @@ export default function GanttSection({ tasks }: Props) {
 
                     {!collapsedBlocks.has(block) && Array.from(projects.entries()).map(([proj, ptasks]) => {
                       const projColor = projectColorMap[proj] ?? '#2E75B6';
-                      const avgPct = ptasks.length ? Math.round(ptasks.reduce((s, t) => s + t.progress, 0) / ptasks.length) : 0;
                       const blockTone = block.includes('3 Month') ? '#FFF2CC' : '#DDEEFF';
 
                       return (
@@ -467,7 +456,6 @@ export default function GanttSection({ tasks }: Props) {
                             <td colSpan={4} style={{ padding: '7px 10px 7px 24px', borderLeft: `4px solid ${projColor}` }}>
                               {collapsedProjects.has(proj) ? '▶' : '▼'}
                               <span style={{ marginLeft: 6 }}>{proj}</span>
-                              <span style={{ opacity: 0.6, fontWeight: 400, fontSize: '0.72rem', marginLeft: 8 }}>{ptasks.length} tasks · {avgPct}%</span>
                             </td>
                             {MONTHS.map(m => <td key={m.label} style={{ borderLeft: '1px solid #dde3ed', background: blockTone }} />)}
                           </tr>
@@ -538,12 +526,12 @@ export default function GanttSection({ tasks }: Props) {
               </tbody>
             </table>
 
-            {/* Today line overlay */}
-            {todayLeft !== null && (
+            {/* Today line overlay — pixel position measured from DOM refs */}
+            {todayLinePx !== null && (
               <div style={{
                 position: 'absolute', top: 0, bottom: 0, width: 2,
                 background: '#C00000', zIndex: 20, pointerEvents: 'none',
-                left: `calc(480px + ${todayLeft}%)`,
+                left: todayLinePx,
               }}>
                 <span style={{ position: 'absolute', top: 0, left: 4, fontSize: '0.6rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today</span>
               </div>

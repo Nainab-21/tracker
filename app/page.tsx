@@ -88,10 +88,10 @@ export default function Home() {
       }}>
         <div>
           <h1 style={{ fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.5px' }}>
-            🌿 StomaSense – Roadmap &amp; Issues Tracker 2026
+            🌿 StomaSense – Roadmap &amp; Product Improvement Log Tracker
           </h1>
           <div style={{ fontSize: '0.78rem', opacity: 0.8, marginTop: 4 }}>
-            Blocks: [3 Months Mar–May 2026] · [May–Oct 2026] · Last updated: {lastRefreshed?.toLocaleTimeString() ?? '—'}
+            Last updated: {lastRefreshed?.toLocaleString() ?? '—'}
           </div>
         </div>
 

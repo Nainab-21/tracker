@@ -4,43 +4,22 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
 
-const DATA_ISSUE_TYPES = new Set([
-  'Data Accuracy',
-  'Data Availability',
-  'Data Configuration',
-  'Data Consistency',
-  'Data Integration',
-  'Data Latency',
-  'Data Quality',
-  'Data consistency in download',
+const ISSUES_AND_BUGS = new Set([
+  'Bug',
+  'Data Accuracy', 'Data Availability', 'Data Configuration',
+  'Data Integration', 'Data Latency',
+  'Data Quality', 'Data consistency in download',
+  'Performance',
 ]);
 
-const UI_TYPES = new Set([
-  'UI Consistency',
-  'UI Improvement',
-  'UI/UX',
-  'Usability',
-  'Usability Improvement',
-  'Visual Consistency',
+const NEW_FEATURE_TYPES = new Set([
+  'New Feature', 'New Functionality', 'New Product Request',
 ]);
-
-const FEATURE_TYPES = new Set([
-  'New Feature',
-  'New Functionality',
-  'New Product Request',
-  'Enhancement',
-  'Improvement',
-]);
-
-const PERFORMANCE_TYPES = new Set(['Optimization', 'Performance', 'Restructuring']);
 
 function classifyIssue(issueType: string): IssueGroup {
-  if (issueType === 'Bug') return 'Bug';
-  if (DATA_ISSUE_TYPES.has(issueType)) return 'Data Issues';
-  if (UI_TYPES.has(issueType)) return 'UI/UX';
-  if (FEATURE_TYPES.has(issueType)) return 'Features & Enhancements';
-  if (PERFORMANCE_TYPES.has(issueType)) return 'Performance & Other';
-  return 'Features & Enhancements'; // fallback
+  if (ISSUES_AND_BUGS.has(issueType))   return 'Issues and Bugs';
+  if (NEW_FEATURE_TYPES.has(issueType)) return 'New Feature/Product Request';
+  return 'Current Feature Enhancement'; // Enhancement, Improvement, Optimization, UI/UX, Usability, Restructuring, etc.
 }
 
 export async function GET() {
@@ -64,7 +43,8 @@ export async function GET() {
       if (!row[0]) continue;
 
       const issueType = String(row[4] ?? '').trim();
-      const status = String(row[7] ?? '').trim() as IssueStatus;
+      // col 5 = Category (new); cols 6+ shifted by 1 vs old layout
+      const status = String(row[8] ?? '').trim() as IssueStatus;
 
       issues.push({
         issueId: String(row[0]).trim(),
@@ -73,17 +53,17 @@ export async function GET() {
         component: String(row[3] ?? '').trim(),
         issueType,
         issueGroup: classifyIssue(issueType),
-        priority: typeof row[5] === 'number' ? row[5] : Number(row[5]) || 0,
-        severity: String(row[6] ?? '').trim(),
+        priority: typeof row[6] === 'number' ? row[6] : Number(row[6]) || 0,
+        severity: String(row[7] ?? '').trim(),
         status,
-        description: String(row[8] ?? '').trim(),
-        progress: typeof row[9] === 'number' ? Math.round(row[9] * 100) : Number(row[9]) || 0,
-        dateReported: String(row[10] ?? '').trim(),
-        reference: row[11] ? String(row[11]).trim() : null,
-        platform: String(row[12] ?? '').trim(),
-        tracking: String(row[13] ?? '').trim(),
-        requester: String(row[14] ?? '').trim(),
-        approval: Boolean(row[15]),
+        description: String(row[9] ?? '').trim(),
+        progress: typeof row[10] === 'number' ? Math.round(row[10] * 100) : Number(row[10]) || 0,
+        dateReported: String(row[11] ?? '').trim(),
+        reference: row[12] ? String(row[12]).trim() : null,
+        platform: String(row[13] ?? '').trim(),
+        tracking: String(row[14] ?? '').trim(),
+        requester: String(row[15] ?? '').trim(),
+        approval: Boolean(row[16]),
       });
     }
 
