@@ -226,8 +226,9 @@ export default function IssuesSection({ issues }: Props) {
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', color: '#555', whiteSpace: 'nowrap', fontSize: '0.72rem' }}>{issue.component}</td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', whiteSpace: 'nowrap' }}>
                       <span style={{ display: 'inline-block', padding: '2px 7px', borderRadius: 10, fontSize: '0.68rem', fontWeight: 600, background: `${cfg.color}18`, color: cfg.color, border: `1px solid ${cfg.color}33` }}>
-                        {cfg.icon} {issue.issueType}
+                        {cfg.icon} {cfg.label}
                       </span>
+                      <div style={{ fontSize: '0.65rem', color: '#999', marginTop: 2, paddingLeft: 2 }}>{issue.issueType}</div>
                     </td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', fontSize: '0.72rem', color: '#666', whiteSpace: 'nowrap' }}>{PRIORITY_LABEL[issue.priority] ?? `P${issue.priority}`}</td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', whiteSpace: 'nowrap' }}>
