@@ -270,17 +270,6 @@ export default function GanttSection({ tasks }: Props) {
     return map;
   }, [filtered]);
 
-  // Project stats for sidebar cards
-  const projectStats = useMemo(() => {
-    const map = new Map<string, { total: number; sumPct: number; block: string }>();
-    for (const t of tasks) {
-      if (!map.has(t.project)) map.set(t.project, { total: 0, sumPct: 0, block: t.block });
-      const s = map.get(t.project)!;
-      s.total++;
-      s.sumPct += t.progress;
-    }
-    return map;
-  }, [tasks]);
 
   // Today line position
   const todayLeft = useMemo(() => {
@@ -356,19 +345,6 @@ export default function GanttSection({ tasks }: Props) {
           ↺ Clear filters
         </button>
 
-        {/* Project cards */}
-        <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: 1, color: '#5c7da8', marginBottom: 8, paddingBottom: 4, borderBottom: '1px solid #eef2f8' }}>
-          📁 Projects
-        </div>
-        {Array.from(projectStats.entries()).map(([proj, stat]) => {
-          const col = projectColorMap[proj] ?? '#2E75B6';
-          return (
-            <div key={proj} style={{ borderRadius: 6, padding: '8px 10px', marginBottom: 6, borderLeft: `4px solid ${col}`, background: '#f8fafc', cursor: 'pointer' }}
-              onClick={() => setBlockFilter(stat.block === blockFilter ? 'All' : stat.block)}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1a1a2e' }}>{proj}</div>
-            </div>
-          );
-        })}
       </div>
 
       {/* ── MAIN GANTT ────────────────────────────────────────────────────── */}
