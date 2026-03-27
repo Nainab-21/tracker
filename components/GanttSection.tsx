@@ -311,26 +311,23 @@ export default function GanttSection({ tasks }: Props) {
           📊 Global Summary
         </div>
 
-        {/* Global progress bar */}
-        <div style={{ marginBottom: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#555', marginBottom: 4 }}>
-            <span>Overall progress</span><span style={{ fontWeight: 700 }}>{globalPct}%</span>
-          </div>
-          <div style={{ background: '#e0e7ef', borderRadius: 20, height: 10, overflow: 'hidden' }}>
-            <div style={{ width: `${globalPct}%`, height: '100%', borderRadius: 20, background: 'linear-gradient(90deg, #2E75B6, #70AD47)', transition: 'width 0.5s' }} />
-          </div>
-        </div>
-
-        {/* KPI grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
-          <KPI val={total}      lbl="Total tasks"  color="#2E75B6" />
-          <KPI val={completed}  lbl="Completed"    color="#538135" />
-          <KPI val={inProgress} lbl="In Progress"  color="#ED7D31" />
-          <KPI val={blocked}    lbl="Blocked"      color="#C00000" />
-          <KPI val={pending}    lbl="Pending"      color="#A6A6A6" />
-          <KPI val={delayed}    lbl="Delayed"      color="#FF8C00" />
-          <KPI val={`${globalPct}%`} lbl="Avg Progress" color="#2E75B6" />
-        </div>
+        {/* On-Track / Needs Attention badge */}
+        {(() => {
+          const now = new Date(); now.setHours(0, 0, 0, 0);
+          const needsAttention = delayed > 0 || blocked > 0 ||
+            tasks.some(t => new Date(t.endDate + 'T00:00:00') < now && t.status !== 'Completed');
+          return (
+            <div style={{
+              marginBottom: 16, borderRadius: 8, padding: '10px 12px', textAlign: 'center',
+              background: needsAttention ? '#FFF2F2' : '#F0FFF4',
+              border: `1px solid ${needsAttention ? '#C00000' : '#538135'}`,
+            }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: needsAttention ? '#C00000' : '#538135' }}>
+                {needsAttention ? '⚠ Needs Attention' : '✅ On-Track'}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Filters */}
         <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: 1, color: '#5c7da8', marginBottom: 8, paddingBottom: 4, borderBottom: '1px solid #eef2f8' }}>
@@ -364,16 +361,11 @@ export default function GanttSection({ tasks }: Props) {
           📁 Projects
         </div>
         {Array.from(projectStats.entries()).map(([proj, stat]) => {
-          const avg = stat.total ? Math.round(stat.sumPct / stat.total) : 0;
           const col = projectColorMap[proj] ?? '#2E75B6';
           return (
             <div key={proj} style={{ borderRadius: 6, padding: '8px 10px', marginBottom: 6, borderLeft: `4px solid ${col}`, background: '#f8fafc', cursor: 'pointer' }}
               onClick={() => setBlockFilter(stat.block === blockFilter ? 'All' : stat.block)}>
               <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1a1a2e' }}>{proj}</div>
-              <div style={{ fontSize: '0.68rem', color: '#666', marginTop: 4 }}>{stat.total} tasks · {avg}% avg</div>
-              <div style={{ background: '#e0e7ef', borderRadius: 10, height: 5, marginTop: 4 }}>
-                <div style={{ width: `${avg}%`, height: 5, borderRadius: 10, background: col, transition: 'width 0.4s' }} />
-              </div>
             </div>
           );
         })}
@@ -456,7 +448,6 @@ export default function GanttSection({ tasks }: Props) {
 
                     {!collapsedBlocks.has(block) && Array.from(projects.entries()).map(([proj, ptasks]) => {
                       const projColor = projectColorMap[proj] ?? '#2E75B6';
-                      const avgPct = ptasks.length ? Math.round(ptasks.reduce((s, t) => s + t.progress, 0) / ptasks.length) : 0;
                       const blockTone = block.includes('3 Month') ? '#FFF2CC' : '#DDEEFF';
 
                       return (
@@ -467,7 +458,6 @@ export default function GanttSection({ tasks }: Props) {
                             <td colSpan={4} style={{ padding: '7px 10px 7px 24px', borderLeft: `4px solid ${projColor}` }}>
                               {collapsedProjects.has(proj) ? '▶' : '▼'}
                               <span style={{ marginLeft: 6 }}>{proj}</span>
-                              <span style={{ opacity: 0.6, fontWeight: 400, fontSize: '0.72rem', marginLeft: 8 }}>{ptasks.length} tasks · {avgPct}%</span>
                             </td>
                             {MONTHS.map(m => <td key={m.label} style={{ borderLeft: '1px solid #dde3ed', background: blockTone }} />)}
                           </tr>
