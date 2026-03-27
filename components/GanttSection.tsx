@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
 
 interface Props { tasks: PlanningTask[] }
@@ -271,11 +271,33 @@ export default function GanttSection({ tasks }: Props) {
   }, [filtered]);
 
 
-  // Today line position
-  const todayLeft = useMemo(() => {
-    const p = leftPct(new Date());
-    return p >= 0 && p <= 100 ? p : null;
+  // Today line — fractional position across the full timeline (null if outside range)
+  const todayFraction = useMemo(() => {
+    const p = leftPct(new Date()) / 100;
+    return p >= 0 && p <= 1 ? p : null;
   }, []);
+
+  // Measure the exact pixel offset of the Gantt chart area so the line stays
+  // pinned to the correct date regardless of screen / column width.
+  const ganttContainerRef = useRef<HTMLDivElement>(null);
+  const firstMonthThRef   = useRef<HTMLTableCellElement>(null);
+  const [todayLinePx, setTodayLinePx] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (todayFraction === null) return;
+    function recalc() {
+      if (!ganttContainerRef.current || !firstMonthThRef.current) return;
+      const containerLeft = ganttContainerRef.current.getBoundingClientRect().left;
+      const monthLeft     = firstMonthThRef.current.getBoundingClientRect().left;
+      const ganttStart    = monthLeft - containerLeft;
+      const ganttWidth    = ganttContainerRef.current.offsetWidth - ganttStart;
+      setTodayLinePx(ganttStart + todayFraction * ganttWidth);
+    }
+    recalc();
+    const ro = new ResizeObserver(recalc);
+    ro.observe(ganttContainerRef.current!);
+    return () => ro.disconnect();
+  }, [todayFraction]);
 
   const toggleBlock   = (b: string) => setCollapsedBlocks(prev => { const n = new Set(prev); n.has(b) ? n.delete(b) : n.add(b); return n; });
   const toggleProject = (p: string) => setCollapsedProjects(prev => { const n = new Set(prev); n.has(p) ? n.delete(p) : n.add(p); return n; });
@@ -393,7 +415,7 @@ export default function GanttSection({ tasks }: Props) {
           )}
 
           {/* Table */}
-          {viewMode === 'gantt' && <div style={{ overflowX: 'auto', position: 'relative' }}>
+          {viewMode === 'gantt' && <div ref={ganttContainerRef} style={{ overflowX: 'auto', position: 'relative' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
               <thead>
                 <tr>
@@ -402,8 +424,8 @@ export default function GanttSection({ tasks }: Props) {
                   <th style={{ background: '#1F3864', color: '#fff', padding: '8px 10px', textAlign: 'center', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 10, width: 70 }}>Progress</th>
                   <th style={{ background: '#1F3864', color: '#fff', padding: '8px 10px', textAlign: 'center', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 10, width: 90 }}>Status</th>
                   {/* Month columns */}
-                  {MONTHS.map(m => (
-                    <th key={m.label} style={{ background: '#1F3864', color: '#fff', padding: '4px 2px', textAlign: 'center', fontSize: '0.68rem', minWidth: 80, position: 'sticky', top: 0, zIndex: 10, borderLeft: '1px solid rgba(255,255,255,0.15)' }}>
+                  {MONTHS.map((m, mi) => (
+                    <th key={m.label} ref={mi === 0 ? firstMonthThRef : undefined} style={{ background: '#1F3864', color: '#fff', padding: '4px 2px', textAlign: 'center', fontSize: '0.68rem', minWidth: 80, position: 'sticky', top: 0, zIndex: 10, borderLeft: '1px solid rgba(255,255,255,0.15)' }}>
                       {m.label} 2026
                     </th>
                   ))}
@@ -504,12 +526,12 @@ export default function GanttSection({ tasks }: Props) {
               </tbody>
             </table>
 
-            {/* Today line overlay */}
-            {todayLeft !== null && (
+            {/* Today line overlay — pixel position measured from DOM refs */}
+            {todayLinePx !== null && (
               <div style={{
                 position: 'absolute', top: 0, bottom: 0, width: 2,
                 background: '#C00000', zIndex: 20, pointerEvents: 'none',
-                left: `calc(480px + ${(todayLeft / 100).toFixed(6)} * (100% - 480px))`,
+                left: todayLinePx,
               }}>
                 <span style={{ position: 'absolute', top: 0, left: 4, fontSize: '0.6rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today</span>
               </div>
