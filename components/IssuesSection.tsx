@@ -22,12 +22,11 @@ const PRIORITY_LABEL: Record<number, string> = {
   1: 'P1 · Critical', 2: 'P2 · High', 3: 'P3 · Medium', 4: 'P4 · Low',
 };
 
-function KPI({ val, lbl, color, sub }: { val: number | string; lbl: string; color: string; sub?: string }) {
+function KPI({ val, lbl, color }: { val: number | string; lbl: string; color: string }) {
   return (
     <div style={{ background: '#F0F4F8', borderRadius: 8, padding: '12px 10px', textAlign: 'center', border: '1px solid #dde3ed', flex: 1 }}>
+      <div style={{ fontSize: '0.72rem', color: '#666', marginBottom: 6, fontWeight: 600 }}>{lbl}</div>
       <div style={{ fontSize: '1.8rem', fontWeight: 700, color }}>{val}</div>
-      <div style={{ fontSize: '0.72rem', color: '#666', marginTop: 2, fontWeight: 600 }}>{lbl}</div>
-      {sub && <div style={{ fontSize: '0.65rem', color: '#999', marginTop: 1 }}>{sub}</div>}
     </div>
   );
 }
@@ -43,11 +42,9 @@ export default function IssuesSection({ issues }: Props) {
     [issues]);
 
   // ── KPIs ──────────────────────────────────────────────────────────────────
-  const total    = issues.length;
-  const open     = issues.filter(i => i.status === 'Open').length;
-  const done     = issues.filter(i => i.status === 'Done').length;
-  const critical = issues.filter(i => i.status === 'Open' && i.severity === 'Critical').length;
-  const high     = issues.filter(i => i.status === 'Open' && i.severity === 'High').length;
+  const total = issues.length;
+  const open  = issues.filter(i => i.status === 'Open').length;
+  const done  = issues.filter(i => i.status === 'Done').length;
 
   // ── Resolution progress bars (one per category) ──────────────────────────
   const bugsAll    = issues.filter(i => i.issueGroup === 'Issues and Bugs');
@@ -99,11 +96,9 @@ export default function IssuesSection({ issues }: Props) {
       <div style={{ background: '#fff', borderRadius: 10, padding: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
         <div style={sectionTitle}>📊 Overview</div>
         <div style={{ display: 'flex', gap: 10 }}>
-          <KPI val={total}    lbl="Total Issues"  color="#2E75B6" />
-          <KPI val={open}     lbl="Open"          color="#ED7D31" sub="need attention" />
-          <KPI val={done}     lbl="Resolved"      color="#538135" sub="completed" />
-          <KPI val={critical} lbl="Critical Open" color="#C00000" sub="highest priority" />
-          <KPI val={high}     lbl="High Open"     color="#ED7D31" sub="should fix soon" />
+          <KPI val={total} lbl="Total Issues" color="#2E75B6" />
+          <KPI val={open}  lbl="Open"         color="#ED7D31" />
+          <KPI val={done}  lbl="Resolved"     color="#538135" />
         </div>
       </div>
 
