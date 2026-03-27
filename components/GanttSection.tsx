@@ -509,7 +509,7 @@ export default function GanttSection({ tasks }: Props) {
               <div style={{
                 position: 'absolute', top: 0, bottom: 0, width: 2,
                 background: '#C00000', zIndex: 20, pointerEvents: 'none',
-                left: `calc(480px + ${todayLeft}%)`,
+                left: `calc(480px + ${(todayLeft / 100).toFixed(6)} * (100% - 480px))`,
               }}>
                 <span style={{ position: 'absolute', top: 0, left: 4, fontSize: '0.6rem', color: '#C00000', fontWeight: 700, whiteSpace: 'nowrap' }}>Today</span>
               </div>
