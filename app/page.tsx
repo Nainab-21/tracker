@@ -91,7 +91,7 @@ export default function Home() {
             🌿 StomaSense – Roadmap &amp; Product Improvement Log Tracker
           </h1>
           <div style={{ fontSize: '0.78rem', opacity: 0.8, marginTop: 4 }}>
-            Blocks: [3 Months Mar–May 2026] · [May–Oct 2026] · Last updated: {lastRefreshed?.toLocaleTimeString() ?? '—'}
+            Last updated: {lastRefreshed?.toLocaleString() ?? '—'}
           </div>
         </div>
 
