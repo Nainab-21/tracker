@@ -291,7 +291,7 @@ export default function GanttSection({ tasks }: Props) {
       const monthLeft     = firstMonthThRef.current.getBoundingClientRect().left;
       const ganttStart    = monthLeft - containerLeft;
       const ganttWidth    = ganttContainerRef.current.offsetWidth - ganttStart;
-      setTodayLinePx(ganttStart + todayFraction * ganttWidth);
+      setTodayLinePx(ganttStart + todayFraction! * ganttWidth);
     }
     recalc();
     const ro = new ResizeObserver(recalc);
