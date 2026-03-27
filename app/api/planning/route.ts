@@ -235,6 +235,17 @@ export async function GET() {
       const rawDays = row[9];
       if (typeof rawDays === 'number') days = rawDays;
 
+      const progress = typeof row[10] === 'number' ? row[10] : 0;
+      const endDate = parseDate(row[8]);
+      const today = new Date().toISOString().split('T')[0];
+
+      let status: TaskStatus = STATUS_MAP[rawStatus] ?? 'Pending';
+      if (progress >= 100) {
+        status = 'Completed';
+      } else if (endDate && endDate < today && status !== 'Completed') {
+        status = 'Delayed';
+      }
+
       tasks.push({
         id: Number(row[0]),
         block: String(row[1] ?? '').trim(),
@@ -244,10 +255,10 @@ export async function GET() {
         description: DESCRIPTION_MAP[rawDesc] ?? rawDesc,
         team: TEAM_MAP[rawTeam] ?? rawTeam,
         startDate: parseDate(row[7]),
-        endDate: parseDate(row[8]),
+        endDate,
         days,
-        progress: typeof row[10] === 'number' ? row[10] : 0,
-        status: STATUS_MAP[rawStatus] ?? 'Pending',
+        progress,
+        status,
         notes: rawNotes ? (NOTES_MAP[rawNotes] ?? rawNotes) : null,
         updated: String(row[13] ?? '').trim(),
       });
