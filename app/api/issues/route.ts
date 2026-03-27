@@ -7,9 +7,9 @@ import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
 const ISSUES_AND_BUGS = new Set([
   'Bug',
   'Data Accuracy', 'Data Availability', 'Data Configuration',
-  'Data Consistency', 'Data Integration', 'Data Latency',
+  'Data Integration', 'Data Latency',
   'Data Quality', 'Data consistency in download',
-  'Performance', 'UI Consistency', 'Visual Consistency',
+  'Performance',
 ]);
 
 const NEW_FEATURE_TYPES = new Set([
