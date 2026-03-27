@@ -34,6 +34,7 @@ const STATUS_COLOR: Record<TaskStatus, string> = {
   'Completed':    '#70AD47',
   'Blocked':      '#C00000',
   'Under Review': '#FFD966',
+  'Delayed':      '#FF8C00',
 };
 const STATUS_TEXT_COLOR: Record<TaskStatus, string> = {
   'In Progress':  '#fff',
@@ -41,6 +42,7 @@ const STATUS_TEXT_COLOR: Record<TaskStatus, string> = {
   'Completed':    '#fff',
   'Blocked':      '#fff',
   'Under Review': '#1a1a2e',
+  'Delayed':      '#fff',
 };
 
 // ── Project palette (matches original HTML) ───────────────────────────────────
@@ -161,7 +163,7 @@ function TimelineView({ tasks, projectColorMap }: { tasks: PlanningTask[]; proje
                 <div style={{ fontSize: '0.72rem', fontWeight: 600, color: '#1a1a2e', lineHeight: 1.3 }}>{task.task}</div>
                 <div style={{ fontSize: '0.65rem', color: color, marginTop: 2, fontWeight: 600 }}>{task.project}</div>
                 <div style={{ display: 'flex', gap: 6, marginTop: 3, alignItems: 'center' }}>
-                  <span style={{ display: 'inline-block', padding: '1px 5px', borderRadius: 8, fontSize: '0.62rem', fontWeight: 700, background: statusCol, color: task.status === 'Under Review' ? '#1a1a2e' : '#fff' }}>
+                  <span style={{ display: 'inline-block', padding: '1px 5px', borderRadius: 8, fontSize: '0.62rem', fontWeight: 700, background: statusCol, color: STATUS_TEXT_COLOR[task.status] }}>
                     {task.status}
                   </span>
                   <span style={{ fontSize: '0.62rem', color: '#888' }}>{task.progress}%</span>
@@ -236,6 +238,7 @@ export default function GanttSection({ tasks }: Props) {
   const inProgress = tasks.filter(t => t.status === 'In Progress').length;
   const blocked    = tasks.filter(t => t.status === 'Blocked').length;
   const pending    = tasks.filter(t => t.status === 'Pending').length;
+  const delayed    = tasks.filter(t => t.status === 'Delayed').length;
   const globalPct  = total ? Math.round(tasks.reduce((s, t) => s + t.progress, 0) / total) : 0;
 
   // Stable project → color index
@@ -325,6 +328,7 @@ export default function GanttSection({ tasks }: Props) {
           <KPI val={inProgress} lbl="In Progress"  color="#ED7D31" />
           <KPI val={blocked}    lbl="Blocked"      color="#C00000" />
           <KPI val={pending}    lbl="Pending"      color="#A6A6A6" />
+          <KPI val={delayed}    lbl="Delayed"      color="#FF8C00" />
           <KPI val={`${globalPct}%`} lbl="Avg Progress" color="#2E75B6" />
         </div>
 
