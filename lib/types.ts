@@ -46,11 +46,9 @@ export interface Issue {
 }
 
 export type IssueGroup =
-  | 'Bug'
-  | 'Data Issues'
-  | 'UI/UX'
-  | 'Features & Enhancements'
-  | 'Performance & Other';
+  | 'Issues and Bugs'
+  | 'Current Feature Enhancement'
+  | 'New Feature/Product Request';
 
 export interface IssuesData {
   issues: Issue[];

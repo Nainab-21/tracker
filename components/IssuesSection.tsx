@@ -6,11 +6,9 @@ import type { Issue, IssueGroup } from '@/lib/types';
 interface Props { issues: Issue[] }
 
 const GROUP_CONFIG: Record<IssueGroup, { label: string; color: string; icon: string }> = {
-  'Bug':                     { label: 'Bugs',                   color: '#C00000', icon: '🐛' },
-  'Data Issues':             { label: 'Data Issues',            color: '#ED7D31', icon: '📊' },
-  'UI/UX':                   { label: 'UI / UX',                color: '#7030A0', icon: '🎨' },
-  'Features & Enhancements': { label: 'Features & Enhancements',color: '#2E75B6', icon: '✨' },
-  'Performance & Other':     { label: 'Performance & Other',    color: '#538135', icon: '⚡' },
+  'Issues and Bugs':             { label: 'Issues & Bugs',             color: '#C00000', icon: '🐛' },
+  'Current Feature Enhancement': { label: 'Current Feature Enhancement', color: '#2E75B6', icon: '✨' },
+  'New Feature/Product Request': { label: 'New Feature / Product Request', color: '#7030A0', icon: '🚀' },
 };
 
 const SEVERITY_COLOR: Record<string, { bg: string; text: string }> = {
@@ -51,14 +49,18 @@ export default function IssuesSection({ issues }: Props) {
   const critical = issues.filter(i => i.status === 'Open' && i.severity === 'Critical').length;
   const high     = issues.filter(i => i.status === 'Open' && i.severity === 'High').length;
 
-  // ── 2 key progress bars ───────────────────────────────────────────────────
-  const bugs       = issues.filter(i => i.issueGroup === 'Bug');
-  const bugsDone   = bugs.filter(i => i.status === 'Done').length;
-  const bugsPct    = bugs.length ? Math.round((bugsDone / bugs.length) * 100) : 0;
+  // ── Resolution progress bars (one per category) ──────────────────────────
+  const bugsAll    = issues.filter(i => i.issueGroup === 'Issues and Bugs');
+  const bugsDone   = bugsAll.filter(i => i.status === 'Done').length;
+  const bugsPct    = bugsAll.length ? Math.round((bugsDone / bugsAll.length) * 100) : 0;
 
-  const dataIss     = issues.filter(i => i.issueGroup === 'Data Issues');
-  const dataIssDone = dataIss.filter(i => i.status === 'Done').length;
-  const dataIssPct  = dataIss.length ? Math.round((dataIssDone / dataIss.length) * 100) : 0;
+  const enhAll     = issues.filter(i => i.issueGroup === 'Current Feature Enhancement');
+  const enhDone    = enhAll.filter(i => i.status === 'Done').length;
+  const enhPct     = enhAll.length ? Math.round((enhDone / enhAll.length) * 100) : 0;
+
+  const featAll    = issues.filter(i => i.issueGroup === 'New Feature/Product Request');
+  const featDone   = featAll.filter(i => i.status === 'Done').length;
+  const featPct    = featAll.length ? Math.round((featDone / featAll.length) * 100) : 0;
 
   // ── Group stats ───────────────────────────────────────────────────────────
   const groupStats = useMemo(() =>
@@ -110,8 +112,9 @@ export default function IssuesSection({ issues }: Props) {
         <div style={sectionTitle}>📈 Resolution Progress</div>
         <div style={{ display: 'flex', gap: 24 }}>
           {[
-            { label: 'Bugs', pct: bugsPct, total: bugs.length, done: bugsDone, color: 'linear-gradient(90deg, #C00000, #ED7D31)' },
-            { label: 'Data Issues', pct: dataIssPct, total: dataIss.length, done: dataIssDone, color: 'linear-gradient(90deg, #ED7D31, #FFD966)' },
+            { label: 'Issues & Bugs',             pct: bugsPct, total: bugsAll.length, done: bugsDone, color: 'linear-gradient(90deg, #C00000, #ED7D31)' },
+            { label: 'Current Feature Enhancement', pct: enhPct,  total: enhAll.length,  done: enhDone,  color: 'linear-gradient(90deg, #2E75B6, #5B9BD5)' },
+            { label: 'New Feature / Product Request', pct: featPct, total: featAll.length, done: featDone, color: 'linear-gradient(90deg, #7030A0, #9B59B6)' },
           ].map(({ label, pct, total: t, done: d, color }) => (
             <div key={label} style={{ flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#444', marginBottom: 6, fontWeight: 600 }}>
