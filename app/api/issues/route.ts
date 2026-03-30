@@ -1,5 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import * as XLSX from 'xlsx';
+import * as fs from 'fs';
+import * as path from 'path';
 import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -53,7 +55,27 @@ function classifyIssue(issueType: string): IssueGroup {
   return 'Current Feature Enhancement'; // Enhancement, Improvement, Optimization, UI/UX, Usability, Restructuring, etc.
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  if (request.nextUrl.searchParams.get('week') === 'previous') {
+    try {
+      const snapshot = JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), 'snapshots', 'issues.json'), 'utf-8')
+      );
+      if (!snapshot.issues?.length) {
+        return NextResponse.json(
+          { error: 'No snapshot available yet', detail: "Run 'npm run snapshot' and commit the result." },
+          { status: 404 }
+        );
+      }
+      return NextResponse.json(snapshot);
+    } catch (err) {
+      return NextResponse.json(
+        { error: 'Snapshot not found', detail: String(err) },
+        { status: 404 }
+      );
+    }
+  }
+
   try {
     const buffer = await fetchSharePointExcel(ISSUES_SHAREPOINT_URL);
     const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });

@@ -20,6 +20,7 @@ export interface PlanningTask {
 export interface PlanningData {
   tasks: PlanningTask[];
   lastFetched: string;
+  snapshotDate?: string; // present only on previous-week responses
 }
 
 export type IssueStatus = 'Open' | 'Done';
@@ -53,4 +54,5 @@ export type IssueGroup =
 export interface IssuesData {
   issues: Issue[];
   lastFetched: string;
+  snapshotDate?: string; // present only on previous-week responses
 }

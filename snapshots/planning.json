@@ -1,0 +1,6 @@
+{
+  "tasks": [],
+  "lastFetched": null,
+  "snapshotDate": null,
+  "_note": "Run 'npm run snapshot' while the dev server is running to populate this file, then commit it."
+}

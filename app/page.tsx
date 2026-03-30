@@ -32,8 +32,11 @@ function ErrorBanner({ message }: { message: string }) {
   );
 }
 
+type Week = 'current' | 'previous';
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>('gantt');
+  const [week, setWeek] = useState<Week>('current');
   const [planningData, setPlanningData] = useState<PlanningData | null>(null);
   const [issuesData, setIssuesData] = useState<IssuesData | null>(null);
   const [planningError, setPlanningError] = useState<string | null>(null);
@@ -42,8 +45,11 @@ export default function Home() {
   const [lastRefreshed, setLastRefreshed] = useState<Date | null>(null);
   const [refreshing, setRefreshing] = useState(false);
 
-  const fetchAll = useCallback(async (bust = false) => {
-    const qs = bust ? `?ts=${Date.now()}` : '';
+  const fetchAll = useCallback(async (bust = false, targetWeek: Week = 'current') => {
+    const params = new URLSearchParams();
+    if (bust) params.set('ts', String(Date.now()));
+    if (targetWeek === 'previous') params.set('week', 'previous');
+    const qs = params.size ? `?${params}` : '';
     setRefreshing(true);
     setPlanningError(null);
     setIssuesError(null);
@@ -70,7 +76,9 @@ export default function Home() {
     setRefreshing(false);
   }, []);
 
-  useEffect(() => { fetchAll(); }, [fetchAll]);
+  const switchWeek = (w: Week) => { setWeek(w); fetchAll(false, w); };
+
+  useEffect(() => { fetchAll(false, 'current'); }, [fetchAll]);
 
   const todayStr = new Date().toLocaleDateString('en-US', {
     weekday: 'short', month: 'short', day: 'numeric', year: 'numeric',
@@ -123,9 +131,28 @@ export default function Home() {
             📅 {todayStr}
           </div>
 
+          {/* Week toggle */}
+          <div style={{ display: 'flex', background: 'rgba(255,255,255,0.15)', borderRadius: 8, padding: 3, gap: 3 }}>
+            {(['current', 'previous'] as Week[]).map((w) => (
+              <button
+                key={w}
+                onClick={() => switchWeek(w)}
+                style={{
+                  padding: '6px 14px', borderRadius: 6, border: 'none',
+                  cursor: 'pointer', fontWeight: 600, fontSize: '0.78rem',
+                  background: week === w ? '#fff' : 'transparent',
+                  color: week === w ? '#1F3864' : 'rgba(255,255,255,0.85)',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {w === 'current' ? '📡 This Week' : '🗂 Last Week'}
+              </button>
+            ))}
+          </div>
+
           {/* Refresh */}
           <button
-            onClick={() => fetchAll(true)}
+            onClick={() => fetchAll(true, week)}
             disabled={refreshing}
             style={{
               padding: '6px 16px', borderRadius: 6, border: '1px solid rgba(255,255,255,0.4)',
@@ -139,6 +166,25 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      {/* ── Snapshot banner ─────────────────────────────────────────────── */}
+      {week === 'previous' && (
+        <div style={{
+          background: '#FFF8E1', borderBottom: '1px solid #FFD54F',
+          padding: '8px 28px', fontSize: '0.8rem', color: '#795548',
+          display: 'flex', alignItems: 'center', gap: 8,
+        }}>
+          🗂 <strong>Viewing last week&apos;s snapshot</strong>
+          {planningData?.snapshotDate && (
+            <span>— saved {new Date(planningData.snapshotDate).toLocaleDateString('en-US', {
+              weekday: 'short', month: 'short', day: 'numeric', year: 'numeric',
+            })}</span>
+          )}
+          <span style={{ marginLeft: 'auto', opacity: 0.7 }}>
+            Changes made to the live Excel this week are not reflected here.
+          </span>
+        </div>
+      )}
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
       <div style={{ padding: '20px 24px' }}>
