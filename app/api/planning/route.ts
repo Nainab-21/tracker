@@ -1,5 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import * as XLSX from 'xlsx';
+import * as fs from 'fs';
+import * as path from 'path';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -259,7 +261,28 @@ function parseDate(val: unknown): string {
 
 // ── Route ─────────────────────────────────────────────────────────────────────
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Serve the committed snapshot when ?week=previous
+  if (request.nextUrl.searchParams.get('week') === 'previous') {
+    try {
+      const snapshot = JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), 'snapshots', 'planning.json'), 'utf-8')
+      );
+      if (!snapshot.tasks?.length) {
+        return NextResponse.json(
+          { error: 'No snapshot available yet', detail: "Run 'npm run snapshot' and commit the result." },
+          { status: 404 }
+        );
+      }
+      return NextResponse.json(snapshot);
+    } catch (err) {
+      return NextResponse.json(
+        { error: 'Snapshot not found', detail: String(err) },
+        { status: 404 }
+      );
+    }
+  }
+
   try {
     const buffer = await fetchSharePointExcel(PLANNING_SHAREPOINT_URL);
     const wb = XLSX.read(buffer, { type: 'buffer', cellDates: false });
