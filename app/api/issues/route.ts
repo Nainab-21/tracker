@@ -1,8 +1,37 @@
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
-import * as fs from 'fs';
-import * as path from 'path';
 import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
+
+const ISSUES_SHAREPOINT_URL =
+  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQCgKaHu8P3YT7JbOk5K_XX8AV9cmMeNa5vIdD8pwc2pogM?e=Oq1KUA';
+
+async function fetchSharePointExcel(shareUrl: string): Promise<Buffer> {
+  const baseUrl = 'https://findabilitysciences-my.sharepoint.com';
+
+  // Step 1: hit the sharing link with &download=1 — SharePoint returns a 302
+  // with a FedAuth cookie and a relative Location to the actual file.
+  const resp1 = await fetch(`${shareUrl}&download=1`, { redirect: 'manual' });
+
+  const location = resp1.headers.get('location');
+  const rawCookie = resp1.headers.get('set-cookie');
+
+  if (!location || !rawCookie) {
+    throw new Error(`SharePoint redirect handshake failed (status ${resp1.status})`);
+  }
+
+  // Extract just the cookie name=value part (strip attributes like path, SameSite…)
+  const cookie = rawCookie.split(';')[0];
+
+  // Step 2: fetch the actual file using the cookie for auth.
+  const fileUrl = location.startsWith('/') ? `${baseUrl}${location}` : location;
+  const resp2 = await fetch(fileUrl, { headers: { Cookie: cookie } });
+
+  if (!resp2.ok) {
+    throw new Error(`Failed to download Excel from SharePoint (${resp2.status})`);
+  }
+
+  return Buffer.from(await resp2.arrayBuffer());
+}
 
 const ISSUES_AND_BUGS = new Set([
   'Bug',
@@ -24,8 +53,7 @@ function classifyIssue(issueType: string): IssueGroup {
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'app_issues_backlog.xlsx');
-    const buffer = fs.readFileSync(filePath);
+    const buffer = await fetchSharePointExcel(ISSUES_SHAREPOINT_URL);
     const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
 
     // Find the "Product Improvement Log" sheet (case-insensitive)

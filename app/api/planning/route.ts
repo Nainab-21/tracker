@@ -1,8 +1,37 @@
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
-import * as fs from 'fs';
-import * as path from 'path';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
+
+const PLANNING_SHAREPOINT_URL =
+  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Mcrb2O';
+
+async function fetchSharePointExcel(shareUrl: string): Promise<Buffer> {
+  const baseUrl = 'https://findabilitysciences-my.sharepoint.com';
+
+  // Step 1: hit the sharing link with &download=1 — SharePoint returns a 302
+  // with a FedAuth cookie and a relative Location to the actual file.
+  const resp1 = await fetch(`${shareUrl}&download=1`, { redirect: 'manual' });
+
+  const location = resp1.headers.get('location');
+  const rawCookie = resp1.headers.get('set-cookie');
+
+  if (!location || !rawCookie) {
+    throw new Error(`SharePoint redirect handshake failed (status ${resp1.status})`);
+  }
+
+  // Extract just the cookie name=value part (strip attributes like path, SameSite…)
+  const cookie = rawCookie.split(';')[0];
+
+  // Step 2: fetch the actual file using the cookie for auth.
+  const fileUrl = location.startsWith('/') ? `${baseUrl}${location}` : location;
+  const resp2 = await fetch(fileUrl, { headers: { Cookie: cookie } });
+
+  if (!resp2.ok) {
+    throw new Error(`Failed to download Excel from SharePoint (${resp2.status})`);
+  }
+
+  return Buffer.from(await resp2.arrayBuffer());
+}
 
 // ── Translation maps ──────────────────────────────────────────────────────────
 
@@ -210,8 +239,7 @@ function parseDate(val: unknown): string {
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'planificacion_stomasense.xlsx');
-    const buffer = fs.readFileSync(filePath);
+    const buffer = await fetchSharePointExcel(PLANNING_SHAREPOINT_URL);
     const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
     const ws = wb.Sheets[wb.SheetNames[0]];
     const rows: unknown[][] = XLSX.utils.sheet_to_json(ws, { header: 1, defval: null });
