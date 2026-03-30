@@ -229,7 +229,14 @@ function excelSerialToISO(serial: number): string {
 function parseDate(val: unknown): string {
   if (!val) return '';
   if (typeof val === 'number') return excelSerialToISO(val);
-  if (val instanceof Date) return val.toISOString().split('T')[0];
+  if (val instanceof Date) {
+    // These cells were entered as D/M/YYYY but Excel (US locale) stored them as
+    // M/D/YYYY, so month and day are swapped. Swap them back.
+    const y = val.getUTCFullYear();
+    const m = val.getUTCMonth() + 1; // Excel's "month" is actually the day
+    const d = val.getUTCDate();      // Excel's "day" is actually the month
+    return `${y}-${String(d).padStart(2, '0')}-${String(m).padStart(2, '0')}`;
+  }
   if (typeof val === 'string') {
     const s = val.trim();
     // DD-MM-YYYY or D-M-YYYY (dashes, European/Spanish format)
@@ -238,7 +245,7 @@ function parseDate(val: unknown): string {
       const [, d, m, y] = dashMatch;
       return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
     }
-    // DD/MM/YYYY or D/M/YYYY (slashes, European/Spanish format)
+    // DD/MM/YYYY or D/M/YYYY (slashes) — these are plain text cells, D/M/YYYY
     const slashMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (slashMatch) {
       const [, d, m, y] = slashMatch;
