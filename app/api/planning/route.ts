@@ -228,24 +228,23 @@ function excelSerialToISO(serial: number): string {
 
 function parseDate(val: unknown): string {
   if (!val) return '';
-  if (typeof val === 'number') return excelSerialToISO(val);
-  if (val instanceof Date) {
-    // These cells were entered as D/M/YYYY but Excel (US locale) stored them as
-    // M/D/YYYY, so month and day are swapped. Swap them back.
-    const y = val.getUTCFullYear();
-    const m = val.getUTCMonth() + 1; // Excel's "month" is actually the day
-    const d = val.getUTCDate();      // Excel's "day" is actually the month
-    return `${y}-${String(d).padStart(2, '0')}-${String(m).padStart(2, '0')}`;
+  if (typeof val === 'number') {
+    // Excel stored these cells using M/D/YYYY (US locale) but the sheet uses D/M/YYYY.
+    // Decode the serial to get the "as-stored" ISO date (e.g. "2026-10-03" for 10/3/2026),
+    // then swap month and day to recover the intended D/M date (→ "2026-03-10").
+    const iso = excelSerialToISO(val);        // always UTC, no tz ambiguity
+    const [y, m, d] = iso.split('-');
+    return `${y}-${d}-${m}`;                  // swap: M/D → D/M
   }
   if (typeof val === 'string') {
     const s = val.trim();
-    // DD-MM-YYYY or D-M-YYYY (dashes, European/Spanish format)
+    // DD-MM-YYYY or D-M-YYYY (dashes, European/Spanish format – stored as text)
     const dashMatch = s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
     if (dashMatch) {
       const [, d, m, y] = dashMatch;
       return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
     }
-    // DD/MM/YYYY or D/M/YYYY (slashes) — these are plain text cells, D/M/YYYY
+    // DD/MM/YYYY or D/M/YYYY (slashes – stored as text, D/M/YYYY)
     const slashMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (slashMatch) {
       const [, d, m, y] = slashMatch;
@@ -261,7 +260,7 @@ function parseDate(val: unknown): string {
 export async function GET() {
   try {
     const buffer = await fetchSharePointExcel(PLANNING_SHAREPOINT_URL);
-    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
+    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: false });
     const ws = wb.Sheets[wb.SheetNames[0]];
     const rows: unknown[][] = XLSX.utils.sheet_to_json(ws, { header: 1, defval: null });
 
