@@ -1,8 +1,37 @@
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
-import * as fs from 'fs';
-import * as path from 'path';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
+
+const PLANNING_SHAREPOINT_URL =
+  'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Mcrb2O';
+
+async function fetchSharePointExcel(shareUrl: string): Promise<Buffer> {
+  const baseUrl = 'https://findabilitysciences-my.sharepoint.com';
+
+  // Step 1: hit the sharing link with &download=1 — SharePoint returns a 302
+  // with a FedAuth cookie and a relative Location to the actual file.
+  const resp1 = await fetch(`${shareUrl}&download=1`, { redirect: 'manual' });
+
+  const location = resp1.headers.get('location');
+  const rawCookie = resp1.headers.get('set-cookie');
+
+  if (!location || !rawCookie) {
+    throw new Error(`SharePoint redirect handshake failed (status ${resp1.status})`);
+  }
+
+  // Extract just the cookie name=value part (strip attributes like path, SameSite…)
+  const cookie = rawCookie.split(';')[0];
+
+  // Step 2: fetch the actual file using the cookie for auth.
+  const fileUrl = location.startsWith('/') ? `${baseUrl}${location}` : location;
+  const resp2 = await fetch(fileUrl, { headers: { Cookie: cookie } });
+
+  if (!resp2.ok) {
+    throw new Error(`Failed to download Excel from SharePoint (${resp2.status})`);
+  }
+
+  return Buffer.from(await resp2.arrayBuffer());
+}
 
 // ── Translation maps ──────────────────────────────────────────────────────────
 
@@ -199,10 +228,30 @@ function excelSerialToISO(serial: number): string {
 
 function parseDate(val: unknown): string {
   if (!val) return '';
-  if (typeof val === 'number') return excelSerialToISO(val);
-  if (typeof val === 'string') return val.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1');
-  // xlsx may parse dates as JS Date objects
-  if (val instanceof Date) return val.toISOString().split('T')[0];
+  if (typeof val === 'number') {
+    // Excel stored these cells using M/D/YYYY (US locale) but the sheet uses D/M/YYYY.
+    // Decode the serial to get the "as-stored" ISO date (e.g. "2026-10-03" for 10/3/2026),
+    // then swap month and day to recover the intended D/M date (→ "2026-03-10").
+    const iso = excelSerialToISO(val);        // always UTC, no tz ambiguity
+    const [y, m, d] = iso.split('-');
+    return `${y}-${d}-${m}`;                  // swap: M/D → D/M
+  }
+  if (typeof val === 'string') {
+    const s = val.trim();
+    // DD-MM-YYYY or D-M-YYYY (dashes, European/Spanish format – stored as text)
+    const dashMatch = s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+    if (dashMatch) {
+      const [, d, m, y] = dashMatch;
+      return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
+    }
+    // DD/MM/YYYY or D/M/YYYY (slashes – stored as text, D/M/YYYY)
+    const slashMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (slashMatch) {
+      const [, d, m, y] = slashMatch;
+      return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
+    }
+    return s;
+  }
   return String(val);
 }
 
@@ -210,9 +259,8 @@ function parseDate(val: unknown): string {
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'planificacion_stomasense.xlsx');
-    const buffer = fs.readFileSync(filePath);
-    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: true });
+    const buffer = await fetchSharePointExcel(PLANNING_SHAREPOINT_URL);
+    const wb = XLSX.read(buffer, { type: 'buffer', cellDates: false });
     const ws = wb.Sheets[wb.SheetNames[0]];
     const rows: unknown[][] = XLSX.utils.sheet_to_json(ws, { header: 1, defval: null });
 
