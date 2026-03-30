@@ -229,9 +229,23 @@ function excelSerialToISO(serial: number): string {
 function parseDate(val: unknown): string {
   if (!val) return '';
   if (typeof val === 'number') return excelSerialToISO(val);
-  if (typeof val === 'string') return val.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1');
-  // xlsx may parse dates as JS Date objects
   if (val instanceof Date) return val.toISOString().split('T')[0];
+  if (typeof val === 'string') {
+    const s = val.trim();
+    // DD-MM-YYYY or D-M-YYYY (dashes, European/Spanish format)
+    const dashMatch = s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+    if (dashMatch) {
+      const [, d, m, y] = dashMatch;
+      return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
+    }
+    // DD/MM/YYYY or D/M/YYYY (slashes, European/Spanish format)
+    const slashMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (slashMatch) {
+      const [, d, m, y] = slashMatch;
+      return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`;
+    }
+    return s;
+  }
   return String(val);
 }
 
