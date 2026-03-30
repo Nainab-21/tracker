@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
 import type { Issue, IssueGroup, IssueStatus } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 const ISSUES_SHAREPOINT_URL =
   'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQCgKaHu8P3YT7JbOk5K_XX8AV9cmMeNa5vIdD8pwc2pogM?e=Oq1KUA';
 
@@ -90,8 +92,8 @@ export async function GET() {
         reference: row[12] ? String(row[12]).trim() : null,
         platform: String(row[13] ?? '').trim(),
         tracking: String(row[14] ?? '').trim(),
-        requester: String(row[15] ?? '').trim(),
-        approval: Boolean(row[16]),
+        approval: Boolean(row[15]),          // col 15 = Aprobación
+        requester: String(row[16] ?? '').trim(), // col 16 = Solicitante
       });
     }
 
