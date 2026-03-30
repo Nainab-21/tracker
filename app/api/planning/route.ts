@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
 import type { PlanningTask, TaskStatus } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 const PLANNING_SHAREPOINT_URL =
   'https://findabilitysciences-my.sharepoint.com/:x:/p/bnaina/IQBV4slET1weR4Wihzp0LDO3AUsQwstKbpIi2WXxV89AviM?e=Mcrb2O';
 
