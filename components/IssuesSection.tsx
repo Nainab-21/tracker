@@ -188,7 +188,7 @@ export default function IssuesSection({ issues }: Props) {
                       </span>
                     </td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', maxWidth: 300 }}>
-                      <div className="line-clamp-2" style={{ color: '#333' }}>{issue.description}</div>
+                      <div style={{ color: '#333' }}>{issue.description}</div>
                     </td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', color: '#555', whiteSpace: 'nowrap' }}>{issue.platform}</td>
                     <td style={{ padding: '6px 10px', borderBottom: '1px solid #eef2f8', color: '#555', whiteSpace: 'nowrap' }}>{issue.requester}</td>
