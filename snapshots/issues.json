@@ -16,7 +16,7 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Jose Gomez"
     },
     {
@@ -32,10 +32,10 @@
       "description": "When clicking the PDF button located next to the “Grupo Pantaleon” label, the platform becomes unresponsive.\r\nNo PDF is generated, and all buttons and interactions stop working after the action is triggered.",
       "progress": 100,
       "dateReported": "Fri Jan 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Jose Gomez"
     },
     {
@@ -54,7 +54,7 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Jose Gomez"
     },
     {
@@ -73,7 +73,7 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Jose Gomez"
     },
     {
@@ -89,7 +89,7 @@
       "description": "When Google Chrome dark mode is enabled, text within the platform is rendered in a pale gray color, reducing readability. In standard (light) mode, the platform displays the text correctly with adequate contrast.",
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
@@ -108,10 +108,10 @@
       "description": "Right-click interactions within the platform override the default browser context menu, limiting the availability of standard options such as opening content in a new tab.",
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -123,11 +123,11 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 3,
       "severity": "Medium",
-      "status": "Done",
+      "status": "In QA",
       "description": "The platform currently does not support an in-platform split-screen or side-by-side view for comparing NDVI+, NDVI Potential, or other derived products within the same workspace.",
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": false,
@@ -210,19 +210,19 @@
       "requester": "Evelin Quevedo"
     },
     {
-      "issueId": "EX-GEN-004",
-      "module": "Explore",
-      "featureArea": "All Maps",
-      "component": "Raster clip / parcel mask",
-      "issueType": "Data Consistency",
+      "issueId": "EX-CDM-001",
+      "module": "Dashboard",
+      "featureArea": "All Sections",
+      "component": "Chart Interactivity / Label Rendering",
+      "issueType": "Usability",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 2,
-      "severity": "Medium",
-      "status": "Done",
-      "description": "The raster clip is not being applied at the Pantaleon level and is missing in some parcels, resulting in imagery being displayed outside the expected boundaries.",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "In QA",
+      "description": "In the dashboard, the distribution charts lack interactivity, which prevents users from viewing the full names of all distribution categories. Several labels are truncated and cannot be expanded or accessed through interaction (e.g., hover or click), limiting the ability to fully interpret the distribution details. new filter button of Región (division_02), Finca (division_01)",
       "progress": 100,
-      "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
       "platform": "Movil",
       "tracking": "Testing de validación",
       "approval": false,
@@ -244,8 +244,8 @@
       "reference": "",
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "EX-GEN-006",
@@ -263,8 +263,8 @@
       "reference": "",
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-012",
@@ -279,7 +279,7 @@
       "description": "The satellite-based moisture monitor is not updated for Monte Rosa (05/01/2026) and Pantaleon (03/01/2026). Additionally, the current moisture TIFF cannot be downloaded, which prevents validation of related products such as clustering, under/over the curve analysis, growth stage criticality, and irrigation priority.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
@@ -305,6 +305,25 @@
       "requester": "Evelin Quevedo"
     },
     {
+      "issueId": "EX-GEN-025",
+      "module": "Explore",
+      "featureArea": "Inspection",
+      "component": "UI Layout / Responsive Design",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Critical",
+      "status": "Done",
+      "description": "In the mobile application, within the Inspection section, the interface does not properly adjust to the screen size. As a result, action buttons such as “Apply Changes” are partially hidden or overlapped, preventing users from interacting with them and completing the process.",
+      "progress": 100,
+      "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "Movil",
+      "tracking": "Capacitación PSH",
+      "approval": true,
+      "requester": "Ana Mendoza"
+    },
+    {
       "issueId": "RS-GEN-009",
       "module": "Remote Sensing",
       "featureArea": "All Maps",
@@ -313,30 +332,11 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Done",
-      "description": "Within the platform, certain products and models display intermittent data availability across image dates. For example, in the NDVI product for Monte Rosa, no data is available for several fields between 31/12/2025 and 15/01/2026, data becomes available on 20/01/2026, and is again unavailable between 25/01/2026 and 30/01/2026.\r\n\r\nThis occurs despite the fact that the corresponding template contains valid field information (e.g., crop start date, variety)",
+      "status": "In QA",
+      "description": "Within the platform, certain products and models display intermittent data availability across image dates. For example, in the NDVI product for Monte Rosa, no data is available for several fields between 31/12/2025 and 15/01/2026, data becomes available on 20/01/2026, and is again unavailable between 25/01/2026 and 30/01/2026.\r\nThis occurs despite the fact that the corresponding template contains valid field information (e.g., crop start date, variety). \r\nevaluate if it was due to active season",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Ana Mendoza"
-    },
-    {
-      "issueId": "RS-GEN-010",
-      "module": "Remote Sensing",
-      "featureArea": "All Maps",
-      "component": "Pixel Masking",
-      "issueType": "Data Consistency",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "Critical",
-      "status": "Done",
-      "description": "Pixel overlap between adjacent polygons has been observed. Although a buffer is applied to constrain the analysis area, this clipping is not consistently reflected across all areas. As a result, pixels from neighboring polygons are included in certain cases, leading to inaccuracies in the calculated values.",
-      "progress": 100,
-      "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": false,
@@ -355,11 +355,11 @@
       "description": "When applying filters within the platform, the map only zooms to the selected area but does not restrict the display to the selected elements. For example, when filtering Region 1 and a specific field in Amajac, the map zooms to the selected location, but other fields remain visible instead of showing only the filtered selection.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-009",
@@ -374,10 +374,10 @@
       "description": "When switching between companies (Pantaleon, Monte Rosa, Amajac, IPSA, EMSA), the Hydro model retains the date from the previously selected company and requires a manual adjustment to refresh the correct date.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -393,7 +393,7 @@
       "description": "In the Hydro model, within the Detailed Water Status Analysis section, numeric values are displayed with excessive decimal precision (more than 10 decimal places), which makes the information difficult to read. Limiting the display to two decimal places would improve clarity and readability without affecting analytical accuracy.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
@@ -412,30 +412,30 @@
       "description": "In the weed model visualization, detections are observed in areas located outside the polygon boundary, including non-cultivated surfaces such as access areas and forested zones. Additionally, the detected patterns appear highly regular, which is not consistent with real-world weed distribution and may indicate inaccuracies in the spatial masking or classification process.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "EX-CDM-001",
-      "module": "Dashboard",
-      "featureArea": "All Sections",
-      "component": "Chart Interactivity / Label Rendering",
-      "issueType": "Usability",
+      "issueId": "EX-GEN-004",
+      "module": "Explore",
+      "featureArea": "All Maps",
+      "component": "Raster clip / parcel mask",
+      "issueType": "Data Consistency",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "Critical",
-      "status": "Open",
-      "description": "In the dashboard, the distribution charts lack interactivity, which prevents users from viewing the full names of all distribution categories. Several labels are truncated and cannot be expanded or accessed through interaction (e.g., hover or click), limiting the ability to fully interpret the distribution details.",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Done",
+      "description": "The raster clip is not being applied at the Pantaleon level and is missing in some parcels, resulting in imagery being displayed outside the expected boundaries.",
       "progress": 100,
-      "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "EX-GEN-007",
@@ -450,10 +450,10 @@
       "description": "In the Comparison section, the color contrast does not provide adequate visibility for outdoor field conditions. Exposure to sunlight reduces text legibility, which can hinder effective use of the platform during field activities.",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -469,10 +469,10 @@
       "description": "For field GT01-0010157-0104, the Comparison view shows partial data coverage for the SG layer, while NDVI Potential displays complete coverage for the same field, despite the fact that the corresponding template contains valid field information (e.g., crop start date, variety).\r\nAdditionally, only the SG legend is displayed, while the NDVI Potential legend is missing, which limits proper interpretation of the comparative results.",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -488,10 +488,10 @@
       "description": "A minimum and maximum display scale should be defined for the model/product layers to prevent information from disappearing when zooming in or out. Currently, as the user approaches the field level, the model or product information is no longer visible, which affects data continuity and interpretation.",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -510,7 +510,7 @@
       "reference": "",
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -529,7 +529,7 @@
       "reference": "",
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -545,28 +545,28 @@
       "description": "For field GT01-0010123-0207, in the Weed Detection model, an aggregated red area is displayed at certain zoom levels. When zooming in further, this aggregation disappears and only the underlying pixel-level detections remain visible. This scale-dependent rendering overrepresents the affected area and may lead to misinterpretation of weed distribution.",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Movil",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "RS-MONI-014",
-      "module": "Remote Sensing",
-      "featureArea": "Monitor",
-      "component": "Category Sorting / Value Formatting",
-      "issueType": "Data Consistency",
+      "issueId": "EX-GEN-018",
+      "module": "Explore",
+      "featureArea": "All Sections",
+      "component": "Filtering",
+      "issueType": "Usability",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 4,
-      "severity": "Low",
+      "priority": 1,
+      "severity": "Medium",
       "status": "Open",
-      "description": "In the Areas with Deficient Index by Cycle chart (hectares with deficient index per crop cycle) for SG, the cycle values are displayed inconsistently. Numeric values appear duplicated as both integers and decimals (e.g., 6 and 6.0, 7 and 7.0). Additionally, the cycle categories are not ordered numerically; instead, they follow a lexicographical order (e.g., 1, 10, 11, 12, 13, 2), which affects correct interpretation of the data distribution.",
-      "progress": 100,
-      "dateReported": "Mon Feb 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "description": "Add to the filters one by farm name, another by parcel code and ownership (under administration and producers)- filters division_01 as Finca, division_02 as Region",
+      "progress": 0,
+      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
-      "platform": "Web",
-      "tracking": "Testing de validación",
+      "platform": "Movil",
+      "tracking": "Capacitación PSH",
       "approval": false,
       "requester": "Ana Mendoza"
     },
@@ -602,7 +602,7 @@
       "description": "Across several monitors, the reported parcel areas do not match the monitored area values, and this discrepancy is observed consistently across multiple fields and total area calculations. For example, for field MX07-5644011-0001, the NDVI+ Monitor reports 5 ha as the monitored area, while the NDVI Range Distribution shows 4.5 ha, and both the NDVI vs Potential Distribution and Parcel Details show 14.3 ha. In the Growth Monitor (SG), the monitored area is 5 ha, but the Growth Index Distribution shows 15 ha, and Areas by Improvement Status per Stage shows 14.8 ha. In the NDWI Monitor, the monitored area is 8 ha, while the Hydro+ (NDWI) Range Distribution reports 14.8 ha, and the Weed Monitor reports 12.53 ha. Similar discrepancies are observed in other fields; for example, field MX07-5127038-0001 shows 9 ha in the NDVI+ Monitor, while the NDVI Range Distribution reports 8.7 ha, and the NDVI vs Potential Distribution shows 8.5 ha. In the Growth Monitor (SG), the monitored area is 9 ha, while Areas by Improvement Status per Stage shows 8.5 ha. In the NDWI Monitor, the monitored area is 9 ha, while the Hydro+ (NDWI) Range Distribution shows 8.5 ha, and the Weed Monitor reports 9.65 ha. This issue appears consistently across different monitors and fields, where the monitored area, distribution values, and total reported areas do not align, which may affect the reliability and interpretation of the analytical results.",
       "progress": 100,
       "dateReported": "Fri Mar 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
@@ -624,8 +624,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "EX-GEN-017",
@@ -685,18 +685,56 @@
       "requester": "Evelin Quevedo"
     },
     {
-      "issueId": "RS-MONI-015",
+      "issueId": "RS-NDVI-004",
       "module": "Remote Sensing",
-      "featureArea": "Monitor",
-      "component": "Filtering",
+      "featureArea": "NDVI+",
+      "component": "Filter Logic & Naming Standardization",
+      "issueType": "Data Consistency",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "In QA",
+      "description": "In the NDVI Detailed Data by Parcel section, the Region and Quadrant filters are not applied correctly, as the data does not update according to the selected values. Additionally, there is inconsistency in the naming conventions across countries, which may lead to confusion and affect filtering and data interpretation. For example, in Amajac, IPSA, EMSA, values such as REGION_01, REGION1, REGION2, REGION_02 are displayed; in Pantaleon, REGION OESTE, REGION CENTRAL, REGION1, REGION_01; and in Monte Rosa, ZONA 1, PR, REGION7, REGION_07, among others.",
+      "progress": 100,
+      "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Web",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Ana Mendoza"
+    },
+    {
+      "issueId": "RS-GEN-019",
+      "module": "Remote Sensing",
+      "featureArea": "All Maps",
+      "component": "Map PDF Export",
       "issueType": "Usability",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 2,
-      "severity": "Medium",
+      "priority": 1,
+      "severity": "Critical",
       "status": "Open",
-      "description": "Add interactivity or a filter to the map to visualize the area by state type (critical, low, medium, good, and optimal)",
+      "description": "When exporting the map to PDF, the content appears misaligned and compressed at the top of the document, leaving a large blank space at the bottom. The map's centering and scale need to be adjusted so that it correctly fills the available area in the PDF layout. Normalize the categories by country (send the list of distinct values ​​first and we will send the normalization for the historical data), but ensure that the zafra feild is used in the join.",
       "progress": 0,
-      "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Web",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Evelin Quevedo"
+    },
+    {
+      "issueId": "RS-GEN-022",
+      "module": "All sections",
+      "featureArea": "All sections",
+      "component": "KPIs, Maps, Graphics, and Tables",
+      "issueType": "Visual Consistency",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "High",
+      "status": "Open",
+      "description": "Currently, numerical values ​​in the platform's various modules (KPIs, tables, charts) are displayed with an inconsistent number of decimal places. This creates visual confusion and can hinder quick data comparison. A single rule for decimal display needs to be defined and applied.\r\n\r\nRule Specification:\r\nAll numerical values ​​on the platform representing metrics, averages, percentages, or measurements must be displayed with two (2) decimal places, taking into account the following considerations:\r\n\r\nGeneral Application: This rule applies to:\r\nValues ​​in KPIs and summary cards.\r\nNumbers within tables.\r\nData labels and axes in charts.\r\nInformation displayed in tooltips and pop-up windows (maps, charts, etc.).\r\nNumerical data in exports (CSV, Excel), where applicable.\r\n\r\nZero Padding: Whole numbers or numbers with only one decimal place must be padded with zeros to maintain two decimal places. This ensures alignment and visual consistency in tables.\r\n\r\nExceptions: Values ​​that by their nature are always whole numbers (e.g., number of farms, number of lots, number of inspections) must be displayed without decimals.",
+      "progress": 0,
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Web",
       "tracking": "Capacitación PSH",
@@ -707,77 +745,39 @@
       "issueId": "EX-GEN-018",
       "module": "Explore",
       "featureArea": "All Sections",
-      "component": "Filtering",
-      "issueType": "Usability",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "Medium",
-      "status": "Open",
-      "description": "Add to the filters one by farm name, another by parcel code and ownership (under administration and producers)",
-      "progress": 0,
-      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
-    },
-    {
-      "issueId": "EX-GEN-018",
-      "module": "Explore",
-      "featureArea": "All Maps",
-      "component": "Detail of the polygon",
-      "issueType": "Usability",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 2,
-      "severity": "Medium",
-      "status": "Open",
-      "description": "The plot description displays information from the master plot (variety, area, start date, productivity, average of the visualized index)",
-      "progress": 0,
-      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
-    },
-    {
-      "issueId": "EX-GEN-018",
-      "module": "Explore",
-      "featureArea": "All Sections",
       "component": "Visualization of the polygon",
       "issueType": "Data Accuracy",
       "issueGroup": "Issues and Bugs",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "Not all polygon boundaries are visible on the map (all boundaries are visible within the web portal).",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Movil",
       "tracking": "Capacitación PSH",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "EX-GEN-019",
-      "module": "Explore",
-      "featureArea": "All Sections",
-      "component": "Detailed legend and product",
-      "issueType": "Usability",
+      "issueId": "RS-GEN-010",
+      "module": "Remote Sensing",
+      "featureArea": "All Maps",
+      "component": "Pixel Masking",
+      "issueType": "Data Consistency",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Low",
-      "status": "Open",
-      "description": "An icon is desired within the legend that describes the product viewed and expands on the description of each color.",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "Done",
+      "description": "Pixel overlap between adjacent polygons has been observed. Although a buffer is applied to constrain the analysis area, this clipping is not consistently reflected across all areas. As a result, pixels from neighboring polygons are included in certain cases, leading to inaccuracies in the calculated values.",
       "progress": 100,
-      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "Web",
+      "tracking": "Testing de validación",
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "EX-GEN-027",
@@ -788,14 +788,14 @@
       "issueGroup": "Issues and Bugs",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "In Amajac, IPSA, EMSA, not all parcel boundaries are fully visible on the map, as only approximately 5,000 parcels are displayed, while the total number of parcels exceeds this limit. This restriction limits proper spatial interpretation and field-level analysis.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
       "platform": "Movil",
       "tracking": "Capacitación PSH",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -837,39 +837,39 @@
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "RS-SGI-001",
+      "issueId": "RS-WD-006",
       "module": "Remote Sensing",
-      "featureArea": "Smart Growth Index",
-      "component": "Layer Styling / Visual Contrast",
-      "issueType": "Usability",
+      "featureArea": "Weed Detection",
+      "component": "KPIs, Maps, Graphics, and Tables",
+      "issueType": "Usability Improvement",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Medium",
+      "priority": 1,
+      "severity": "High",
       "status": "Open",
-      "description": "Parcel boundaries are difficult to distinguish due to the similarity in color tones between the parcel outlines and the TIFF layer. This lack of visual contrast causes the boundaries to blend with the underlying imagery, making it challenging to clearly identify parcel limits during analysis.",
-      "progress": 0,
-      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
-    },
-    {
-      "issueId": "EX-GEN-020",
-      "module": "Explore",
-      "featureArea": "All Maps",
-      "component": "Legend widget",
-      "issueType": "UI Improvement",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Low",
-      "status": "Open",
-      "description": "Add an interactive information icon (i or ?) exclusively to the map legend widget within the mobile app. Tapping it will open a pop-up window or text box with a detailed explanation of the displayed symbols.\r\n\r\nExpected behavior:\r\nThe icon should be visible next to the legend title or in a corner of the legend.\r\nTapping it will display a clear description. For example, on a potential map, it would explain the meaning of \"High,\" \"Medium,\" and \"Low\" in terms of crop development.\r\nThe text should be concise and easy to read on mobile device screens.",
+      "description": "Currently, the platform exhibits inconsistent behavior when filtering by terrain.\r\nWith weed data (Image 1): When selecting a terrain with a recorded weed percentage, all KPIs, charts, and tables are displayed correctly.\r\nWithout weed data (Image 2): When selecting a terrain with a weed percentage of 0 or where data is missing, the visual components of the dashboard (KPIs, charts, and tables) disappear completely. This gives the false impression that the page has crashed or that there is no data, when in reality the basic terrain information is available.\r\n\r\nRequirement and expected behavior:\r\nTo ensure consistency and clarity of information, the platform should behave as follows, regardless of the weed percentage value:\r\n\r\nDisplay weed metrics as zero:\r\nAny KPI, chart, or table that directly measures the \"% of weeds\" should not disappear. Instead, it should explicitly display the value as 0%. This confirms to the user that the data has been processed and that the result is zero.\r\n\r\nKeep general KPIs visible:\r\nKPIs and components that depend on general field information, such as area, lot name, date, etc., should always remain visible. This data is independent of weed percentage and should not be hidden by any filter of this type.",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
-      "platform": "Movil",
+      "platform": "Web",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Evelin Quevedo"
+    },
+    {
+      "issueId": "ST-HOME-002",
+      "module": "Stomata-Home",
+      "featureArea": "Home",
+      "component": "KPIs, Maps, Graphics, and Tables",
+      "issueType": "Restructuring",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "High",
+      "status": "Open",
+      "description": "Two completely independent and dedicated analytics dashboards must be created in a dedicated section, such as NDVI+ and Hydro+. Each dashboard will have subsections for Inspections and Tasks. Each dashboard must have its own relevant KPIs, charts, and tables.\r\n\r\nInspections Dashboard:\r\nAccess: This dashboard will be accessed from the \"Inspections\" section.\r\nContent: It should only display metrics and visualizations related to the data collected during inspections.\r\n\r\nTasks Dashboard:\r\nAccess: This dashboard will be accessed from the \"Tasks\" section.\r\n\r\nContent: It should only display metrics and visualizations related to the execution and progress of agricultural tasks.",
+      "progress": 0,
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Web",
       "tracking": "Capacitación PSH",
       "approval": false,
       "requester": "Evelin Quevedo"
@@ -913,6 +913,63 @@
       "requester": "Evelin Quevedo"
     },
     {
+      "issueId": "EX-GEN-018",
+      "module": "Explore",
+      "featureArea": "All Maps",
+      "component": "Detail of the polygon",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Open",
+      "description": "The plot description displays information from the master plot (variety, area, start date, productivity, average of the visualized index)",
+      "progress": 0,
+      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Movil",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Ana Mendoza"
+    },
+    {
+      "issueId": "GEOIA-CMM-015",
+      "module": "GEOIA Models",
+      "featureArea": "Cane Moisture Model",
+      "component": "Country Context Mapping",
+      "issueType": "Data Consistency",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Open",
+      "description": "In Monte Rosa, when downloading the moisture TIFF in  the API, the output incorrectly references GT instead of NI. For example: \"https://s..com/cogs-bucket/cogs/GT_Grupo_Pantaleon_Humedad_2026-03-26_cog.tif\"",
+      "progress": 0,
+      "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "API",
+      "tracking": "Testing de validación",
+      "approval": false,
+      "requester": "Ana Mendoza"
+    },
+    {
+      "issueId": "RS-MONI-015",
+      "module": "Remote Sensing",
+      "featureArea": "Monitor",
+      "component": "Filtering",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Open",
+      "description": "Add interactivity or a filter to the map to visualize the area by state type (critical, low, medium, good, and optimal)",
+      "progress": 0,
+      "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Web",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Evelin Quevedo"
+    },
+    {
       "issueId": "RS-GEN-018",
       "module": "Remote Sensing",
       "featureArea": "NDVI +",
@@ -923,25 +980,6 @@
       "severity": "Medium",
       "status": "Open",
       "description": "It is necessary to change the write-type filters to list-type filters in the detailed data section by parcel, since the filters applied in the header do not affect or work correctly on this detailed view.",
-      "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
-    },
-    {
-      "issueId": "RS-GEN-019",
-      "module": "Remote Sensing",
-      "featureArea": "All Maps",
-      "component": "Map PDF Export",
-      "issueType": "Usability",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "Critical",
-      "status": "Open",
-      "description": "When exporting the map to PDF, the content appears misaligned and compressed at the top of the document, leaving a large blank space at the bottom. The map's centering and scale need to be adjusted so that it correctly fills the available area in the PDF layout.",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
@@ -1008,44 +1046,6 @@
       "requester": "Evelin Quevedo"
     },
     {
-      "issueId": "RS-GEN-022",
-      "module": "All sections",
-      "featureArea": "All sections",
-      "component": "KPIs, Maps, Graphics, and Tables",
-      "issueType": "Visual Consistency",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "High",
-      "status": "Open",
-      "description": "Currently, numerical values ​​in the platform's various modules (KPIs, tables, charts) are displayed with an inconsistent number of decimal places. This creates visual confusion and can hinder quick data comparison. A single rule for decimal display needs to be defined and applied.\r\n\r\nRule Specification:\r\nAll numerical values ​​on the platform representing metrics, averages, percentages, or measurements must be displayed with two (2) decimal places, taking into account the following considerations:\r\n\r\nGeneral Application: This rule applies to:\r\nValues ​​in KPIs and summary cards.\r\nNumbers within tables.\r\nData labels and axes in charts.\r\nInformation displayed in tooltips and pop-up windows (maps, charts, etc.).\r\nNumerical data in exports (CSV, Excel), where applicable.\r\n\r\nZero Padding: Whole numbers or numbers with only one decimal place must be padded with zeros to maintain two decimal places. This ensures alignment and visual consistency in tables.\r\n\r\nExceptions: Values ​​that by their nature are always whole numbers (e.g., number of farms, number of lots, number of inspections) must be displayed without decimals.",
-      "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
-    },
-    {
-      "issueId": "RS-SGI-001",
-      "module": "Remote Sensing",
-      "featureArea": "Smart Growth Index",
-      "component": "Monitor Map",
-      "issueType": "Visual Consistency",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Medium",
-      "status": "Open",
-      "description": "The Plot Map - Smart Growth Index of PANTALEON, MONTE ROSA, IPSA, EMSA and AMAJAC are not being affected by the header filter in time, it shows a delay in displaying the result.",
-      "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
-    },
-    {
       "issueId": "RS-SGI-002",
       "module": "Remote Sensing",
       "featureArea": "Smart Growth Index",
@@ -1056,44 +1056,6 @@
       "severity": "Critical",
       "status": "Open",
       "description": "Unify the display structure of the SG module maps to ensure consistent functionality and performance. The unified map should display and function similarly to the NDVI and Potential maps. Currently, the Smart Growth Index map zooms out when the date changes, while the SG map with variability remains static on the selected plot (this modification has been requested for all maps).",
-      "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
-    },
-    {
-      "issueId": "RS-SGI-003",
-      "module": "Remote Sensing",
-      "featureArea": "Smart Growth Index",
-      "component": "Monitor Map",
-      "issueType": "UI Improvement",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Critical",
-      "status": "Open",
-      "description": "Update the symbology used in the Plot Map - Smart Growth Index to improve the visual interpretation of the data. Change it to the calculated field of growth index levels or improvement status.",
-      "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
-    },
-    {
-      "issueId": "RS-WD-006",
-      "module": "Remote Sensing",
-      "featureArea": "Weed Detection",
-      "component": "KPIs, Maps, Graphics, and Tables",
-      "issueType": "Usability Improvement",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "High",
-      "status": "Open",
-      "description": "Currently, the platform exhibits inconsistent behavior when filtering by terrain.\r\nWith weed data (Image 1): When selecting a terrain with a recorded weed percentage, all KPIs, charts, and tables are displayed correctly.\r\nWithout weed data (Image 2): When selecting a terrain with a weed percentage of 0 or where data is missing, the visual components of the dashboard (KPIs, charts, and tables) disappear completely. This gives the false impression that the page has crashed or that there is no data, when in reality the basic terrain information is available.\r\n\r\nRequirement and expected behavior:\r\nTo ensure consistency and clarity of information, the platform should behave as follows, regardless of the weed percentage value:\r\n\r\nDisplay weed metrics as zero:\r\nAny KPI, chart, or table that directly measures the \"% of weeds\" should not disappear. Instead, it should explicitly display the value as 0%. This confirms to the user that the data has been processed and that the result is zero.\r\n\r\nKeep general KPIs visible:\r\nKPIs and components that depend on general field information, such as area, lot name, date, etc., should always remain visible. This data is independent of weed percentage and should not be hidden by any filter of this type.",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
@@ -1122,23 +1084,61 @@
       "requester": "Evelin Quevedo"
     },
     {
-      "issueId": "ST-HOME-002",
-      "module": "Stomata-Home",
-      "featureArea": "Home",
-      "component": "KPIs, Maps, Graphics, and Tables",
-      "issueType": "Restructuring",
+      "issueId": "RS-SGI-001",
+      "module": "Remote Sensing",
+      "featureArea": "Smart Growth Index",
+      "component": "Layer Styling / Visual Contrast",
+      "issueType": "Usability",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "High",
+      "priority": 3,
+      "severity": "Medium",
       "status": "Open",
-      "description": "Two completely separate and dedicated analytics dashboards must be created: one for Inspections and one for Tasks. Each dashboard should have its own KPIs, charts, and relevant tables, eliminating the current combination.\r\n\r\nInspections Dashboard:\r\nAccess: This dashboard will be accessed from the \"Inspections\" section.\r\nContent: It should only display metrics and visualizations related to the data collected during inspections.\r\n\r\nTasks Dashboard:\r\nAccess: This dashboard will be accessed from the \"Tasks\" section.\r\nContent: It should only display metrics and visualizations related to the execution and progress of agricultural tasks.",
+      "description": "Parcel boundaries are difficult to distinguish due to the similarity in color tones between the parcel outlines and the TIFF layer. This lack of visual contrast causes the boundaries to blend with the underlying imagery, making it challenging to clearly identify parcel limits during analysis.",
       "progress": 0,
-      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "Movil",
+      "tracking": "Capacitación PSH",
+      "approval": false,
+      "requester": "Ana Mendoza"
+    },
+    {
+      "issueId": "EX-GEN-024",
+      "module": "Remote Sensing",
+      "featureArea": "Models (All)",
+      "component": "Data Visualization",
+      "issueType": "Enhancement",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 3,
+      "severity": "Medium",
+      "status": "Open",
+      "description": "Distribution charts for products are currently displayed at the operational zone level; however, it is required to update the visualization to the region level instead.",
+      "progress": 0,
+      "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Web",
       "tracking": "Capacitación PSH",
       "approval": false,
-      "requester": "Evelin Quevedo"
+      "requester": "Ana Mendoza"
+    },
+    {
+      "issueId": "RS-HYD-006",
+      "module": "Remote Sensing",
+      "featureArea": "Hydro",
+      "component": "Range Distribution",
+      "issueType": "UI/UX",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 3,
+      "severity": "Medium",
+      "status": "In QA",
+      "description": "The range distribution may be incorrect, or the legend color mapping is wrong. Verify bins and ensure legend colors match the map/chart.",
+      "progress": 100,
+      "dateReported": "30/12/2025",
+      "reference": "",
+      "platform": "Web",
+      "tracking": "Testing de validación",
+      "approval": false,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "EX-GEN-022",
@@ -1198,23 +1198,23 @@
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "EX-GEN-024",
-      "module": "Remote Sensing",
-      "featureArea": "Models (All)",
-      "component": "Data Visualization",
-      "issueType": "Enhancement",
+      "issueId": "EX-GEN-019",
+      "module": "Explore",
+      "featureArea": "All Sections",
+      "component": "Detailed legend and product",
+      "issueType": "Usability",
       "issueGroup": "Current Feature Enhancement",
       "priority": 3,
-      "severity": "Medium",
-      "status": "Open",
-      "description": "Distribution charts for products are currently displayed at the operational zone level; however, it is required to update the visualization to the region level instead.",
-      "progress": 0,
-      "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "severity": "Low",
+      "status": "In QA",
+      "description": "An icon is desired within the legend that describes the product viewed and expands on the description of each color.",
+      "progress": 100,
+      "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
-      "platform": "Web",
+      "platform": "Movil",
       "tracking": "Capacitación PSH",
       "approval": false,
-      "requester": "Ana Mendoza"
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "EX-GEN-025",
@@ -1244,14 +1244,14 @@
       "issueGroup": "Issues and Bugs",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "The soil moisture variable used in the Growth Index (SG) should be corrected by aligning it with the NDWI-derived moisture values, ensuring consistency between indices and improving the accuracy of the growth analysis.",
       "progress": 100,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Web",
       "tracking": "Capacitación PSH",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -1350,23 +1350,23 @@
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "EX-GEN-025",
+      "issueId": "EX-GEN-020",
       "module": "Explore",
-      "featureArea": "Inspection",
-      "component": "UI Layout / Responsive Design",
-      "issueType": "Usability",
+      "featureArea": "All Maps",
+      "component": "Legend widget",
+      "issueType": "UI Improvement",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 2,
-      "severity": "Critical",
+      "priority": 3,
+      "severity": "Low",
       "status": "Open",
-      "description": "In the mobile application, within the Inspection section, the interface does not properly adjust to the screen size. As a result, action buttons such as “Apply Changes” are partially hidden or overlapped, preventing users from interacting with them and completing the process.",
-      "progress": 100,
-      "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "description": "Add an interactive information icon (i or ?) exclusively to the map legend widget within the mobile app. Tapping it will open a pop-up window or text box with a detailed explanation of the displayed symbols.\r\n\r\nExpected behavior:\r\nThe icon should be visible next to the legend title or in a corner of the legend.\r\nTapping it will display a clear description. For example, on a potential map, it would explain the meaning of \"High,\" \"Medium,\" and \"Low\" in terms of crop development.\r\nThe text should be concise and easy to read on mobile device screens.",
+      "progress": 0,
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": "",
       "platform": "Movil",
       "tracking": "Capacitación PSH",
       "approval": false,
-      "requester": "Ana Mendoza"
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "EX-GEN-026",
@@ -1384,7 +1384,7 @@
       "reference": "",
       "platform": "Movil",
       "tracking": "Capacitación PSH",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -1426,21 +1426,21 @@
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "RS-NDVI-004",
+      "issueId": "RS-WD-001",
       "module": "Remote Sensing",
-      "featureArea": "NDVI+",
-      "component": "Filter Logic & Naming Standardization",
-      "issueType": "Data Consistency",
-      "issueGroup": "Current Feature Enhancement",
-      "priority": 1,
-      "severity": "Critical",
-      "status": "Open",
-      "description": "In the NDVI Detailed Data by Parcel section, the Region and Quadrant filters are not applied correctly, as the data does not update according to the selected values. Additionally, there is inconsistency in the naming conventions across countries, which may lead to confusion and affect filtering and data interpretation. For example, in Amajac, IPSA, EMSA, values such as REGION_01, REGION1, REGION2, REGION_02 are displayed; in Pantaleon, REGION OESTE, REGION CENTRAL, REGION1, REGION_01; and in Monte Rosa, ZONA 1, PR, REGION7, REGION_07, among others.",
+      "featureArea": "Weed Detection",
+      "component": "Map PDF Export",
+      "issueType": "Bug",
+      "issueGroup": "Issues and Bugs",
+      "priority": 2,
+      "severity": "High",
+      "status": "In QA",
+      "description": "The downloaded PDF generated from the map is not georeferenced",
       "progress": 100,
-      "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "dateReported": "30/12/2025",
       "reference": "",
       "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "tracking": "Testing de validación",
       "approval": false,
       "requester": "Ana Mendoza"
     },
@@ -1464,23 +1464,23 @@
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "GEOIA-CMM-015",
-      "module": "GEOIA Models",
-      "featureArea": "Cane Moisture Model",
-      "component": "Country Context Mapping",
-      "issueType": "Data Consistency",
+      "issueId": "RS-SGI-001",
+      "module": "Remote Sensing",
+      "featureArea": "Smart Growth Index",
+      "component": "Monitor Map",
+      "issueType": "Visual Consistency",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 2,
+      "priority": 3,
       "severity": "Medium",
       "status": "Open",
-      "description": "In Monte Rosa, when downloading the moisture TIFF in  the API, the output incorrectly references GT instead of NI. For example: \"https://s..com/cogs-bucket/cogs/GT_Grupo_Pantaleon_Humedad_2026-03-26_cog.tif\"",
+      "description": "The Plot Map - Smart Growth Index of PANTALEON, MONTE ROSA, IPSA, EMSA and AMAJAC are not being affected by the header filter in time, it shows a delay in displaying the result.",
       "progress": 0,
-      "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "API",
-      "tracking": "Testing de validación",
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
+      "platform": "Web",
+      "tracking": "Capacitación PSH",
       "approval": false,
-      "requester": "Ana Mendoza"
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-GEN-023",
@@ -1517,8 +1517,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-002",
@@ -1536,8 +1536,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-003",
@@ -1555,8 +1555,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-004",
@@ -1574,8 +1574,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-005",
@@ -1593,8 +1593,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-006",
@@ -1612,8 +1612,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-007",
@@ -1631,8 +1631,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-008",
@@ -1650,8 +1650,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-009",
@@ -1669,8 +1669,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-010",
@@ -1688,8 +1688,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-011",
@@ -1707,8 +1707,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-012",
@@ -1726,8 +1726,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "RS-MONI-015",
@@ -1742,7 +1742,7 @@
       "description": "In the Growth Monitor (SG), selecting a specific Farm does not correctly apply the expected filters to the Growth Index Distribution, Areas with Deficient Index by Cycle, Areas with Deficient Index by Phenological Stage, and Areas by Improvement Status per Stage sections. Instead of updating to display data corresponding to the selected farm, these components return no data, indicating that the filter context is not being properly applied across the dashboard.",
       "progress": 100,
       "dateReported": "26/2/2026",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": true,
@@ -1761,30 +1761,30 @@
       "description": "In the NDVI Monitor, selecting a specific Farm (Finca) does not properly filter the NDVI Detailed Data by Parcel section. Instead of displaying only the parcels associated with the selected farm, all parcels remain visible, indicating that the filter is not being applied correctly to the detailed data view.",
       "progress": 100,
       "dateReported": "26/2/2026",
-      "reference": "",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
-      "issueId": "GEOIA-CMM-014",
-      "module": "GEOIA Models",
-      "featureArea": "Cane Moisture Model",
-      "component": "Results Analysis (All Maps)",
-      "issueType": "Enhancement",
+      "issueId": "RS-SGI-003",
+      "module": "Remote Sensing",
+      "featureArea": "Smart Growth Index",
+      "component": "Monitor Map",
+      "issueType": "UI Improvement",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 4,
-      "severity": "Medium",
+      "priority": 3,
+      "severity": "Critical",
       "status": "Open",
-      "description": "Add the option in the filters to search by farm and parcel ID.",
+      "description": "Update the symbology used in the Plot Map - Smart Growth Index to improve the visual interpretation of the data. Change it to the calculated field of growth index levels or improvement status.",
       "progress": 0,
-      "dateReported": "30/03/2026",
-      "reference": null,
+      "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "",
       "platform": "Web",
-      "tracking": "Testing  Validation",
+      "tracking": "Capacitación PSH",
       "approval": false,
-      "requester": "Nestor Duarte"
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-001",
@@ -1802,8 +1802,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-002",
@@ -1821,8 +1821,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-003",
@@ -1840,8 +1840,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-004",
@@ -1859,8 +1859,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Evelin Quevedo"
     },
     {
       "issueId": "GEOIA-CMM-005",
@@ -1878,8 +1878,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-006",
@@ -1897,8 +1897,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-007",
@@ -1916,8 +1916,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-008",
@@ -1935,8 +1935,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-009",
@@ -1954,8 +1954,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-010",
@@ -1973,8 +1973,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-CMM-011",
@@ -1992,8 +1992,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-001",
@@ -2011,8 +2011,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-002",
@@ -2030,8 +2030,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-003",
@@ -2049,8 +2049,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-004",
@@ -2068,8 +2068,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-005",
@@ -2087,8 +2087,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "GEOIA-HOME-006",
@@ -2106,8 +2106,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-GEN-001",
@@ -2125,8 +2125,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-GEN-002",
@@ -2144,8 +2144,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-001",
@@ -2163,8 +2163,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-002",
@@ -2182,8 +2182,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-003",
@@ -2201,8 +2201,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-004",
@@ -2220,8 +2220,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-005",
@@ -2239,27 +2239,27 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
-      "issueId": "RS-HYD-006",
+      "issueId": "RS-MONI-014",
       "module": "Remote Sensing",
-      "featureArea": "Hydro",
-      "component": "Range Distribution",
-      "issueType": "UI/UX",
+      "featureArea": "Monitor",
+      "component": "Category Sorting / Value Formatting",
+      "issueType": "Data Consistency",
       "issueGroup": "Current Feature Enhancement",
-      "priority": 3,
-      "severity": "Medium",
-      "status": "Done",
-      "description": "The range distribution may be incorrect, or the legend color mapping is wrong. Verify bins and ensure legend colors match the map/chart.",
+      "priority": 4,
+      "severity": "Low",
+      "status": "In QA",
+      "description": "In the Areas with Deficient Index by Cycle chart (hectares with deficient index per crop cycle) for SG, the cycle values are displayed inconsistently. Numeric values appear duplicated as both integers and decimals (e.g., 6 and 6.0, 7 and 7.0). Additionally, the cycle categories are not ordered numerically; instead, they follow a lexicographical order (e.g., 1, 10, 11, 12, 13, 2), which affects correct interpretation of the data distribution.",
       "progress": 100,
-      "dateReported": "30/12/2025",
-      "reference": "",
+      "dateReported": "Mon Feb 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
       "platform": "Web",
       "tracking": "Testing de validación",
       "approval": false,
-      "requester": "Erik Alonzo"
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-007",
@@ -2277,8 +2277,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-HYD-008",
@@ -2296,8 +2296,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-NDVI-002",
@@ -2315,27 +2315,27 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
-      "issueId": "RS-WD-001",
-      "module": "Remote Sensing",
-      "featureArea": "Weed Detection",
-      "component": "Map PDF Export",
-      "issueType": "Bug",
-      "issueGroup": "Issues and Bugs",
-      "priority": 2,
-      "severity": "High",
-      "status": "Done",
-      "description": "The downloaded PDF generated from the map is not georeferenced",
-      "progress": 100,
-      "dateReported": "30/12/2025",
-      "reference": "",
+      "issueId": "GEOIA-CMM-014",
+      "module": "GEOIA Models",
+      "featureArea": "Cane Moisture Model",
+      "component": "Results Analysis (All Maps)",
+      "issueType": "Enhancement",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 4,
+      "severity": "Medium",
+      "status": "Open",
+      "description": "Add the option in the filters to search by farm (division_01) and id_parcela.",
+      "progress": 0,
+      "dateReported": "30/03/2026",
+      "reference": null,
       "platform": "Web",
-      "tracking": "Testing de validación",
+      "tracking": "Testing  Validation",
       "approval": false,
-      "requester": "Erik Alonzo"
+      "requester": "Nestor Duarte"
     },
     {
       "issueId": "RS-WD-002",
@@ -2353,8 +2353,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-WD-003",
@@ -2372,8 +2372,8 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     },
     {
       "issueId": "RS-WD-004",
@@ -2391,10 +2391,10 @@
       "reference": "",
       "platform": "Web",
       "tracking": "Testing de validación",
-      "approval": false,
-      "requester": "Erik Alonzo"
+      "approval": true,
+      "requester": "Ana Mendoza"
     }
   ],
-  "lastFetched": "2026-04-05T02:54:30.311Z",
-  "snapshotDate": "2026-04-05T02:54:30.316Z"
+  "lastFetched": "2026-04-12T03:19:16.034Z",
+  "snapshotDate": "2026-04-12T03:19:16.039Z"
 }
