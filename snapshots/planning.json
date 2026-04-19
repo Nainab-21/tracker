@@ -41,7 +41,7 @@
       "description": "CA model validation with new samples and average MX model",
       "team": "AI Team + Product",
       "startDate": "2026-03-10",
-      "endDate": "2026-04-15",
+      "endDate": "2026-04-25",
       "days": 36,
       "progress": 85,
       "status": "In Progress",
@@ -59,8 +59,8 @@
       "startDate": "2026-03-10",
       "endDate": "2026-04-10",
       "days": 24,
-      "progress": 85,
-      "status": "Delayed",
+      "progress": 100,
+      "status": "Completed",
       "notes": null,
       "updated": "17/03/2026"
     },
@@ -76,7 +76,7 @@
       "endDate": "2026-04-17",
       "days": 11,
       "progress": 10,
-      "status": "In Progress",
+      "status": "Delayed",
       "notes": null,
       "updated": "17/03/2026"
     },
@@ -92,7 +92,7 @@
       "endDate": "2026-04-17",
       "days": 11,
       "progress": 40,
-      "status": "In Progress",
+      "status": "Delayed",
       "notes": null,
       "updated": "17/03/2026"
     },
@@ -105,7 +105,7 @@
       "description": "Migrar los clientes de TA al nuevo portal con todos los",
       "team": "AI Team",
       "startDate": "2026-04-01",
-      "endDate": "2026-04-15",
+      "endDate": "2026-04-25",
       "days": 14,
       "progress": 0,
       "status": "Pending",
@@ -121,7 +121,7 @@
       "description": "Migrate TA client models to the new environment",
       "team": "AI Team",
       "startDate": "2026-04-01",
-      "endDate": "2026-04-15",
+      "endDate": "2026-04-25",
       "days": 19,
       "progress": 0,
       "status": "Pending",
@@ -153,10 +153,10 @@
       "description": "Additional Feature Requests and Enhancements",
       "team": "Product",
       "startDate": "2026-03-17",
-      "endDate": "2026-04-10",
+      "endDate": "2026-04-20",
       "days": 8,
       "progress": 80,
-      "status": "Delayed",
+      "status": "In Progress",
       "notes": null,
       "updated": "17/03/2026"
     },
@@ -185,10 +185,10 @@
       "description": "Integration of existing models into the enterprise mobility workflow",
       "team": "AI Team",
       "startDate": "2026-03-17",
-      "endDate": "2026-04-10",
+      "endDate": "2026-04-20",
       "days": 25,
       "progress": 0,
-      "status": "Delayed",
+      "status": "In Progress",
       "notes": null,
       "updated": "17/03/2026"
     },
@@ -721,6 +721,6 @@
       "updated": "17/03/2026"
     }
   ],
-  "lastFetched": "2026-04-12T03:19:10.802Z",
-  "snapshotDate": "2026-04-12T03:19:16.039Z"
+  "lastFetched": "2026-04-19T03:24:03.974Z",
+  "snapshotDate": "2026-04-19T03:24:08.203Z"
 }
