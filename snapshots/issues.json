@@ -9,14 +9,14 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "In the dashboard, the distribution charts lack interactivity, which prevents users from viewing the full names of all distribution categories. Several labels are truncated and cannot be expanded or accessed through interaction (e.g., hover or click), limiting the ability to fully interpret the distribution details. new filter button of Región (division_02), Finca (division_01)",
-      "progress": 80,
+      "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
       "platform": "Movil",
       "tracking": "Testing  Validation",
-      "approval": false,
+      "approval": true,
       "requester": "Ana Mendoza"
     },
     {
@@ -1320,9 +1320,9 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "The platform currently does not support an in-platform split-screen or side-by-side view for comparing NDVI+, NDVI Potential, or other derived products within the same workspace.",
-      "progress": 95,
+      "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
       "platform": "Web",
@@ -1719,7 +1719,7 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Medium",
-      "status": "In QA",
+      "status": "Done",
       "description": "Persist the zoom level on all maps when making product changes in the remote sensing module, in order to maintain continuity in the visualization of the area of ​​interest.",
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -2908,6 +2908,6 @@
       "requester": "Ana Mendoza"
     }
   ],
-  "lastFetched": "2026-05-10T03:43:44.335Z",
-  "snapshotDate": "2026-05-10T03:43:44.345Z"
+  "lastFetched": "2026-05-17T03:53:46.759Z",
+  "snapshotDate": "2026-05-17T03:53:46.769Z"
 }
