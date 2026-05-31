@@ -959,9 +959,9 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "In Monte Rosa, when downloading the moisture TIFF in  the API, the output incorrectly references GT instead of NI. For example: \"https://s..com/cogs-bucket/cogs/GT_Grupo_Pantaleon_Humedad_2026-03-26_cog.tif\"",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
       "platform": "API",
@@ -1035,7 +1035,7 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "Filters for the moisture model\r\nThe same filters currently available in the remote sensing module should also be applied to the moisture model, in order to maintain functional consistency and improve usability for end users.",
       "progress": 0,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -1586,7 +1586,7 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Low",
-      "status": "Open",
+      "status": "Done",
       "description": "The current filename generated for TIFF image downloads is too long, making them difficult to manage and organize. A new naming convention needs to be implemented that is short, consistent, and contains only the essential information.\r\n\r\nThe new filename structure should be as follows:\r\n\r\n[Site Code]_[Product]_[Date].tif",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -2821,7 +2821,7 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "In Progress",
       "description": "Calculate and model the optimal curve within the SGI, with the objective of establishing a reference behavior that allows comparing and evaluating the performance of the analyzed data.",
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -2859,7 +2859,7 @@
       "issueGroup": "Issues and Bugs",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "Within the map visualization, the TIFF imagery presents patchy spatial coverage within the same parcel, where areas of valid data are interspersed with gaps lacking coverage.",
       "progress": 0,
       "dateReported": "Mon Apr 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -2908,6 +2908,6 @@
       "requester": "Ana Mendoza"
     }
   ],
-  "lastFetched": "2026-05-24T04:02:56.512Z",
-  "snapshotDate": "2026-05-24T04:02:56.522Z"
+  "lastFetched": "2026-05-31T04:16:05.795Z",
+  "snapshotDate": "2026-05-31T04:16:05.806Z"
 }
