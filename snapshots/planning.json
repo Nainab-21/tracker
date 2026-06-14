@@ -390,7 +390,7 @@
       "project": "AI Models – Pol|Maturation|TCH|Cane",
       "category": "AI Models",
       "task": "TCH Model Training (Tons of Cane/Ha)",
-      "description": "TCH yield prediction (Tons of Cane per Hectare)",
+      "description": "TCH Ripener",
       "team": "Data Science",
       "startDate": "2026-15-05",
       "endDate": "2026-07-15",
@@ -801,6 +801,6 @@
       "updated": "17/03/2026"
     }
   ],
-  "lastFetched": "2026-06-07T04:20:50.062Z",
-  "snapshotDate": "2026-06-07T04:20:56.272Z"
+  "lastFetched": "2026-06-14T04:40:27.585Z",
+  "snapshotDate": "2026-06-14T04:40:32.305Z"
 }
