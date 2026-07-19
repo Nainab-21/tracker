@@ -14,10 +14,10 @@
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-001",
@@ -32,11 +32,11 @@
       "description": "The selector displays Guatemala; however, when it is selected, no products, analyses, or data are shown on the dashboard.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-002",
@@ -51,11 +51,11 @@
       "description": "Update product names: replace “sg” with “Smart Growth (SG)” and “maleza_temporalidad” with “Malezas” to ensure consistent and user-friendly labeling in the application.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-003",
@@ -70,11 +70,11 @@
       "description": "Images are not being published on time; they are uploaded after the satellite pass.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-004",
@@ -89,11 +89,11 @@
       "description": "The raster clip is not being applied at the Pantaleon level and is missing in some parcels, resulting in imagery being displayed outside the expected boundaries.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-005",
@@ -108,11 +108,11 @@
       "description": "A configuration or detection mechanism must be implemented for users who rely on action buttons, as the current interaction interferes with navigation and prevents them from proceeding.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-006",
@@ -127,11 +127,11 @@
       "description": "The scale-dependent rendering effect that visually enlarges polygons should be removed. At distant zoom levels, entire fields appear highlighted in red and change as the user zooms in, which can cause confusion when viewing the overall map.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-007",
@@ -147,10 +147,10 @@
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-008",
@@ -166,10 +166,10 @@
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-009",
@@ -185,10 +185,10 @@
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-010",
@@ -203,11 +203,11 @@
       "description": "In both the Explore section (map-based product views) and the Dashboard, the active campaign context is not clearly indicated. It is not specified whether the user is interacting with all campaigns, 2026, or 2027, which can lead to ambiguity when interpreting maps, products, and analytical results.",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-011",
@@ -222,11 +222,11 @@
       "description": "When navigating within the product views (e.g., NDVI, Weeds, NDVI Potential, NDWI, NDWI Potential), changing the selected date causes the platform to switch unexpectedly to the SG product. For example, when viewing data for 28/01/2026 and selecting 02/02/2026, the active product changes automatically to SG instead of remaining on the originally selected product",
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-016",
@@ -241,11 +241,11 @@
       "description": "The filter mask shows movement when zooming out or zooming in.",
       "progress": 100,
       "dateReported": "Fri Mar 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "EX-GEN-017",
@@ -260,11 +260,11 @@
       "description": "In the inspections section, insert the point at the user's current position. Additionally, the inspection submission process needs to be corrected, as it currently does not allow submission; it only allows data entry, but the information is neither saved nor sent.",
       "progress": 100,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-013",
@@ -279,11 +279,11 @@
       "description": "Add to the filters one by farm name, another by parcel code and ownership (under administration and producers)- filters division_01 as Finca, division_02 as Region",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-014",
@@ -298,11 +298,11 @@
       "description": "Not all polygon boundaries are visible on the map (all boundaries are visible within the web portal).",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-018",
@@ -317,11 +317,11 @@
       "description": "The plot description displays information from the master plot (variety, area, start date, productivity, average of the visualized index)",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-019",
@@ -336,11 +336,11 @@
       "description": "An icon is desired within the legend that describes the product viewed and expands on the description of each color.",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-020",
@@ -355,11 +355,11 @@
       "description": "Add an interactive information icon (i or ?) exclusively to the map legend widget within the mobile app. Tapping it will open a pop-up window or text box with a detailed explanation of the displayed symbols.\r\n\r\nExpected behavior:\r\nThe icon should be visible next to the legend title or in a corner of the legend.\r\nTapping it will display a clear description. For example, on a potential map, it would explain the meaning of \"High,\" \"Medium,\" and \"Low\" in terms of crop development.\r\nThe text should be concise and easy to read on mobile device screens.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Duplicado",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "Duplicado",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-021",
@@ -374,11 +374,11 @@
       "description": "A list should be implemented that allows the selection of multiple items using checkboxes. When one or more options are selected, the associated data fields (such as \"Dose\" and \"Unit\") should be marked as required. To ensure data integrity, the system should validate that these fields are complete, keeping the action button disabled or displaying an error if an attempt is made to save without the required information. Additionally, the text of the \"Submit Inspection\" button should be changed to \"Submit.\"",
       "progress": 95,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-012",
@@ -393,11 +393,11 @@
       "description": "The SL App should include a measurement tool (“Ruler”) to allow users to measure distances directly within the map interface. Additionally, an “Add Polygon” functionality should be implemented to enable users to draw polygons within the application, similar to the drawing tools available in Google Earth. When creating a polygon, the system should require the identifier field (ABS_IDCOMP / Parcel ID) as a mandatory attribute. The created polygon should also be downloadable from the platform in SHP and KML formats to support further spatial analysis and integration with external GIS tools.",
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "No procede (Movilidad empresarial)",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "",
+      "tracking": "No procede (Movilidad empresarial)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-022",
@@ -412,11 +412,11 @@
       "description": "The Current Weather Conditions section should include additional climate variables such as relative humidity and wind speed to provide a more comprehensive view of environmental conditions. Additionally, when a parcel is selected, the applied filter should also be reflected in the weather data, ensuring that climate information corresponds to the selected parcel context.",
       "progress": 100,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-023",
@@ -431,11 +431,11 @@
       "description": "The platform should include the RGB image alongside the analytical products and display the corresponding cloud coverage percentage (%) for each image, enabling better visual validation of conditions and data quality during analysis.",
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "No procede",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "123",
+      "tracking": "No procede",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-023",
@@ -450,11 +450,11 @@
       "description": "In the mobile application, the location point for inspections should not be editable or movable by the user. The system should only allow capturing the current device location to ensure accuracy and reliability of georeferenced inspection data.",
       "progress": 100,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-015",
@@ -470,10 +470,10 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "123",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-024",
@@ -488,11 +488,11 @@
       "description": "In the Field Operations (Labores) section, the interface should be interactive by displaying polygons that are selectable on the map. Users should be able to select one or multiple polygons and input or update data for all selected features simultaneously, enabling efficient bulk data entry and management.",
       "progress": 0,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "No procede (Movilidad empresarial)",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "",
+      "tracking": "No procede (Movilidad empresarial)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-025",
@@ -508,10 +508,10 @@
       "progress": 100,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-035",
@@ -526,11 +526,11 @@
       "description": "The platform should incorporate ejido-level information for Amajac, EMSA, IPSA, into the database and make it available as a filter, allowing users—particularly supervisors—to filter and analyze data at the ejido level for improved segmentation and operational management.",
       "progress": 80,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "123",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-026",
@@ -545,11 +545,11 @@
       "description": "The soil moisture variable used in the Growth Index (SG) should be corrected by aligning it with the NDWI-derived moisture values, ensuring consistency between indices and improving the accuracy of the growth analysis.",
       "progress": 100,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-026",
@@ -564,11 +564,11 @@
       "description": "In IPSA, a resolution issue has been observed in the generation of map tiles, where the rendered imagery appears pixelated and inconsistent with the expected spatial resolution",
       "progress": 100,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-027",
@@ -584,10 +584,10 @@
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-027",
@@ -602,11 +602,11 @@
       "description": "The platform should include a new irrigation priority product focused on crop management. This product should integrate soil moisture percentage (%) and identify water stress conditions to support irrigation decision-making and optimize field management practices.",
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Prioridad baja (aun no procede)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "123",
+      "tracking": "Prioridad baja (aun no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-028",
@@ -622,10 +622,10 @@
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "ST-HOME-001",
@@ -640,11 +640,11 @@
       "description": "The platform should implement PSH access monitoring, enabling user management by mill (Pantaleon, Monte Rosa, Amajac, IPSA, EMSA) and providing visibility into user sessions, including login activity by user and date, to support tracking, auditing, and usage analysis",
       "progress": 10,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "122",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-029",
@@ -659,11 +659,11 @@
       "description": "The dashboard should display a harvest performance summary at the time of data update, including key indicators such as productivity, number of fields, and hectares harvested (ha).",
       "progress": 0,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Prioridad baja (aun no procede)",
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "121",
+      "tracking": "Prioridad baja (aun no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-WD-001",
@@ -679,10 +679,10 @@
       "progress": 100,
       "dateReported": "Thu Feb 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-001",
@@ -697,11 +697,11 @@
       "description": "R² value in the Performance section does not match the R² shown on the model card in Home. Align calculations/source.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-002",
@@ -716,11 +716,11 @@
       "description": "“Analyzed Samples” KPI is inconsistent (should be ~20k but shows ~4k). Verify counting logic and source.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-003",
@@ -735,11 +735,11 @@
       "description": "Rename selected features to be more user-friendly (e.g., image bands like B2/B3/etc. should display meaningful names).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-004",
@@ -754,11 +754,11 @@
       "description": "Reduce polygon border thickness on the cluster map and hide polygon outlines when zoomed out (match behavior from other maps).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-005",
@@ -773,11 +773,11 @@
       "description": "Reorder cluster priority for harvest decisions based on moisture value (clusters should be ordered by humidity, not current ordering).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-006",
@@ -792,11 +792,11 @@
       "description": "For cluster analysis, add a chart that displays current moisture, previous moisture, and cluster color (cluster-coded series/legend) to support interpretation.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-007",
@@ -811,11 +811,11 @@
       "description": "In “Area by Region”, the bar chart should be segmented (stacked or grouped) by cluster.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-008",
@@ -830,11 +830,11 @@
       "description": "In “Area Under/Over Curve”, region bars must be colored by curve status (under/over/within curve categories).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-009",
@@ -849,11 +849,11 @@
       "description": "In “Criticality by Stage”, region bars must be colored by curve/status category (consistent status coloring across regions).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-010",
@@ -868,11 +868,11 @@
       "description": "Apply consistent parcel polygon border behavior across all maps in Results Analysis (reduce borders and hide outlines when zoomed out).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-011",
@@ -887,11 +887,11 @@
       "description": "For all region bar charts across subsections, display category values on the bars (data labels per region/category).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-012",
@@ -907,10 +907,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-013",
@@ -925,11 +925,11 @@
       "description": "In Monte Rosa, when downloading the moisture TIFF, in the platform, the output incorrectly references GT instead of NI. This indicates an issue with the country or context identification in the export process, which may lead to confusion and incorrect data association.",
       "progress": 100,
       "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "GEOIA-CMM-014",
@@ -945,10 +945,10 @@
       "progress": 100,
       "dateReported": "30/03/2026",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Nestor Duarte"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-015",
@@ -964,10 +964,10 @@
       "progress": 0,
       "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "API",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "117",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-CMM-016",
@@ -983,10 +983,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "GEOIA-CMM-017",
@@ -1002,10 +1002,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "GEOIA-CMM-018",
@@ -1021,10 +1021,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "GEOIA-CMM-019",
@@ -1039,11 +1039,11 @@
       "description": "Filters for the moisture model\r\nThe same filters currently available in the remote sensing module should also be applied to the moisture model, in order to maintain functional consistency and improve usability for end users.",
       "progress": 0,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "eliminar",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Nestor Duarte"
+      "reference": null,
+      "platform": "",
+      "tracking": "eliminar",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "GEOIA-GEN-001",
@@ -1058,11 +1058,11 @@
       "description": "In the GEOIA Models section, metrics are not recalculated or refreshed when switching between different mills or organizations.\r\nAll KPIs and metrics should update dynamically based on the selected organizational context.\r\nFailing to do so can lead to incorrect interpretation of model performance and analytics.",
       "progress": 100,
       "dateReported": "Fri Jan 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-GEN-002",
@@ -1077,11 +1077,11 @@
       "description": "The platform should provide historical predictive capabilities that identify which past harvest season (zafra) current conditions most closely resemble, based on correlations with key indices (e.g., NDVI, NDWI, SG), in order to support estimation and forecasting.",
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Prioridad baja (aun no procede)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "123",
+      "tracking": "Prioridad baja (aun no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "GEOIA-GEN-003",
@@ -1096,11 +1096,11 @@
       "description": "The platform should include a new product to detect anomalies in index behavior, identifying abrupt increases or decreases in values that may be associated with events such as weed presence or field operations (e.g., tillage(volteo)). This capability should analyze temporal variations in key indices (e.g., NDVI, NDWI, SG) to highlight significant deviations and support timely decision-making for Amajac, EMSA, IPSA",
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "123",
+      "tracking": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "GEOIA-HOME-001",
@@ -1115,11 +1115,11 @@
       "description": "“Active Models” KPI must count only active models, excluding models in development.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-HOME-002",
@@ -1134,11 +1134,11 @@
       "description": "“Average Precision” KPI must be calculated using only active models.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-HOME-003",
@@ -1153,11 +1153,11 @@
       "description": "“Analyzed Lots” KPI is hardcoded. It should be the average number of lots in the most recent prediction across active models.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-HOME-004",
@@ -1172,11 +1172,11 @@
       "description": "“Analyzed Area” KPI is hardcoded. It should be the average lot area in the most recent prediction across active models.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-HOME-005",
@@ -1191,11 +1191,11 @@
       "description": "Add a “Last Updated” KPI/label showing the date of the latest training for active models.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "GEOIA-HOME-006",
@@ -1210,11 +1210,11 @@
       "description": "Ensure “Training Zafras” are computed dynamically (not hardcoded) based on each model’s training data.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-001",
@@ -1229,11 +1229,11 @@
       "description": "Add a Harvest Season (Zafra) filter across all sections, including map layers and analytics, so data is scoped consistently by zafra.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-002",
@@ -1248,11 +1248,11 @@
       "description": "Add a toggle to show/hide parcel polygons on all maps, and enable a parcel information pop-up when clicking a polygon.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-003",
@@ -1268,10 +1268,10 @@
       "progress": 100,
       "dateReported": "Fri Jan 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-004",
@@ -1287,10 +1287,10 @@
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-005",
@@ -1306,10 +1306,10 @@
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-006",
@@ -1325,10 +1325,10 @@
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-007",
@@ -1343,11 +1343,11 @@
       "description": "When adding a TIFF download option for model outputs, support for RGB composites should also be considered.",
       "progress": 100,
       "dateReported": "Sat Jan 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-008",
@@ -1362,11 +1362,11 @@
       "description": "Pantaleon’s images are not being published on time; they are uploaded four days after the satellite pass.",
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-009",
@@ -1382,10 +1382,10 @@
       "progress": 80,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "163",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-010",
@@ -1401,10 +1401,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-011",
@@ -1420,10 +1420,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-012",
@@ -1439,10 +1439,10 @@
       "progress": 100,
       "dateReported": "Fri Mar 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-013",
@@ -1457,11 +1457,11 @@
       "description": "No se esta visualizando en todas las parcelas la curva real con respecto al potencia (NDVI Potencial e Hidro Potencial)",
       "progress": 100,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-014",
@@ -1476,11 +1476,11 @@
       "description": "En la opcion de descargar en formato de excel no esta funcionando correctamente, lo descarga corrompido y por tal razon toda la informacion queda en una sola columna",
       "progress": 100,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-015",
@@ -1495,11 +1495,11 @@
       "description": "When downloading Detailed Data by Parcel for the SG, NDVI, NDWI, and Weed monitors, the exported CSV file only includes the records currently displayed on the first page of the table (e.g., 1–20 of 7,382 records) instead of exporting the complete dataset. Additionally, when opening the CSV file and converting the data from text to columns, some values appear misaligned or shifted into incorrect columns, which affects proper data interpretation and analysis.",
       "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-016",
@@ -1514,11 +1514,11 @@
       "description": "In the NDVI+ and Hydro+ potential module, the dialog box with the potential curve for the selected plot in Mexico (EMSA, AMAJAC, IPSA) is not displayed. The selected plot is also not highlighted in red. The data loading or display logic should be reviewed.No visualiza la curva potencial en MX",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-018",
@@ -1533,11 +1533,11 @@
       "description": "It is necessary to change the write-type filters to list-type filters in the detailed data section by parcel, since the filters applied in the header do not affect or work correctly on this detailed view.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-019",
@@ -1552,11 +1552,11 @@
       "description": "When exporting the map to PDF, the content appears misaligned and compressed at the top of the document, leaving a large blank space at the bottom. The map's centering and scale need to be adjusted so that it correctly fills the available area in the PDF layout. Normalize the categories by country (send the list of distinct values ​​first and we will send the normalization for the historical data), but ensure that the zafra feild is used in the join.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-020",
@@ -1571,11 +1571,11 @@
       "description": "Extend the functionality of the information icon (such as the one shown for the \"Total Monitored Area\" KPI) to all key visual components of the platform. Hovering over this icon will display a tooltip with details about the element.\r\n\r\nAffected components:\r\nKPI: Add a clear description of the metric being displayed (e.g., \"Total area of ​​parcels under active satellite monitoring\").\r\nCharts: Explain what the data, axes, or how to interpret the visualized information represents.\r\nMaps: Provide information about the data layers, the symbology used, or the source of the geospatial information.\r\nTable of contents: Clarify the meaning of specific columns or the nature of the listed data.",
       "progress": 50,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "127",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-021",
@@ -1590,11 +1590,11 @@
       "description": "The current filename generated for TIFF image downloads is too long, making them difficult to manage and organize. A new naming convention needs to be implemented that is short, consistent, and contains only the essential information.\r\n\r\nThe new filename structure should be as follows:\r\n\r\n[Site Code]_[Product]_[Date].tif",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-036",
@@ -1609,11 +1609,11 @@
       "description": "The current legend of the potential map (as seen in the reference image) displays numerical ranges (e.g., <0.6, 0.9–1.1) that are not self-explanatory. For clarity and to facilitate user interpretation, these labels need to be modified to explicitly indicate that they represent percentage values.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-022",
@@ -1628,11 +1628,11 @@
       "description": "Currently, numerical values ​​in the platform's various modules (KPIs, tables, charts) are displayed with an inconsistent number of decimal places. This creates visual confusion and can hinder quick data comparison. A single rule for decimal display needs to be defined and applied.\r\n\r\nRule Specification:\r\nAll numerical values ​​on the platform representing metrics, averages, percentages, or measurements must be displayed with two (2) decimal places, taking into account the following considerations:\r\n\r\nGeneral Application: This rule applies to:\r\nValues ​​in KPIs and summary cards.\r\nNumbers within tables.\r\nData labels and axes in charts.\r\nInformation displayed in tooltips and pop-up windows (maps, charts, etc.).\r\nNumerical data in exports (CSV, Excel), where applicable.\r\n\r\nZero Padding: Whole numbers or numbers with only one decimal place must be padded with zeros to maintain two decimal places. This ensures alignment and visual consistency in tables.\r\n\r\nExceptions: Values ​​that by their nature are always whole numbers (e.g., number of farms, number of lots, number of inspections) must be displayed without decimals.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-034",
@@ -1647,11 +1647,11 @@
       "description": "A problem has been detected in the numeric display system, where the grouping of digits (thousands and decimal separators) does not follow the expected format according to the regional settings. This causes inconsistencies in the reading and interpretation of data, especially in indicators and graphs.",
       "progress": 100,
       "dateReported": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-024",
@@ -1667,10 +1667,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-025",
@@ -1686,10 +1686,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-026",
@@ -1705,10 +1705,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-027",
@@ -1724,10 +1724,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-028",
@@ -1743,10 +1743,10 @@
       "progress": 100,
       "dateReported": "Fri Apr 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-029",
@@ -1762,10 +1762,10 @@
       "progress": 100,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Nestor Duarte"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-030",
@@ -1780,11 +1780,11 @@
       "description": "TIFF file download behavior\r\nWhen a single farm or a specific plot is selected, the TIFF download currently exports the entire map instead of only the selected area. The export should respect the applied filter and download only the selected farm or plot.",
       "progress": 0,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "No procede",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Nestor Duarte"
+      "reference": null,
+      "platform": "92",
+      "tracking": "No procede",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-HYD-001",
@@ -1799,11 +1799,11 @@
       "description": "The “Average Hydro+ Index” indicator is displayed as a percentage, but it should be shown as an index value (not %).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-002",
@@ -1818,11 +1818,11 @@
       "description": "The “High Deficit (< -0.2)” indicator appears to be miscalculated. Review the calculation and display the correct hectares (ha).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-003",
@@ -1837,11 +1837,11 @@
       "description": "The “Water Balance” indicator calculation needs review. It should be computed as Optimal + Excellent.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-004",
@@ -1856,11 +1856,11 @@
       "description": "The “Clear Filters” button is not working.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-005",
@@ -1875,11 +1875,11 @@
       "description": "Implement a strategy for cumulative/connected filters so that selections apply coherently across filters (dependent filtering).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-006",
@@ -1894,11 +1894,11 @@
       "description": "The range distribution may be incorrect, or the legend color mapping is wrong. Verify bins and ensure legend colors match the map/chart.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-007",
@@ -1913,11 +1913,11 @@
       "description": "Rename “Balance by Farm” to “Status by Farm”.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-008",
@@ -1932,11 +1932,11 @@
       "description": "Re-evaluate the categories and recommendations in the final data table, and add area (ha) by index range 1–14.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-009",
@@ -1952,10 +1952,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-HYD-010",
@@ -1971,10 +1971,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-001",
@@ -1989,11 +1989,11 @@
       "description": "Raster download option (button).",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-002",
@@ -2008,11 +2008,11 @@
       "description": "Soil moisture is hardcoded. Connect it to Open-Meteo Weather Variable (Soil Moisture 9–27 cm).",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-003",
@@ -2027,11 +2027,11 @@
       "description": "Climate indicators are hardcoded.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-004",
@@ -2046,11 +2046,11 @@
       "description": "Stress Zone KPI does not match the right tail of the Growth Index histogram (KPI shows 910 ha, histogram shows 752 ha). Values must match.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-005",
@@ -2065,11 +2065,11 @@
       "description": "Analysis filters are not updating the map. Filter field names are not using aliases (shows Division 1, Division 2, etc.).",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-006",
@@ -2084,11 +2084,11 @@
       "description": "Calendar should only enable dates for which imagery is available.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-007",
@@ -2103,11 +2103,11 @@
       "description": "Change the TechnoAnalytics label.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-008",
@@ -2122,11 +2122,11 @@
       "description": "SG color palette labels do not match the color palette displayed on the map. Focus red color",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-009",
@@ -2141,11 +2141,11 @@
       "description": "Only process images on the “standard” calendar; ignore atypical/off-calendar dates.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-010",
@@ -2160,11 +2160,11 @@
       "description": "“Improvement Status by Stage” graph shows lots already in Macollamiento stage, but they don’t appear in the top “Phenological Stages” widget.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-011",
@@ -2179,11 +2179,11 @@
       "description": "PDF generation is taking too long.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-012",
@@ -2198,11 +2198,11 @@
       "description": "PDF is still showing TechnoAnalytics branding.",
       "progress": 100,
       "dateReported": "24/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-013",
@@ -2217,11 +2217,11 @@
       "description": "Analysis filters currently require users to manually scroll through long lists of values.\r\nAdd a search input for each filter category (e.g., Farm) to allow users to type and quickly find values.\r\nAdditionally, include the Parcel identifier (ABS_IDCOMP / Terreno) as a selectable filter.",
       "progress": 100,
       "dateReported": "Fri Jan 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-014",
@@ -2237,10 +2237,10 @@
       "progress": 100,
       "dateReported": "Mon Feb 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-MONI-015",
@@ -2255,11 +2255,11 @@
       "description": "Add interactivity or a filter to the map to visualize the area by state type (critical, low, medium, good, and optimal)",
       "progress": 0,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "129",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-MONI-015",
@@ -2275,10 +2275,10 @@
       "progress": 100,
       "dateReported": "26/2/2026",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-NDVI-001",
@@ -2293,11 +2293,11 @@
       "description": "Add a tooltip on hover that displays the indicator’s detailed explanation when the user places the cursor over it, to help with interpretation.",
       "progress": 100,
       "dateReported": "Fri Mar 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-NDVI-002",
@@ -2312,11 +2312,11 @@
       "description": "Update the “Minimum NDVI” indicator to use the 30th percentile (P30) instead of the current calculation.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-NDVI-003",
@@ -2332,10 +2332,10 @@
       "progress": 100,
       "dateReported": "26/2/2026",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-NDVI-004",
@@ -2350,11 +2350,11 @@
       "description": "In the NDVI Detailed Data by Parcel section, the Region and Quadrant filters are not applied correctly, as the data does not update according to the selected values. Additionally, there is inconsistency in the naming conventions across countries, which may lead to confusion and affect filtering and data interpretation. For example, in Amajac, IPSA, EMSA, values such as REGION_01, REGION1, REGION2, REGION_02 are displayed; in Pantaleon, REGION OESTE, REGION CENTRAL, REGION1, REGION_01; and in Monte Rosa, ZONA 1, PR, REGION7, REGION_07, among others.",
       "progress": 100,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-SGI-001",
@@ -2370,10 +2370,10 @@
       "progress": 0,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "128",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-SGI-001",
@@ -2388,11 +2388,11 @@
       "description": "The Plot Map - Smart Growth Index of PANTALEON, MONTE ROSA, IPSA, EMSA and AMAJAC are not being affected by the header filter in time, it shows a delay in displaying the result.",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Se quito el mapa (no procede)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "",
+      "tracking": "Se quito el mapa (no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-SGI-002",
@@ -2407,11 +2407,11 @@
       "description": "Unify the display structure of the SG module maps to ensure consistent functionality and performance. The unified map should display and function similarly to the NDVI and Potential maps. Currently, the Smart Growth Index map zooms out when the date changes, while the SG map with variability remains static on the selected plot (this modification has been requested for all maps).",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Se quito el mapa (no procede)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "",
+      "tracking": "Se quito el mapa (no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-SGI-003",
@@ -2426,11 +2426,11 @@
       "description": "Update the symbology used in the Plot Map - Smart Growth Index to improve the visual interpretation of the data. Change it to the calculated field of growth index levels or improvement status.",
       "progress": 0,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Se quito el mapa (no procede)",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "",
+      "tracking": "Se quito el mapa (no procede)",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-WD-001",
@@ -2445,11 +2445,11 @@
       "description": "The downloaded PDF generated from the map is not georeferenced",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-002",
@@ -2464,11 +2464,11 @@
       "description": "The “Control Program” indicator is currently hardcoded and needs to be connected to real data.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-003",
@@ -2483,11 +2483,11 @@
       "description": "Set the weed critical threshold to 10% for Pantaleon (update configuration/business rule accordingly).",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-004",
@@ -2502,11 +2502,11 @@
       "description": "The data table should display only records from the latest available image, or from the image currently selected on the map.",
       "progress": 100,
       "dateReported": "30/12/2025",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-005",
@@ -2521,11 +2521,11 @@
       "description": "In the Weed Detection monitor, the main indicators are displayed at the bottom of the map, unlike the NDVI+, Hydro+, and Growth monitors, where indicators are consistently shown at the top.\r\nThe indicator layout should be standardized across all monitors to ensure a consistent user experience.",
       "progress": 100,
       "dateReported": "Fri Jan 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-006",
@@ -2541,10 +2541,10 @@
       "progress": 100,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Ana Mendoza"
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-WD-006",
@@ -2559,11 +2559,11 @@
       "description": "Currently, the platform exhibits inconsistent behavior when filtering by terrain.\r\nWith weed data (Image 1): When selecting a terrain with a recorded weed percentage, all KPIs, charts, and tables are displayed correctly.\r\nWithout weed data (Image 2): When selecting a terrain with a weed percentage of 0 or where data is missing, the visual components of the dashboard (KPIs, charts, and tables) disappear completely. This gives the false impression that the page has crashed or that there is no data, when in reality the basic terrain information is available.\r\n\r\nRequirement and expected behavior:\r\nTo ensure consistency and clarity of information, the platform should behave as follows, regardless of the weed percentage value:\r\n\r\nDisplay weed metrics as zero:\r\nAny KPI, chart, or table that directly measures the \"% of weeds\" should not disappear. Instead, it should explicitly display the value as 0%. This confirms to the user that the data has been processed and that the result is zero.\r\n\r\nKeep general KPIs visible:\r\nKPIs and components that depend on general field information, such as area, lot name, date, etc., should always remain visible. This data is independent of weed percentage and should not be hidden by any filter of this type.",
       "progress": 100,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
+      "reference": null,
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-WD-007",
@@ -2579,10 +2579,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-008",
@@ -2598,10 +2598,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-009",
@@ -2617,10 +2617,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-010",
@@ -2636,10 +2636,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-011",
@@ -2655,10 +2655,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-012",
@@ -2674,10 +2674,10 @@
       "progress": 50,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-013",
@@ -2693,10 +2693,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-014",
@@ -2712,10 +2712,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-WD-015",
@@ -2731,10 +2731,10 @@
       "progress": 100,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Nestor Duarte"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "ST-HOME-002",
@@ -2749,11 +2749,11 @@
       "description": "Two completely independent and dedicated analytics dashboards must be created in a dedicated section, such as NDVI+ and Hydro+. Each dashboard will have subsections for Inspections and Tasks. Each dashboard must have its own relevant KPIs, charts, and tables.\r\n\r\nInspections Dashboard:\r\nAccess: This dashboard will be accessed from the \"Inspections\" section.\r\nContent: It should only display metrics and visualizations related to the data collected during inspections.",
       "progress": 10,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "",
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": null,
+      "platform": "127",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-NDVI-005",
@@ -2769,10 +2769,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Evelin Quevedo"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-031",
@@ -2788,10 +2788,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Nestor Duarte"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-032",
@@ -2807,10 +2807,10 @@
       "progress": 100,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Nestor Duarte"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-SGI-004",
@@ -2826,10 +2826,10 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "100",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-033",
@@ -2845,10 +2845,10 @@
       "progress": 100,
       "dateReported": "Fri Apr 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
+      "platform": "",
+      "tracking": "",
       "approval": true,
-      "requester": "Jose Gomez"
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-GEN-034",
@@ -2861,13 +2861,13 @@
       "severity": "Critical",
       "status": "Done",
       "description": "Within the map visualization, the TIFF imagery presents patchy spatial coverage within the same parcel, where areas of valid data are interspersed with gaps lacking coverage.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Mon Apr 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-035",
@@ -2878,15 +2878,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "An updated polygon dataset has already been provided (including new fields, modified geometries, and deactivated fields); however, these updates are not yet reflected in the platform.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Wed Apr 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "93",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-036",
@@ -2899,13 +2899,13 @@
       "severity": "Critical",
       "status": "Open",
       "description": "Satellite imagery should be processed from harvest season (zafra) 2022-2023 onward (starting September 2022) to ensure sufficient historical coverage for analysis. Currently, the platform only contains data from October 2025 to the present, which limits historical comparison.",
-      "progress": 0,
+      "progress": 50,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "74",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "EX-GEN-029",
@@ -2916,15 +2916,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 4,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "When the user clicks on it, the map North  should automatically rotate and align to the North, as shown in the video. This behavior is similar to the Google Earth app.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Movil",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Nestor Duarte"
+      "platform": "74",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-SGI-005",
@@ -2935,15 +2935,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "In Progress",
       "description": "The current map color palette for the SGI visualization does not clearly represent variability across the data range, limiting proper differentiation between conditions. Additionally, the classification ranges should be updated to avoid overly penalizing the results. It is proposed to use the logic where 80/80 = 64, so that values greater than 64 are classified as Excellent, providing a more balanced interpretation of the SGI categories.",
-      "progress": 0,
+      "progress": 90,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": "Evaluarlo",
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": null,
+      "platform": "64",
+      "tracking": "Evaluarlo",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-NDVI-006",
@@ -2954,15 +2954,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "The metric “No active vegetation detected” should be removed from the Selection Metrics section",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": "Thu Jul 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "GEOIA-GEN-004",
@@ -2978,10 +2978,10 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "64",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "GEOIA-GEN-005",
@@ -2997,10 +2997,10 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "approach with agricultural management",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "64",
+      "tracking": "",
+      "approval": true,
+      "requester": "approach with agricultural management"
     },
     {
       "issueId": "RS-SGI-006",
@@ -3011,15 +3011,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "Filters, Suprvisor, Jefe de region etc. works in ndvi and hidro and if you apply filter in smart growth it doesn't work on map. But if you apply filter on any other tab and then go to smart growth it works then",
-      "progress": 0,
-      "dateReported": "5//21/2026",
+      "progress": 100,
+      "dateReported": "Thu May 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Nestor Duarte"
+      "platform": "57",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "RS-GEN-037",
@@ -3030,15 +3030,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "Add opacity to the map by making a filter selection in the comparison monitor.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Mon May 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     },
     {
       "issueId": "INSP-MAP-001",
@@ -3049,15 +3049,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "In the Inspection module, inspection points are visible on the map; however, selecting an inspection point does not display any associated information or details.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "44",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-NDVI-007",
@@ -3073,10 +3073,10 @@
       "progress": 90,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "44",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "INSP-FT-001",
@@ -3087,15 +3087,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "The Inspection module should include additional finding types, specifically “Revisión de Semillero” and “Otros”, within the list of available findings.",
-      "progress": 90,
+      "progress": 100,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": "Thu Jul 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-038",
@@ -3106,15 +3106,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "The harvest date (cut date) is not displayed consistently in the mobile application. While some users are able to view this information within the field details, others cannot.",
-      "progress": 90,
+      "progress": 100,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-039",
@@ -3125,15 +3125,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "High",
-      "status": "In QA",
+      "status": "Done",
       "description": "The mobile application should include the start date, TCH, and crop age within the parcel detail view.",
-      "progress": 90,
+      "progress": 100,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-040",
@@ -3146,13 +3146,13 @@
       "severity": "Critical",
       "status": "Open",
       "description": "The platform should incorporate the latest available polygon updates to maintain consistency with current field boundaries and operational information. The most recent update was shared in April and includes new parcels, geometry changes, and inactive fields; however, these updates are not yet reflected in the platform and should be considered in the next data refresh cycle.",
-      "progress": 0,
+      "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "39",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-041",
@@ -3165,13 +3165,13 @@
       "severity": "Critical",
       "status": "In Progress",
       "description": "The filters do not dynamically interact with one another. For example, when a Region is selected, the Farm filter continues to display all available records instead of only the farms associated with the selected region.",
-      "progress": 30,
+      "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "39",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-042",
@@ -3182,15 +3182,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "The values used in filters and visualizations should be standardized and aligned with the master template. Currently, inconsistent naming conventions are displayed for the same attribute, such as REGION4 and REGION_04, even though these values are not represented in that format within the template.",
-      "progress": 80,
+      "progress": 100,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "reference": "Thu Jul 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-043",
@@ -3201,15 +3201,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "In Progress",
       "description": "The current database update rule should be reviewed:\r\n\r\nIf the START_DATE falls within the last 7 days, the system updates the record with the new values. If the START_DATE falls outside this window, the record is not processed and any changes made in the source Excel file are not reflected in the database.\r\n\r\nThis rule may be causing inconsistencies between the latest shared template and the information displayed in the platform. Examples include:\r\n\r\nSupervisor Filter: Supervisors such as JAIRO FABIAN and JORGE H. are still displayed, even though they have not been active in the company since the end of 2025.\r\nDuplicate Records: JORGE DANIEL appears as a duplicated supervisor in the platform.\r\nTemplate Mismatch: The latest shared template does not contain the inactive supervisors or duplicate records currently displayed in the platform.\r\nHarvest Status: Some areas that have already been harvested are still being displayed under the 2026 harvest season (zafra).\r\n\r\nThe update logic should be evaluated to ensure that relevant changes in the source template are properly reflected in the platform.",
-      "progress": 0,
+      "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "39",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-044",
@@ -3222,13 +3222,13 @@
       "severity": "High",
       "status": "In Progress",
       "description": "The platform should send email notifications whenever a supervisor submits an inspection record, including relevant inspection details to facilitate monitoring, traceability, and follow-up activities.",
-      "progress": 0,
+      "progress": 50,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "44",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-045",
@@ -3239,15 +3239,15 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "High",
-      "status": "In Progress",
+      "status": "Done",
       "description": "The mobile application should include the potential curves associated with the available products, such as NDVI Potential and NDWI Potential, allowing users to compare current conditions against expected values directly within the app and improve field-level interpretation. usar un boton fab para esta funcion para no saturar la pantalla",
-      "progress": 40,
+      "progress": 100,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "Movil",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "reference": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-046",
@@ -3263,10 +3263,10 @@
       "progress": 0,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web",
-      "tracking": "Capacitación PSH",
-      "approval": false,
-      "requester": "Evelin Quevedo"
+      "platform": "43",
+      "tracking": "",
+      "approval": true,
+      "requester": "Capacitación PSH"
     },
     {
       "issueId": "RS-GEN-047",
@@ -3282,12 +3282,69 @@
       "progress": 0,
       "dateReported": "Fri Jun 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "Web | Movil",
-      "tracking": "Testing  Validation",
-      "approval": false,
-      "requester": "Ana Mendoza"
+      "platform": "35",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-GEN-048",
+      "module": "Remote Sensing",
+      "featureArea": "NDVI Potential / HYDRO Potential",
+      "component": "Potential Curves",
+      "issueType": "Enhancement",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "In Progress",
+      "description": "The Hydro/NDVI product continues to show inconsistencies in the potential curves, with abrupt fluctuations in the observed values that do not appear consistent with the expected crop development.",
+      "progress": 50,
+      "dateReported": "Mon Jul 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "4",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-GEN-049",
+      "module": "Remote Sensing",
+      "featureArea": "All Maps",
+      "component": "Parcel Boundaries Toggle",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Critical",
+      "status": "In QA",
+      "description": "The Parcel Boundaries layer should provide a clearer visual indication when it is enabled or disabled. Currently, the toggle control does not clearly differentiate between its active and inactive states, making it difficult for users to determine whether the layer is displayed.",
+      "progress": 90,
+      "dateReported": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "2",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-SGI-007",
+      "module": "Remote Sensing",
+      "featureArea": "Smart Growth Index",
+      "component": "Historical Trend Visualization",
+      "issueType": "Enhancement",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Critical",
+      "status": "Open",
+      "description": "The SGI (Smart Growth Index) module in the web platform should include a historical trend chart displaying the SGI behavior for each parcel over time. This visualization would allow users to track the evolution of the index across available dates, identify growth trends, detect abrupt changes, and evaluate crop performance throughout the season.",
+      "progress": 0,
+      "dateReported": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "2",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
     }
   ],
-  "lastFetched": "2026-07-12T03:22:30.192Z",
-  "snapshotDate": "2026-07-12T03:22:30.204Z"
+  "lastFetched": "2026-07-19T03:19:05.926Z",
+  "snapshotDate": "2026-07-19T03:19:05.935Z"
 }
