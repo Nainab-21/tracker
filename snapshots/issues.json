@@ -432,7 +432,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "No procede",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -470,7 +470,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -527,7 +527,7 @@
       "progress": 80,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -603,7 +603,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -641,7 +641,7 @@
       "progress": 10,
       "dateReported": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "122",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -660,7 +660,7 @@
       "progress": 0,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "121",
+      "platform": "128",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -964,7 +964,7 @@
       "progress": 0,
       "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "117",
+      "platform": "124",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -983,7 +983,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -1021,7 +1021,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -1078,7 +1078,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1097,7 +1097,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "123",
+      "platform": "130",
       "tracking": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1382,7 +1382,7 @@
       "progress": 80,
       "dateReported": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "163",
+      "platform": "170",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -1572,7 +1572,7 @@
       "progress": 50,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "127",
+      "platform": "134",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1781,7 +1781,7 @@
       "progress": 0,
       "dateReported": "Thu Apr 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "92",
+      "platform": "99",
       "tracking": "No procede",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2256,7 +2256,7 @@
       "progress": 0,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "129",
+      "platform": "136",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2370,7 +2370,7 @@
       "progress": 0,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "128",
+      "platform": "135",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2598,7 +2598,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2636,7 +2636,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2674,7 +2674,7 @@
       "progress": 50,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2712,7 +2712,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2750,7 +2750,7 @@
       "progress": 10,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "127",
+      "platform": "134",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2826,7 +2826,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "100",
+      "platform": "107",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2883,7 +2883,7 @@
       "progress": 100,
       "dateReported": "Wed Apr 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "93",
+      "platform": "100",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -2902,7 +2902,7 @@
       "progress": 50,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "74",
+      "platform": "81",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2921,7 +2921,7 @@
       "progress": 100,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "74",
+      "platform": "81",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -2940,7 +2940,7 @@
       "progress": 90,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "64",
+      "platform": "71",
       "tracking": "Evaluarlo",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2978,7 +2978,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "64",
+      "platform": "71",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2997,7 +2997,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "64",
+      "platform": "71",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -3016,7 +3016,7 @@
       "progress": 100,
       "dateReported": "Thu May 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "57",
+      "platform": "64",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3054,7 +3054,7 @@
       "progress": 100,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "44",
+      "platform": "51",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3073,7 +3073,7 @@
       "progress": 90,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "44",
+      "platform": "51",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3149,7 +3149,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "39",
+      "platform": "46",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3168,7 +3168,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "39",
+      "platform": "46",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3206,7 +3206,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "39",
+      "platform": "46",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3225,7 +3225,7 @@
       "progress": 50,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "44",
+      "platform": "51",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3263,7 +3263,7 @@
       "progress": 0,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "43",
+      "platform": "50",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3282,7 +3282,7 @@
       "progress": 0,
       "dateReported": "Fri Jun 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "35",
+      "platform": "42",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3301,7 +3301,7 @@
       "progress": 50,
       "dateReported": "Mon Jul 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "4",
+      "platform": "11",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3320,7 +3320,7 @@
       "progress": 90,
       "dateReported": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "2",
+      "platform": "9",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3339,12 +3339,12 @@
       "progress": 0,
       "dateReported": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "2",
+      "platform": "9",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
     }
   ],
-  "lastFetched": "2026-07-19T03:19:05.926Z",
-  "snapshotDate": "2026-07-19T03:19:05.935Z"
+  "lastFetched": "2026-07-26T03:23:57.065Z",
+  "snapshotDate": "2026-07-26T03:23:57.071Z"
 }
