@@ -470,7 +470,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "143",
+      "platform": "152",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -603,7 +603,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "143",
+      "platform": "152",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -660,7 +660,7 @@
       "progress": 0,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "141",
+      "platform": "150",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -963,8 +963,8 @@
       "description": "In Monte Rosa, when downloading the moisture TIFF in  the API, the output incorrectly references GT instead of NI. For example: \"https://s..com/cogs-bucket/cogs/GT_Grupo_Pantaleon_Humedad_2026-03-26_cog.tif\"",
       "progress": 0,
       "dateReported": "Sun Mar 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "137",
+      "reference": "Thu Aug 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -983,7 +983,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -1021,7 +1021,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -1078,7 +1078,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "143",
+      "platform": "152",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1097,7 +1097,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "143",
+      "platform": "152",
       "tracking": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1572,7 +1572,7 @@
       "progress": 50,
       "dateReported": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "147",
+      "platform": "156",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2256,7 +2256,7 @@
       "progress": 0,
       "dateReported": "Tue Mar 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "149",
+      "platform": "158",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2365,12 +2365,12 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 3,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "Parcel boundaries are difficult to distinguish due to the similarity in color tones between the parcel outlines and the TIFF layer. This lack of visual contrast causes the boundaries to blend with the underlying imagery, making it challenging to clearly identify parcel limits during analysis.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "148",
+      "reference": "Fri Aug 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2598,7 +2598,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2674,7 +2674,7 @@
       "progress": 50,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2712,7 +2712,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2826,7 +2826,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "120",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2902,7 +2902,7 @@
       "progress": 50,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "94",
+      "platform": "103",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2978,7 +2978,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "84",
+      "platform": "93",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2997,7 +2997,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "84",
+      "platform": "93",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -3016,7 +3016,7 @@
       "progress": 100,
       "dateReported": "Thu May 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "77",
+      "platform": "86",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3054,7 +3054,7 @@
       "progress": 90,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "64",
+      "platform": "73",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3149,7 +3149,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "59",
+      "platform": "68",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3168,7 +3168,7 @@
       "progress": 100,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "59",
+      "platform": "68",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3206,7 +3206,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "59",
+      "platform": "68",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3225,7 +3225,7 @@
       "progress": 50,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "64",
+      "platform": "73",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3263,7 +3263,7 @@
       "progress": 0,
       "dateReported": "Thu Jun 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "63",
+      "platform": "72",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3282,7 +3282,7 @@
       "progress": 0,
       "dateReported": "Fri Jun 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "55",
+      "platform": "64",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3301,7 +3301,7 @@
       "progress": 50,
       "dateReported": "Mon Jul 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "24",
+      "platform": "33",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3339,7 +3339,7 @@
       "progress": 0,
       "dateReported": "Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "22",
+      "platform": "31",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3391,17 +3391,55 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "In QA",
       "description": "For users with access restricted to a single assigned farm, the Remote Sensing – Comparison module correctly displays only the authorized farm. However, the product information is not loaded, and the panel displays \"No data for this parcel\", despite the parcel being visible and assigned to the user.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Mon Jul 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "17",
+      "reference": "Mon Aug 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "GEOIA-TCHM-001",
+      "module": "GEOIA Models",
+      "featureArea": "TCH y Ruta de Cosecha",
+      "component": "Data Consistency",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "High",
+      "status": "Done",
+      "description": "When clicking on a plot while in full-screen mode, add a chart showing the comparison between predicted and actual values ​​for the last five harvests (provided the data is available; otherwise, use only the available information).",
+      "progress": 100,
+      "dateReported": "Mon Aug 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Thu Aug 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "GEOIA-TCHM-001",
+      "module": "GEOIA Models",
+      "featureArea": "TCH y Ruta de Cosecha",
+      "component": "filter",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "Medium",
+      "status": "In Progress",
+      "description": "Add an estimated cutoff month filter",
+      "progress": 100,
+      "dateReported": "Mon Aug 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Thu Aug 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
     }
   ],
-  "lastFetched": "2026-08-09T02:01:33.150Z",
-  "snapshotDate": "2026-08-09T02:01:33.160Z"
+  "lastFetched": "2026-08-16T01:37:30.529Z",
+  "snapshotDate": "2026-08-16T01:37:30.537Z"
 }
