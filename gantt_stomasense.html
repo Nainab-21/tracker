@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StomaSense – Gantt Roadmap 2026</title>
+<title>StomaSense – Roadmap & Product Improvement Log Tracker</title>
 <style>
   /* ── Reset & base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -194,7 +194,7 @@
 <!-- HEADER -->
 <div class="header">
   <div>
-    <h1>🌿 StomaSense – Roadmap de Prioridades 2026</h1>
+    <h1>🌿 StomaSense – Roadmap & Product Improvement Log Tracker</h1>
     <div class="meta">Bloques: [3 Meses Mar-May 2026] · [May-Oct 2026] · Actualizado: 17/03/2026</div>
   </div>
   <div class="today-badge">📅 Hoy: 17/03/2026</div>
@@ -204,17 +204,8 @@
 <div class="layout">
   <!-- SIDEBAR -->
   <div class="sidebar">
-    <h3>📊 Resumen Global</h3>
-    <div class="global-progress">
-      <div class="lbl"><span>Avance global</span><span id="pct-global">9.7%</span></div>
-      <div class="progress-outer"><div class="progress-inner" style="width:9.7%"></div></div>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi blue"><div class="val" id="kpi-total">44</div><div class="lbl">Total tareas</div></div>
-      <div class="kpi green"><div class="val" id="kpi-done">0</div><div class="lbl">Completadas</div></div>
-      <div class="kpi orange"><div class="val" id="kpi-prog">7</div><div class="lbl">En Progreso</div></div>
-      <div class="kpi red"><div class="val" id="kpi-block">0</div><div class="lbl">Bloqueadas</div></div>
-    </div>
+    <h3>📊 Global Summary</h3>
+    <div id="status-badge-container" style="margin: 12px 0; text-align: center;"></div>
 
     <h3>🔍 Filtros</h3>
     <div class="filter-row">
@@ -355,8 +346,7 @@ function renderProyCards() {
     div.style.borderLeftColor = col;
     div.innerHTML = `
       <div class="name">${proy}</div>
-      <div class="prog">${stat.total} tareas · ${stat.avg_pct}% avance</div>
-      <div class="bar-outer"><div class="bar-inner" style="width:${stat.avg_pct}%;background:${col}"></div></div>`;
+      <div class="prog">${stat.total} tasks</div>`;
     div.onclick = () => {
       document.getElementById("filter-bloque").value = stat.bloque;
       document.getElementById("filter-cat").value = "";
@@ -518,7 +508,7 @@ function renderAll() {
       pRow.innerHTML = `
         <td colspan="6" style="padding-left:22px;">
           ${pCollapsed ? "▶" : "▼"} ${proy}
-          <span style="font-size:0.68rem;opacity:0.8;margin-left:8px;">${tasks.length} tareas · ${avgPct}% avance</span>
+          <span style="font-size:0.68rem;opacity:0.8;margin-left:8px;">${tasks.length} tasks</span>
         </td>
         <td style="background:#1F4E79;min-width:${totalBarPx}px;"></td>`;
       pRow.onclick = (e) => { e.stopPropagation(); collapsed[pKey] = !collapsed[pKey]; renderAll(); };
@@ -718,10 +708,32 @@ document.addEventListener("click", (e) => {
   if (tt && tt.style.display === "block" && !tt.contains(e.target)) hideTooltip();
 });
 
+// ─── STATUS BADGE ────────────────────────────────────
+function renderStatusBadge() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const overdue = TASKS_ALL.filter(t => {
+    const fin = parseDate(t.fin);
+    return fin < today && t.estado !== "Completado";
+  });
+  const isOnTrack = overdue.length === 0;
+  const container = document.getElementById("status-badge-container");
+  if (!container) return;
+  container.innerHTML = `
+    <div style="
+      display:inline-block; padding:10px 22px; border-radius:20px;
+      font-size:0.88rem; font-weight:700; letter-spacing:0.4px;
+      background:${isOnTrack ? '#E2F0D9' : '#FCE4D6'};
+      color:${isOnTrack ? '#538135' : '#C00000'};
+      border: 2px solid ${isOnTrack ? '#70AD47' : '#C00000'};
+    ">${isOnTrack ? '✅ On-Track' : '⚠️ Needs Attention'}</div>`;
+}
+
 // ─── INIT ────────────────────────────────────────────
 window.onload = () => {
   initFilters();
   renderProyCards();
+  renderStatusBadge();
   renderAll();
 };
 </script>
