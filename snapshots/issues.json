@@ -603,7 +603,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "198",
+      "platform": "206",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -660,7 +660,7 @@
       "progress": 0,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "196",
+      "platform": "204",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1078,7 +1078,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "198",
+      "platform": "206",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1097,7 +1097,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "198",
+      "platform": "206",
       "tracking": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2598,7 +2598,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "175",
+      "platform": "183",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2902,7 +2902,7 @@
       "progress": 50,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "149",
+      "platform": "157",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2997,7 +2997,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "139",
+      "platform": "147",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -3206,7 +3206,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "114",
+      "platform": "122",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3225,7 +3225,7 @@
       "progress": 50,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "119",
+      "platform": "127",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3301,7 +3301,7 @@
       "progress": 50,
       "dateReported": "Mon Jul 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "79",
+      "platform": "87",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3586,7 +3586,7 @@
       "progress": 0,
       "dateReported": "Tue Aug 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "43",
+      "platform": "51",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4061,7 +4061,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "22",
+      "platform": "30",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4080,7 +4080,7 @@
       "progress": 50,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "22",
+      "platform": "30",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4194,7 +4194,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "20",
+      "platform": "28",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4213,7 +4213,7 @@
       "progress": 50,
       "dateReported": "Mon Sep 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "16",
+      "platform": "24",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4365,7 +4365,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 01 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "29",
+      "platform": "37",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4403,7 +4403,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "22",
+      "platform": "30",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4441,7 +4441,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "8",
+      "platform": "16",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4460,7 +4460,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "13",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4498,7 +4498,7 @@
       "progress": 0,
       "dateReported": "Mon Sep 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "9",
+      "platform": "17",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4512,12 +4512,12 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Critical",
-      "status": "In QA",
+      "status": "Done",
       "description": "The parcel identifier is labeled inconsistently across the monitors: “Parcela ID” in SGI, “Lote” in Hydro, and “Parcela” in NDVI. The label should be standardized as “ID Parcela”, consistent with the terminology used in the main filters, to maintain naming consistency across the platform.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Mon Sep 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "9",
+      "reference": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4555,7 +4555,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4574,7 +4574,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4593,7 +4593,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4612,7 +4612,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4631,7 +4631,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4650,7 +4650,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "6",
+      "platform": "14",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4664,12 +4664,12 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "The Cycle Distribution in the Mobile App should be standardized to use the same cycle grouping applied in the Web platform. Currently, the App displays individual cycle values and an “Others” category.\r\nThe cycle categories should be standardized as:\r\n1, 2, 3, 4, 5, and ≥6\r\nAny cycle value of 6 or higher should be grouped under the ≥6 category, consistent with the Web platform.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "6",
+      "reference": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4688,7 +4688,7 @@
       "progress": 0,
       "dateReported": "Fri Sep 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "5",
+      "platform": "13",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4707,7 +4707,7 @@
       "progress": 0,
       "dateReported": "Mon Sep 28 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "2",
+      "platform": "10",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4726,12 +4726,50 @@
       "progress": 0,
       "dateReported": "Mon Sep 28 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "2",
+      "platform": "10",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-GEN-075",
+      "module": "Remote Sensing",
+      "featureArea": "NDVI / Hydro Potential Curves",
+      "component": "Current Start Date Reference",
+      "issueType": "Data Consistency",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "Done",
+      "description": "The NDVI/Hydro Potential Curve should use the parcel’s current Start Date as the reference for calculating and positioning historical observations by Crop Age (days).\r\nPreviously, the parcel had a different Start Date, and some historical values may still be associated with that previous date. When the Start Date is updated, the curve should be recalculated using the current Start Date, ensuring that the Crop Age of the applicable observations corresponds to the current crop cycle.",
+      "progress": 100,
+      "dateReported": "Fri Oct 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-GEN-076",
+      "module": "Remote Sensing",
+      "featureArea": "All Maps",
+      "component": "CloudFill – MX Operational Units",
+      "issueType": "Data Quality",
+      "issueGroup": "Issues and Bugs",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "Open",
+      "description": "The CloudFill process should be reviewed and improved for the three operational units in Mexico (MX) to enhance the consistency and quality of satellite imagery in areas affected by cloud cover.",
+      "progress": 0,
+      "dateReported": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": null,
+      "platform": "0",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
     }
   ],
-  "lastFetched": "2026-10-04T05:06:52.739Z",
-  "snapshotDate": "2026-10-04T05:06:52.751Z"
+  "lastFetched": "2026-10-11T04:58:15.591Z",
+  "snapshotDate": "2026-10-11T04:58:15.604Z"
 }
