@@ -603,7 +603,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "206",
+      "platform": "213",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -660,7 +660,7 @@
       "progress": 0,
       "dateReported": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "204",
+      "platform": "211",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1078,7 +1078,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "206",
+      "platform": "213",
       "tracking": "Prioridad baja (aun no procede)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -1097,7 +1097,7 @@
       "progress": 0,
       "dateReported": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "206",
+      "platform": "213",
       "tracking": "Prioridad baja (aun no procede hasta que malezas este con 85% de asertividad)",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2598,7 +2598,7 @@
       "progress": 0,
       "dateReported": "Wed Apr 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "183",
+      "platform": "190",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -2902,7 +2902,7 @@
       "progress": 50,
       "dateReported": "Mon May 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "157",
+      "platform": "164",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -2997,7 +2997,7 @@
       "progress": 0,
       "dateReported": "Thu May 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "147",
+      "platform": "154",
       "tracking": "",
       "approval": true,
       "requester": "approach with agricultural management"
@@ -3206,7 +3206,7 @@
       "progress": 90,
       "dateReported": "Mon Jun 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "122",
+      "platform": "129",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3225,7 +3225,7 @@
       "progress": 50,
       "dateReported": "Wed Jun 03 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "127",
+      "platform": "134",
       "tracking": "",
       "approval": true,
       "requester": "Capacitación PSH"
@@ -3301,7 +3301,7 @@
       "progress": 50,
       "dateReported": "Mon Jul 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "87",
+      "platform": "94",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -3586,7 +3586,7 @@
       "progress": 0,
       "dateReported": "Tue Aug 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "51",
+      "platform": "58",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4061,7 +4061,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "30",
+      "platform": "37",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4080,7 +4080,7 @@
       "progress": 50,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "30",
+      "platform": "37",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4194,7 +4194,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "28",
+      "platform": "35",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4213,7 +4213,7 @@
       "progress": 50,
       "dateReported": "Mon Sep 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "24",
+      "platform": "31",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4365,7 +4365,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 01 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "37",
+      "platform": "44",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4398,12 +4398,12 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 2,
       "severity": "Medium",
-      "status": "Open",
+      "status": "Done",
       "description": "Add the ability to create one or multiple polygons directly within the Inspections module,  in the mobile app \r\n\r\nUsers should be able to mark affected areas such as pest infestations, weeds, burns, or other localized anomalies, with the system automatically calculating the affected area in hectares.\r\n\r\nThis will help field teams accurately quantify and document affected areas during inspections.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Tue Sep 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-      "reference": null,
-      "platform": "30",
+      "reference": "Thu Oct 01 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4441,7 +4441,7 @@
       "progress": 0,
       "dateReported": "Tue Sep 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "16",
+      "platform": "23",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4455,12 +4455,12 @@
       "issueGroup": "Current Feature Enhancement",
       "priority": 1,
       "severity": "Critical",
-      "status": "Open",
+      "status": "Done",
       "description": "Discrepancies have been identified between the values displayed in the app and on the web platform for the same index and the same field.  The data does not synchronize with the value shown on the curve.",
-      "progress": 0,
+      "progress": 100,
       "dateReported": "Thu Sep 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "21",
+      "platform": "28",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4498,7 +4498,7 @@
       "progress": 0,
       "dateReported": "Mon Sep 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "17",
+      "platform": "24",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4555,7 +4555,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4574,7 +4574,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4593,7 +4593,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4612,7 +4612,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4631,7 +4631,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4650,7 +4650,7 @@
       "progress": 0,
       "dateReported": "Thu Sep 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "14",
+      "platform": "21",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4688,7 +4688,7 @@
       "progress": 0,
       "dateReported": "Fri Sep 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "13",
+      "platform": "20",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4707,7 +4707,7 @@
       "progress": 0,
       "dateReported": "Mon Sep 28 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "10",
+      "platform": "17",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4726,7 +4726,7 @@
       "progress": 0,
       "dateReported": "Mon Sep 28 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "10",
+      "platform": "17",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
@@ -4764,12 +4764,69 @@
       "progress": 0,
       "dateReported": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
       "reference": null,
-      "platform": "0",
+      "platform": "7",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "RS-GEN-077",
+      "module": "Cartografia",
+      "featureArea": "Map Visualization",
+      "component": "Incorrect map orientation",
+      "issueType": "Data Quality",
+      "issueGroup": "Issues and Bugs",
+      "priority": 1,
+      "severity": "Critical",
+      "status": "Done",
+      "description": "Cartography – Incorrect map orientation and location, and imported shape information\r\n\r\nPlease check for issues with the coordinate reference system or how coordinates are interpreted during file import, and apply the necessary fixes.\r\n\r\nAlso, ensure that users can view the attributes and associated information of imported shapes, similar to how this information is displayed in Google Earth.",
+      "progress": 100,
+      "dateReported": "Tue Oct 06 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Thu Oct 08 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "INSP-MAP-007",
+      "module": "Inspection Dashboard",
+      "featureArea": "Inspections",
+      "component": "Parcel Poligons",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Done",
+      "description": "\"When performing an inspection and creating a polygon, the selected monitor layer—whether Weed Detection, NDVI+, Hydro+, or SGI—should remain visible on the map.\r\nThe purpose is to allow the user to draw the inspection polygon directly over the identified area of interest or anomaly. Currently, when polygon creation starts, the selected monitor layer disappears, leaving only a blank map inside the field boundary.\"",
+      "progress": 100,
+      "dateReported": "Mon Sep 28 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Sat Oct 10 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
+      "tracking": "",
+      "approval": true,
+      "requester": "Testing  Validation"
+    },
+    {
+      "issueId": "INSP-MAP-008",
+      "module": "Inspection Dashboard",
+      "featureArea": "Inspections",
+      "component": "Parcel Poligons",
+      "issueType": "Usability",
+      "issueGroup": "Current Feature Enhancement",
+      "priority": 2,
+      "severity": "Medium",
+      "status": "Done",
+      "description": "Inspections were not appearing in the app, although they were visible online. Additionally, inspections cannot currently be closed through the app.",
+      "progress": 100,
+      "dateReported": "Wed Oct 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "reference": "Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "platform": "",
       "tracking": "",
       "approval": true,
       "requester": "Testing  Validation"
     }
   ],
-  "lastFetched": "2026-10-11T04:58:15.591Z",
-  "snapshotDate": "2026-10-11T04:58:15.604Z"
+  "lastFetched": "2026-10-18T03:49:14.667Z",
+  "snapshotDate": "2026-10-18T03:49:14.682Z"
 }
